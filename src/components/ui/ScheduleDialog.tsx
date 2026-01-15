@@ -6,7 +6,7 @@ import { toast } from "sonner";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/cn";
 
-const placeholderEmail = "hello@example.com";
+const placeholderEmail = "mohamedamine.balti@esprit.tn";
 
 async function copyToClipboard(text: string) {
   if (!navigator?.clipboard?.writeText) {

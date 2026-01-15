@@ -28,8 +28,8 @@ export function Footer() {
               <div>
                 <p className="text-sm font-semibold text-white">Contact</p>
                 <div className="mt-3 space-y-2 text-sm text-white/70">
-                  <p>hello@example.com</p>
-                  <p>+00 (000) 000-000</p>
+                  <p>mohamedamine.balti@esprit.tn</p>
+                  <p>+216 92 358 690</p>
                 </div>
               </div>
               <div>
