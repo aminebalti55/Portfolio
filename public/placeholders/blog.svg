@@ -1,0 +1,23 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="60" y1="40" x2="1140" y2="760" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" />
+      <stop offset="0.55" stop-color="#FFE7DE" />
+      <stop offset="1" stop-color="#FFB79F" />
+    </linearGradient>
+    <radialGradient id="spot" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(820 240) rotate(120) scale(420 420)">
+      <stop stop-color="#FF4D1F" stop-opacity="0.5" />
+      <stop offset="1" stop-color="#FF005C" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)" />
+  <circle cx="840" cy="260" r="380" fill="url(#spot)" />
+  <rect x="110" y="160" width="980" height="80" rx="18" fill="#0B0B0C" fill-opacity="0.08" />
+  <rect x="110" y="270" width="760" height="28" rx="14" fill="#0B0B0C" fill-opacity="0.12" />
+  <rect x="110" y="320" width="900" height="28" rx="14" fill="#0B0B0C" fill-opacity="0.12" />
+  <rect x="110" y="370" width="860" height="28" rx="14" fill="#0B0B0C" fill-opacity="0.12" />
+  <rect x="110" y="450" width="340" height="48" rx="24" fill="#FF4D1F" fill-opacity="0.85" />
+  <text x="64" y="96" fill="#0B0B0C" fill-opacity="0.55" font-family="ui-sans-serif, system-ui" font-size="24" letter-spacing="0.12em">
+    INSIGHT PLACEHOLDER
+  </text>
+</svg>

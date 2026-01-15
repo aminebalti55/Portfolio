@@ -1,0 +1,20 @@
+<svg width="900" height="1200" viewBox="0 0 900 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="120" y1="80" x2="820" y2="1140" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#11060A" />
+      <stop offset="0.45" stop-color="#4B0B12" />
+      <stop offset="1" stop-color="#FF4D1F" />
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(560 260) rotate(110) scale(520 520)">
+      <stop stop-color="#FF7A18" stop-opacity="0.9" />
+      <stop offset="1" stop-color="#FF005C" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="900" height="1200" fill="url(#bg)" />
+  <circle cx="600" cy="260" r="420" fill="url(#glow)" />
+  <circle cx="290" cy="860" r="320" fill="#000" fill-opacity="0.22" />
+  <rect x="240" y="370" width="420" height="600" rx="210" fill="#000" fill-opacity="0.22" />
+  <text x="56" y="108" fill="#FFFFFF" fill-opacity="0.72" font-family="ui-sans-serif, system-ui" font-size="28" letter-spacing="0.12em">
+    PORTRAIT PLACEHOLDER
+  </text>
+</svg>
