@@ -12,28 +12,23 @@ function ProjectCard({
   title,
   description,
   image,
+  slug,
   large = false,
 }: {
   badge: string;
   title: string;
   description: string;
   image: string;
+  slug?: string;
   large?: boolean;
 }) {
-  // Determine case study link based on project title
-  const getCaseStudyLink = (title: string) => {
-    const titleLower = title.toLowerCase();
-    if (titleLower.includes("romorquage")) return "/work/romorquage";
-    if (titleLower.includes("autoally")) return "/work/autoally";
-    if (titleLower.includes("atlas")) return "/work/atlas";
-    if (titleLower.includes("fledem")) return "/work/fledem";
-    if (titleLower.includes("cassandra")) return "/work/cassandra";
-    if (titleLower.includes("easyrhis")) return "/work/easyrhis";
-    if (titleLower.includes("invoicebirds")) return "/work/invoicebirds";
-    return "/work"; // Default fallback
-  };
-
-  const caseStudyLink = getCaseStudyLink(title);
+  // Use the slug field from content.ts when available — way more
+  // robust than string-matching the title (Pulse / Compass / any new
+  // project would silently fall back to /work without this).
+  // Falls back to a slugified title for safety.
+  const caseStudyLink = slug
+    ? `/work/${slug}`
+    : `/work/${title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "")}`;
 
   return (
     <Link href={caseStudyLink}>

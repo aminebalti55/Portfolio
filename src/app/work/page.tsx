@@ -163,7 +163,7 @@ const personalProjects: Project[] = [
     duration: "Solo build",
     description:
       "Personal wealth-management app I built to track my own expenses, savings goals, and income. React + Supabase + Chart.js with a beautiful, fast UI for daily money triage.",
-    image: "/images/projects/live-screenshots/atlas-live-01-hero.png",
+    image: "/images/projects/live-screenshots/atlas-live-hero-v2.png",
     tech: ["React", "Supabase", "Tailwind CSS", "Chart.js"],
     liveUrl: "https://atlas-wealth-app.netlify.app/",
     color: "#ff5500",
@@ -380,9 +380,9 @@ function LiveBadge({ liveUrl }: { liveUrl?: string }) {
       target="_blank"
       rel="noopener noreferrer"
       onClick={(e) => e.stopPropagation()}
-      className="inline-flex items-center gap-1.5 rounded-full border border-emerald-400/40 bg-emerald-400/15 px-2.5 py-1 text-[11px] font-medium text-emerald-300 backdrop-blur-sm transition-colors hover:bg-emerald-400/25"
+      className="inline-flex items-center gap-1.5 rounded-full border border-emerald-400/60 bg-emerald-500/30 px-2.5 py-1 text-[11px] font-medium text-emerald-100 backdrop-blur-md shadow-lg shadow-emerald-500/10 transition-all hover:border-emerald-400 hover:bg-emerald-500/40"
     >
-      <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" />
+      <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.8)]" />
       Live · {new URL(liveUrl).hostname.replace(/^www\./, "")}
     </a>
   );
@@ -414,7 +414,9 @@ function FeaturedCard({ project, index }: { project: Project; index: number }) {
               sizes="(min-width: 1024px) 50vw, 100vw"
               className="object-cover transition-transform duration-700 group-hover:scale-105"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/80 to-zinc-950/20" />
+            {/* Heavier gradient — bottom 70% of card needs to be near-opaque
+                so the white headline + zinc body copy stay readable. */}
+            <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/95 to-zinc-950/50" />
           </div>
 
           <div className="absolute right-5 top-5 z-10">
@@ -424,17 +426,18 @@ function FeaturedCard({ project, index }: { project: Project; index: number }) {
           <div className="relative flex h-full flex-col justify-end p-8">
             <ClientBadge project={project} />
             <div className="mt-2 mb-3 flex items-center gap-2">
+              {/* White text on colored tint = readable on any background.
+                  Border carries the color identity. */}
               <span
-                className="inline-flex items-center rounded-full px-3 py-1 text-xs font-medium"
+                className="inline-flex items-center rounded-full border px-3 py-1 text-xs font-medium text-white backdrop-blur-sm"
                 style={{
-                  backgroundColor: `${project.color}20`,
-                  color: project.color,
-                  border: `1px solid ${project.color}40`,
+                  backgroundColor: `${project.color}26`,
+                  borderColor: `${project.color}80`,
                 }}
               >
                 {project.category}
               </span>
-              <span className="text-xs text-zinc-500">{project.year}</span>
+              <span className="text-xs text-zinc-400">{project.year}</span>
             </div>
             <h3 className="text-3xl font-bold text-white transition-colors group-hover:text-orange-400 sm:text-4xl">
               {project.title}
@@ -483,7 +486,7 @@ function MediumCard({ project, index }: { project: Project; index: number }) {
               sizes="(min-width: 768px) 50vw, 100vw"
               className="object-cover transition-transform duration-700 group-hover:scale-105"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/70 to-zinc-950/10" />
+            <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/95 to-zinc-950/40" />
           </div>
 
           <div className="absolute right-4 top-4 z-10">
@@ -494,11 +497,10 @@ function MediumCard({ project, index }: { project: Project; index: number }) {
             <ClientBadge project={project} />
             <div className="mb-3 mt-2">
               <span
-                className="inline-flex w-fit items-center rounded-full px-3 py-1 text-xs font-medium"
+                className="inline-flex w-fit items-center rounded-full border px-3 py-1 text-xs font-medium text-white backdrop-blur-sm"
                 style={{
-                  backgroundColor: `${project.color}20`,
-                  color: project.color,
-                  border: `1px solid ${project.color}40`,
+                  backgroundColor: `${project.color}26`,
+                  borderColor: `${project.color}80`,
                 }}
               >
                 {project.category}
@@ -541,19 +543,11 @@ function SmallCard({ project, index }: { project: Project; index: number }) {
               sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
               className="object-cover transition-transform duration-500 group-hover:scale-105"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 to-transparent" />
-            <div className="absolute left-4 top-4">
-              <span
-                className="inline-flex items-center rounded-full px-3 py-1 text-xs font-medium backdrop-blur-sm"
-                style={{
-                  backgroundColor: `${project.color}30`,
-                  color: project.color,
-                  border: `1px solid ${project.color}50`,
-                }}
-              >
-                {project.category}
-              </span>
-            </div>
+            {/* Stronger gradient — covers full image bottom-up so the
+                LIVE pill (top-right) reads cleanly even on bright shots. */}
+            <div className="absolute inset-0 bg-gradient-to-b from-zinc-950/40 via-transparent to-zinc-950/60" />
+            {/* Only LIVE pill on the image — category moved BELOW the image
+                to eliminate the collision the user reported. */}
             {project.liveUrl && (
               <div className="absolute right-4 top-4">
                 <LiveBadge liveUrl={project.liveUrl} />
@@ -562,13 +556,26 @@ function SmallCard({ project, index }: { project: Project; index: number }) {
           </div>
           <div className="p-5">
             <ClientBadge project={project} />
-            <div className="mt-2 flex items-center justify-between">
+            <div className="mt-2 flex items-center justify-between gap-3">
               <h3 className="text-lg font-semibold text-white transition-colors group-hover:text-orange-400">
                 {project.title}
               </h3>
-              <span className="text-xs text-zinc-500">{project.year}</span>
+              <span className="shrink-0 text-xs text-zinc-500">{project.year}</span>
             </div>
-            <p className="mt-2 text-sm leading-relaxed text-zinc-400 line-clamp-2">
+            {/* Category moved here — below title, no longer competes with
+                the LIVE pill on the image. */}
+            <div className="mt-2">
+              <span
+                className="inline-flex w-fit items-center rounded-full border px-2.5 py-0.5 text-[11px] font-medium text-white"
+                style={{
+                  backgroundColor: `${project.color}26`,
+                  borderColor: `${project.color}80`,
+                }}
+              >
+                {project.category}
+              </span>
+            </div>
+            <p className="mt-3 text-sm leading-relaxed text-zinc-400 line-clamp-2">
               {project.description}
             </p>
             <div className="mt-4 flex flex-wrap gap-1.5">
@@ -612,11 +619,11 @@ function PersonalCard({ project, index }: { project: Project; index: number }) {
               sizes="(min-width: 1024px) 33vw, 100vw"
               className="object-cover transition-transform duration-700 group-hover:scale-105"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/70 to-zinc-950/10" />
+            <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/95 to-zinc-950/30" />
           </div>
 
           <div className="absolute right-4 top-4 z-10 flex flex-col items-end gap-2">
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-violet-400/40 bg-violet-400/15 px-2.5 py-1 text-[11px] font-medium text-violet-300 backdrop-blur-sm">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-violet-400/50 bg-violet-500/25 px-2.5 py-1 text-[11px] font-medium text-violet-100 backdrop-blur-sm">
               Personal product
             </span>
             <LiveBadge liveUrl={project.liveUrl} />
@@ -624,11 +631,10 @@ function PersonalCard({ project, index }: { project: Project; index: number }) {
 
           <div className="relative flex h-full flex-col justify-end p-6">
             <span
-              className="inline-flex w-fit items-center rounded-full px-3 py-1 text-xs font-medium"
+              className="inline-flex w-fit items-center rounded-full border px-3 py-1 text-xs font-medium text-white backdrop-blur-sm"
               style={{
-                backgroundColor: `${project.color}20`,
-                color: project.color,
-                border: `1px solid ${project.color}40`,
+                backgroundColor: `${project.color}26`,
+                borderColor: `${project.color}80`,
               }}
             >
               {project.category}

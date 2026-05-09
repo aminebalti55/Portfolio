@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Great_Vibes, Inter, Playfair_Display } from "next/font/google";
 import { ViewTransitions } from "next-view-transitions";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Providers } from "@/components/providers/Providers";
 import "./globals.css";
 
@@ -77,6 +79,12 @@ export default function RootLayout({
         <ViewTransitions>
           <Providers>{children}</Providers>
         </ViewTransitions>
+        {/* Vercel Analytics — visitor count + traffic sources, free tier.
+            View at vercel.com/<your-team>/<project>/analytics. */}
+        <Analytics />
+        {/* Vercel Speed Insights — real-user Core Web Vitals (LCP, INP,
+            CLS) from actual visitors. View at .../speed-insights. */}
+        <SpeedInsights />
       </body>
     </html>
   );
