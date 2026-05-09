@@ -31,11 +31,12 @@ export function ServicesSection() {
             <div className="lg:col-span-7">
               <div className="grid gap-4 sm:grid-cols-2">
                 {services.items.map((item) => (
-                  <div
+                  <a
                     key={item.title}
-                    className={`group rounded-2xl border p-5 transition ${
+                    href="#contact"
+                    className={`group block rounded-2xl border p-5 transition ${
                       item.featured
-                        ? "border-transparent bg-[color:var(--accent)] text-white shadow-sm"
+                        ? "border-transparent bg-[color:var(--accent)] text-white shadow-sm hover:brightness-110"
                         : "border-black/10 bg-white text-zinc-950 hover:border-black/20 hover:bg-zinc-50 dark:border-white/10 dark:bg-zinc-950 dark:text-zinc-50 dark:hover:border-white/20 dark:hover:bg-zinc-900/60"
                     }`}
                   >
@@ -74,7 +75,7 @@ export function ServicesSection() {
                           : "text-zinc-950 dark:text-zinc-50"
                       }`}
                     >
-                      <span>Learn more</span>
+                      <span>Discuss this scope</span>
                       <span
                         className="transition group-hover:translate-x-0.5"
                         aria-hidden="true"
@@ -82,7 +83,7 @@ export function ServicesSection() {
                         →
                       </span>
                     </div>
-                  </div>
+                  </a>
                 ))}
               </div>
             </div>

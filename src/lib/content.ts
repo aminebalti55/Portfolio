@@ -10,6 +10,15 @@ export const brand = {
   location: "Tunisia · Remote-friendly · GMT+1",
 };
 
+export const socials = {
+  email: "mohamedamine.balti@esprit.tn",
+  phone: "+216 92 358 690",
+  github: "https://github.com/aminebalti55",
+  linkedin: "https://www.linkedin.com/in/aminebdev/",
+  calendly:
+    "https://calendly.com/mohamedamine-balti-esprit",
+};
+
 export const navLinks: NavLink[] = [
   { label: "About", href: "/#about" },
   { label: "Services", href: "/#services" },
@@ -77,10 +86,10 @@ export type ServiceItem = {
 
 export const services = {
   eyebrow: "Services",
-  title: "Building scalable solutions that work.",
+  title: "Senior execution without agency overhead.",
   description:
-    "From concept to deployment, I deliver end-to-end web applications that solve real business problems. Specialized in SaaS platforms, enterprise software, and modern web technologies.",
-  cta: { label: "Start a project", href: "#contact" },
+    "I take SaaS MVPs, internal tools, and AI workflows from concept to production — fast. You get one engineer who owns the stack end-to-end (frontend, API, database, deployment) instead of a four-person agency contract.",
+  cta: { label: "Book a 20-minute scoping call", href: "#contact" },
   items: [
     {
       title: "Full-Stack Development",
@@ -168,10 +177,10 @@ export const projects = {
 };
 
 export const ctaBand = {
-  title: "Building solutions that scale",
+  title: "Have a SaaS MVP, internal tool, or backend rescue to ship?",
   description:
-    "From concept to deployment, I focus on creating robust, user-centric applications that solve real problems. Whether it's a SaaS platform serving thousands of users or an enterprise system processing real-time data, I deliver production-ready solutions built with modern technologies and best practices.",
-  cta: { label: "Let's work together", href: "#contact" },
+    "I'm open to one new senior remote contract this quarter. 20-minute scoping call → scope I can ship in the first sprint. SaaS MVPs in 6 weeks, internal tools in 2–3 weeks, API rescues on a fixed scope.",
+  cta: { label: "Book a scoping call", href: "#contact" },
 };
 
 // "Outcomes Delivered" — first-person, anonymized client snapshots.
@@ -236,7 +245,7 @@ export const testimonials = {
       region: "Remote · International",
       period: "2025",
       quote:
-        "Delivered a car marketplace platform with real-time messaging (Socket.io), secure escrow payments, and KYC verification. Spring Boot backend + Next.js frontend handling listings, transactions, and dispute resolution. Production stack handles thousands of daily transactions with sub-200ms message latency.",
+        "Delivered a car marketplace platform with real-time messaging (Socket.io), secure escrow payments, and KYC verification. Spring Boot backend + Next.js frontend handling listings, transactions, and dispute resolution — architected for high concurrency with persistent WebSocket connections and Redis-backed message routing.",
     },
     {
       attribution: "Freelance Developer",
@@ -244,7 +253,7 @@ export const testimonials = {
       region: "Canada · Remote",
       period: "2025",
       quote:
-        "Built a modern, mobile-first landing page with real-time location-mapping integration (Supabase + Mapbox). Stranded drivers connect with the dispatch team instantly via the request flow. Page-load under 1.5s on 3G, 100% Lighthouse mobile performance.",
+        "Built a modern, mobile-first landing page with real-time location-mapping integration (Supabase + Mapbox). Stranded drivers connect with the dispatch team instantly via the request flow. Optimized for fast load on mobile networks and high Lighthouse scores across performance, accessibility, and SEO.",
     },
   ] satisfies OutcomeItem[],
 };

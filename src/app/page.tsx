@@ -14,10 +14,11 @@ export default function Home() {
     <main className="min-h-screen bg-white text-zinc-950 dark:bg-zinc-950 dark:text-zinc-50">
       <Hero />
       <LogoCloud />
-      <AboutSection />
-      <ServicesSection />
+      {/* Projects up first — strongest proof leads, per portfolio audit. */}
       <ProjectsSection />
       <CtaBand />
+      <ServicesSection />
+      <AboutSection />
       <TestimonialsSection />
       <InsightsSection />
       <ContactSection />
