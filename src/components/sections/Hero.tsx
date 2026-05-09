@@ -119,7 +119,11 @@ export function Hero() {
                 variants={fadeInUp}
                 custom={0.1}
               >
-                <p className="text-[11px] font-medium tracking-[0.2em] uppercase text-white/50">
+                <span className="inline-flex items-center gap-2 rounded-full border border-emerald-400/40 bg-emerald-400/10 px-3 py-1 text-[11px] font-medium text-emerald-300">
+                  <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" />
+                  Available · Q2 2026
+                </span>
+                <p className="mt-4 text-[11px] font-medium tracking-[0.2em] uppercase text-white/50">
                   Hey, I Am
                 </p>
                 <h1 className="font-inter mt-3 text-[clamp(2.8rem,7vw,5.5rem)] font-extrabold uppercase leading-[0.88] tracking-[-0.03em] text-white">
@@ -140,8 +144,13 @@ export function Hero() {
                 variants={fadeInUp}
                 custom={0.3}
               >
-                <p className="max-w-[400px] text-[13px] leading-[1.8] text-white/60 lg:max-w-[360px]">
-                  Portfolio of Amine — Full-stack engineer crafting digital products & experiences with precision and purpose.
+                <p className="max-w-[400px] text-[13px] leading-[1.8] text-white/70 lg:max-w-[360px]">
+                  Senior full-stack engineer shipping production SaaS, fleet,
+                  and AI tools end-to-end. Working remote across the UK,
+                  Germany, Canada, and Tunisia.
+                </p>
+                <p className="mt-3 max-w-[400px] text-[12px] leading-[1.6] text-white/50 lg:max-w-[360px]">
+                  $55–75/hr · Open to senior contracts and founding-eng roles.
                 </p>
                 {/* CTA Button - Longer and thinner like reference */}
                 <motion.button

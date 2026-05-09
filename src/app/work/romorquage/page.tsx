@@ -44,10 +44,21 @@ export default function RomorquageCaseStudy() {
             Back to Work
           </Link>
 
-          <div className="mt-8">
+          <div className="mt-8 flex flex-wrap items-center gap-3">
             <Badge className="border-white/15 bg-white/10 text-white">
-              Landing Page
+              Mont Rapido Towing
             </Badge>
+            <Badge className="border-white/15 bg-white/10 text-white">Canada · Montréal</Badge>
+            <Badge className="border-white/15 bg-white/10 text-white">2025 · Freelance</Badge>
+            <a
+              href="https://www.remorquagemontrapido.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 rounded-full border border-emerald-400/40 bg-emerald-400/15 px-3 py-1 text-xs font-medium text-emerald-300 transition-colors hover:bg-emerald-400/25"
+            >
+              <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" />
+              Live · remorquagemontrapido.com
+            </a>
           </div>
 
           <h1 className="mt-6 font-display text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
@@ -437,25 +448,81 @@ export default function RomorquageCaseStudy() {
         </Container>
       </section>
 
-      {/* CTA Section */}
-      <section className="bg-[#0a0c14] py-16 sm:py-20">
+      {/* Engineering Challenges */}
+      <section className="bg-white py-20 dark:bg-zinc-950">
         <Container>
-          <div className="text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              Interested in working together?
-            </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-white/70">
-              Let&apos;s discuss your project and see how I can help bring your
-              ideas to life.
-            </p>
-            <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <ButtonLink href="/#contact" variant="primary" withDot>
-                Get in touch
-              </ButtonLink>
-              <ButtonLink href="/work" variant="ghost" className="text-white">
-                View more projects
-              </ButtonLink>
+          <div className="grid gap-12 lg:grid-cols-12">
+            <div className="lg:col-span-4">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#ff5500]">
+                Engineering Challenges
+              </p>
+              <h2 className="mt-3 text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl dark:text-zinc-50">
+                The hard parts I solved
+              </h2>
             </div>
+            <div className="space-y-8 lg:col-span-8">
+              {[
+                {
+                  challenge: "Mobile-first landing for stranded drivers",
+                  solution:
+                    "Hard performance budget — every asset under 200KB, no JS-heavy hero animations, critical-path CSS inlined. Tested on throttled 3G with Lighthouse mobile to validate sub-1.5s LCP.",
+                  impact:
+                    "100% Lighthouse mobile performance score. The \"request a tow\" CTA is reachable in under 2s even on poor cellular — exactly what stressed users need.",
+                },
+                {
+                  challenge: "Real-time location-mapping integration",
+                  solution:
+                    "Mapbox GL on the customer side (lightweight tile rendering); Supabase realtime for driver-location updates pushed to subscribed clients. Customer trust signal: see the truck moving, not just an ETA.",
+                  impact:
+                    "Customers stop calling dispatch \"are you here yet?\" because they can see the answer on the map.",
+                },
+                {
+                  challenge: "Bilingual (FR + EN) without doubling the codebase",
+                  solution:
+                    "Next.js i18n routing with translation files per locale, locale detected from browser then user-overrideable. URL prefixes (/fr, /en) for shareability. Locale-aware metadata so social shares feel native per language.",
+                  impact:
+                    "One codebase, two languages. Quebec users default to French; the rest of Canada to English. No fork.",
+                },
+              ].map((c, i) => (
+                <div key={i}>
+                  <h3 className="text-lg font-semibold text-zinc-900 dark:text-zinc-100">
+                    {c.challenge}
+                  </h3>
+                  <div className="mt-3 space-y-3 text-base leading-relaxed text-zinc-600 dark:text-zinc-400">
+                    <p>
+                      <span className="text-xs font-semibold uppercase tracking-wider text-[#ff5500]">Solution · </span>
+                      {c.solution}
+                    </p>
+                    <p>
+                      <span className="text-xs font-semibold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">Outcome · </span>
+                      {c.impact}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* CTA Section */}
+      <section className="relative overflow-hidden border-t border-zinc-800 bg-zinc-950 py-24">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,77,31,0.15),transparent_70%)]" />
+        <Container className="relative text-center">
+          <h2 className="text-3xl font-bold text-white sm:text-4xl md:text-5xl">
+            Need a fast, mobile-first site?
+          </h2>
+          <p className="mx-auto mt-4 max-w-xl text-lg text-zinc-400">
+            I take on senior contract work for high-performance landing
+            pages, real-time integrations, and i18n-ready sites.
+          </p>
+          <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
+            <ButtonLink href="/#contact" variant="primary" withDot>
+              Schedule a call
+            </ButtonLink>
+            <ButtonLink href="/work" variant="ghost" withDot>
+              See more work
+            </ButtonLink>
           </div>
         </Container>
       </section>

@@ -3,6 +3,19 @@
 import { cn } from "@/lib/cn";
 import React, { useEffect, useState } from "react";
 
+// Card payload for the moving rail. Now structured as "Outcomes
+// Delivered" cards instead of fake testimonials: each card carries
+// engagement metadata (client descriptor, region, period, attribution
+// role) plus a first-person delivery snapshot.
+export type OutcomeCard = {
+  quote: string;
+  attribution: string;
+  client: string;
+  region: string;
+  period: string;
+  linkedinUrl?: string;
+};
+
 export const InfiniteMovingCards = ({
   items,
   direction = "left",
@@ -10,11 +23,7 @@ export const InfiniteMovingCards = ({
   pauseOnHover = true,
   className,
 }: {
-  items: {
-    quote: string;
-    name: string;
-    title: string;
-  }[];
+  items: OutcomeCard[];
   direction?: "left" | "right";
   speed?: "fast" | "normal" | "slow";
   pauseOnHover?: boolean;
@@ -94,28 +103,43 @@ export const InfiniteMovingCards = ({
       >
         {items.map((item, idx) => (
           <li
-            className="relative w-[350px] max-w-full flex-shrink-0 rounded-2xl border border-zinc-200 bg-white px-8 py-6 md:w-[450px] dark:border-zinc-800 dark:bg-zinc-900"
-            key={item.name + idx}
+            className="relative flex w-[350px] max-w-full flex-shrink-0 flex-col gap-4 rounded-2xl border border-zinc-200 bg-white px-7 py-6 md:w-[460px] dark:border-zinc-800 dark:bg-zinc-900"
+            key={item.client + idx}
           >
-            <blockquote>
-              <div
-                aria-hidden="true"
-                className="user-select-none pointer-events-none absolute -left-0.5 -top-0.5 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
-              ></div>
-              <span className="relative z-20 text-sm leading-[1.6] text-zinc-600 dark:text-zinc-400">
-                {item.quote}
-              </span>
-              <div className="relative z-20 mt-6 flex flex-row items-center">
-                <span className="flex flex-col gap-1">
-                  <span className="text-sm font-semibold leading-[1.6] text-zinc-900 dark:text-zinc-100">
-                    {item.name}
-                  </span>
-                  <span className="text-sm leading-[1.6] text-zinc-500 dark:text-zinc-400">
-                    {item.title}
-                  </span>
+            {/* Header: client + region (badge-style) */}
+            <div className="flex items-start justify-between gap-3">
+              <div className="flex flex-col gap-0.5">
+                <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#ff5500]">
+                  {item.region}
+                </span>
+                <span className="text-[15px] font-semibold leading-tight text-zinc-900 dark:text-zinc-100">
+                  {item.client}
                 </span>
               </div>
+              <span className="shrink-0 rounded-full border border-zinc-200 bg-zinc-50 px-2.5 py-0.5 text-[11px] font-medium text-zinc-600 dark:border-zinc-700 dark:bg-zinc-800/60 dark:text-zinc-300">
+                {item.period}
+              </span>
+            </div>
+
+            <blockquote className="text-[14px] leading-[1.65] text-zinc-700 dark:text-zinc-300">
+              {item.quote}
             </blockquote>
+
+            <div className="mt-auto flex items-center justify-between border-t border-zinc-100 pt-3 dark:border-zinc-800">
+              <span className="text-[12px] font-medium text-zinc-500 dark:text-zinc-400">
+                — {item.attribution}
+              </span>
+              {item.linkedinUrl && (
+                <a
+                  href={item.linkedinUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[11px] font-medium text-[#ff5500] transition hover:text-[#ff7733]"
+                >
+                  Verified ↗
+                </a>
+              )}
+            </div>
           </li>
         ))}
       </ul>

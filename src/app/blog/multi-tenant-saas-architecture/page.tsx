@@ -6,9 +6,9 @@ import { Footer } from "@/components/sections/Footer";
 import "../blog-styles.css";
 
 export const metadata: Metadata = {
-  title: "Building Multi-Tenant SaaS: Lessons from EasyRHIS",
+  title: "Building Multi-Tenant SaaS — A Field Guide",
   description:
-    "Architectural decisions and lessons learned building a production-scale multi-tenant SaaS platform for restaurant HR management.",
+    "Practical architectural patterns for production multi-tenant SaaS — database design, RBAC, JWT custom claims, tenant-scoped queries, and the operational issues that show up at scale. Drawn from real engagements building HR and fleet platforms for multi-brand operators.",
 };
 
 export default function MultiTenantSaaSBlogPost() {
@@ -45,11 +45,14 @@ export default function MultiTenantSaaSBlogPost() {
               Architecture
             </Badge>
             <h1 className="mt-6 bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 bg-clip-text font-display text-4xl font-bold tracking-tight text-transparent sm:text-5xl md:text-6xl dark:from-zinc-50 dark:via-zinc-200 dark:to-zinc-50">
-              Building Multi-Tenant SaaS: Lessons from EasyRHIS
+              Building Multi-Tenant SaaS — A Field Guide
             </h1>
             <p className="mt-6 text-xl leading-8 text-zinc-600 dark:text-zinc-400">
-              Architectural decisions and lessons learned building a production-scale 
-              multi-tenant SaaS platform for restaurant HR management.
+              Practical architectural patterns for production multi-tenant
+              SaaS — database design, RBAC, JWT custom claims,
+              tenant-scoped queries, and the operational issues that show
+              up at scale. Drawn from real engagements building HR and
+              fleet platforms for multi-brand operators.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-4 text-sm text-zinc-500 dark:text-zinc-400">
               <div className="flex items-center gap-2">
@@ -81,10 +84,15 @@ export default function MultiTenantSaaSBlogPost() {
               <div className="prose prose-zinc max-w-none dark:prose-invert">
             <h2>The Challenge</h2>
             <p>
-              When I started working on EasyRHIS, the goal was ambitious: build a comprehensive 
-              HR management system that could serve multiple restaurant chains (Five Guys, KFC, etc.) 
-              from a single codebase, while keeping each client's data completely isolated and 
-              ensuring the system could scale to thousands of locations.
+              I&apos;ve worked across multiple multi-tenant SaaS engagements —
+              including a 6-month tenure on a multi-brand QSR HR platform
+              deployed across KFC, Five Guys, and Burger King franchise
+              networks. The core challenge is universal: build one
+              codebase that serves multiple distinct customer organisations,
+              keep their data completely isolated, and scale to thousands
+              of locations without operations costs ballooning. This piece
+              is a field guide to the patterns that survive contact with
+              production.
             </p>
 
             <h2>Multi-Tenancy: Database Design Decisions</h2>

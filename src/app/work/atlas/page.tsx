@@ -44,10 +44,20 @@ export default function AtlasCaseStudy() {
             Back to Work
           </Link>
 
-          <div className="mt-8">
-            <Badge className="border-white/15 bg-white/10 text-white">
-              Personal Finance
-            </Badge>
+          <div className="mt-8 flex flex-wrap items-center gap-3">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-violet-400/40 bg-violet-400/15 px-3 py-1 text-xs font-medium text-violet-300">
+              Personal product
+            </span>
+            <Badge className="border-white/15 bg-white/10 text-white">2025 · Solo build</Badge>
+            <a
+              href="https://atlas-wealth-app.netlify.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 rounded-full border border-emerald-400/40 bg-emerald-400/15 px-3 py-1 text-xs font-medium text-emerald-300 transition-colors hover:bg-emerald-400/25"
+            >
+              <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" />
+              Live · atlas-wealth-app.netlify.app
+            </a>
           </div>
 
           <h1 className="mt-6 font-display text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
@@ -431,25 +441,81 @@ export default function AtlasCaseStudy() {
         </Container>
       </section>
 
-      {/* CTA Section */}
-      <section className="bg-[#0a1628] py-16 sm:py-20">
+      {/* Engineering Challenges */}
+      <section className="bg-white py-20 dark:bg-zinc-950">
         <Container>
-          <div className="text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              Interested in working together?
-            </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-white/70">
-              Let&apos;s discuss your project and see how I can help bring your
-              ideas to life.
-            </p>
-            <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <ButtonLink href="/#contact" variant="primary" withDot>
-                Get in touch
-              </ButtonLink>
-              <ButtonLink href="/work" variant="ghost" className="text-white">
-                View more projects
-              </ButtonLink>
+          <div className="grid gap-12 lg:grid-cols-12">
+            <div className="lg:col-span-4">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#ff5500]">
+                Engineering Challenges
+              </p>
+              <h2 className="mt-3 text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl dark:text-zinc-50">
+                Design choices behind the build
+              </h2>
             </div>
+            <div className="space-y-8 lg:col-span-8">
+              {[
+                {
+                  challenge: "Quick add — expense entry in under 5 seconds",
+                  solution:
+                    "Single-input quick-add with smart parsing (e.g. \"12.50 lunch\" → amount + auto-categorised). Default category from history. Submit on Enter. The whole flow lives behind one keystroke.",
+                  impact:
+                    "I actually log expenses daily instead of monthly batches that drift from reality. App stays useful instead of dying after week 2.",
+                },
+                {
+                  challenge: "Smart categorisation that learns from history",
+                  solution:
+                    "Simple frequency table per merchant string + fallback to keyword rules. Wrong category = one tap to correct, which updates the rule. No heavy ML model required.",
+                  impact:
+                    "After 2 weeks of corrections, the categoriser is right ~90% of the time on new transactions — the friction-removal target was hit without infrastructure cost.",
+                },
+                {
+                  challenge: "Visual analytics that motivate, not depress",
+                  solution:
+                    "Most personal-finance UIs lead with red and \"over budget\" — that disengages users. I lead with progress (savings goals, percent complete), use red sparingly, and surface a \"wins this month\" call-out.",
+                  impact:
+                    "I open the app to celebrate, not to be scolded. Motivational design = repeat opens = the app actually works.",
+                },
+              ].map((c, i) => (
+                <div key={i}>
+                  <h3 className="text-lg font-semibold text-zinc-900 dark:text-zinc-100">
+                    {c.challenge}
+                  </h3>
+                  <div className="mt-3 space-y-3 text-base leading-relaxed text-zinc-600 dark:text-zinc-400">
+                    <p>
+                      <span className="text-xs font-semibold uppercase tracking-wider text-[#ff5500]">Solution · </span>
+                      {c.solution}
+                    </p>
+                    <p>
+                      <span className="text-xs font-semibold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">Outcome · </span>
+                      {c.impact}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* CTA Section */}
+      <section className="relative overflow-hidden border-t border-zinc-800 bg-zinc-950 py-24">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,77,31,0.15),transparent_70%)]" />
+        <Container className="relative text-center">
+          <h2 className="text-3xl font-bold text-white sm:text-4xl md:text-5xl">
+            Building a consumer app?
+          </h2>
+          <p className="mx-auto mt-4 max-w-xl text-lg text-zinc-400">
+            I take on senior contract work for consumer-facing products
+            where UX details and daily-engagement design matter.
+          </p>
+          <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
+            <ButtonLink href="/#contact" variant="primary" withDot>
+              Schedule a call
+            </ButtonLink>
+            <ButtonLink href="/work" variant="ghost" withDot>
+              See more work
+            </ButtonLink>
           </div>
         </Container>
       </section>

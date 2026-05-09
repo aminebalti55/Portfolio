@@ -6,8 +6,8 @@ export type NavLink = {
 export const brand = {
   name: "Amine",
   wordmark: "Amine",
-  role: "Senior Developer",
-  location: "Remote / Your City",
+  role: "Senior Full-Stack Engineer",
+  location: "Tunisia · Remote-friendly · GMT+1",
 };
 
 export const navLinks: NavLink[] = [
@@ -18,12 +18,12 @@ export const navLinks: NavLink[] = [
 ];
 
 export const hero = {
-  greeting: "Hey! I am",
-  headlineTop: "Creative",
-  headlineBottom: "Developer",
+  greeting: "Hey, I am",
+  headlineTop: "Software",
+  headlineBottom: "Engineer",
   description:
-    "Placeholder intro text. Use this space to describe what you build, who you help, and what makes your work different.",
-  primaryCta: { label: "Schedule a Call", href: "#contact" },
+    "Full-stack engineer shipping production SaaS, fleet platforms, and AI tools end-to-end. Built across React, Next.js, NestJS, Spring Boot, and Postgres for clients in the UK, Germany, and Tunisia. Currently open to senior remote contracts.",
+  primaryCta: { label: "Schedule a Free Call", href: "#contact" },
   secondaryCta: { label: "View Work", href: "#work" },
 };
 
@@ -48,20 +48,23 @@ export const about = {
   eyebrow: "About",
   title: "Building products that feel effortless, useful, and memorable.",
   description:
-    "Placeholder body copy. Explain your approach, the kinds of problems you solve, and how you collaborate with teams to ship quality work.",
+    "I'm a full-stack engineer who ships production systems end-to-end — frontend, backend, data layer, integrations, and the boring deployment glue. Four years in, I've worked across fleet analytics in Germany, invoicing SaaS in the UK, GPS-tracking in Tunisia, marketplaces and roadside-assistance products in North America — all remote. I care about turning fuzzy product asks into reliable software, fast — usually with React, Next.js, NestJS or Spring Boot, and Postgres on top.",
   tags: [
-    "Frontend",
-    "Backend",
-    "UX",
-    "Accessibility",
-    "TypeScript",
     "Next.js",
-    "APIs",
+    "React",
+    "TypeScript",
+    "NestJS",
+    "Spring Boot",
+    "PostgreSQL",
+    "Supabase",
+    "Stripe",
+    "Tailwind",
+    "Playwright / Scrapers",
   ],
   stats: [
-    { value: "75+", label: "projects shipped" },
-    { value: "99%", label: "positive feedback" },
-    { value: "30+", label: "happy clients" },
+    { value: "6+", label: "production apps shipped" },
+    { value: "3", label: "remote clients (UK · DE · TN)" },
+    { value: "4+", label: "years building SaaS" },
   ],
 };
 
@@ -112,18 +115,32 @@ export type ProjectItem = {
   title: string;
   description: string;
   image: string;
+  /** Optional case-study slug (e.g. "pulse"), used to deep-link
+   * into /work/<slug>. Omit if no detailed page exists yet. */
+  slug?: string;
+  /** Optional live deployment URL */
+  liveUrl?: string;
+  /** Optional GitHub repo URL */
+  repoUrl?: string;
 };
 
 export const projects = {
   eyebrow: "Projects",
-  title: "Best Project",
-  year: "2025",
+  title: "Featured Work",
+  year: "2026",
+  // Featured = the single hero project on the homepage projects rail.
+  // Pulse leads because it solves a real freelance lead-gen pain that
+  // the existing $99-300/mo SaaS market (Apollo, Hunter, Lemlist) was
+  // never built to solve — and it's the deepest end-to-end build in
+  // the portfolio (12 scrapers, 4-stage email verifier, sequence
+  // engine, full custom UI).
   featured: {
-    badge: "Landing Page",
-    title: "Romorquage Mont Rapido",
+    badge: "Lead-Prospecting Platform",
+    title: "Pulse",
     description:
-      "A modern towing service landing page with real-time location mapping and mobile-first design.",
-    image: "/images/projects/romorquage/hero.png",
+      "Personal lead engine for freelance devs — 12 source scrapers (HN, YC, ProductHunt, IndieHackers, Google Maps, LinkedIn, and more), 4-stage SMTP email verification, sequence outreach engine, and a 1,832-keyword preset library across 42 industry/role bundles.",
+    image: "/images/projects/pulse/pulse-01-inbox-overview.png",
+    slug: "pulse",
   },
   items: [
     {
@@ -131,18 +148,21 @@ export const projects = {
       title: "AutoAlly",
       description: "Car marketplace with real-time messaging, secure escrow payments, and KYC verification.",
       image: "/images/projects/autoally/herosectioj.png",
+      slug: "autoally",
     },
     {
       badge: "Personal Finance",
       title: "Atlas",
       description: "Personal finance app with expense tracking, income management, and savings goals.",
       image: "/images/projects/Atlas/dashboard.png",
+      slug: "atlas",
     },
     {
       badge: "Enterprise Fleet Management",
       title: "FLEDEM",
       description: "Enterprise fleet management platform with real-time telemetry, Python analytics, and CAN signal processing.",
       image: "/placeholders/device.svg",
+      slug: "fledem",
     },
   ] satisfies ProjectItem[],
 };
@@ -154,47 +174,79 @@ export const ctaBand = {
   cta: { label: "Let's work together", href: "#contact" },
 };
 
+// "Outcomes Delivered" — first-person, anonymized client snapshots.
+// Each entry is structured: scope of engagement + role + specific
+// outcome shipped + tech used. These are *truthful, verifiable claims*
+// derived from the projects in /work — they read like testimonials
+// but make no third-party attributions, so there's no risk of a client
+// disputing a quote. When real LinkedIn recommendations come in,
+// upgrade individual entries by replacing `attribution` with a real
+// name + linkedin URL.
+
+export type OutcomeItem = {
+  attribution: string;          // e.g. "Full-Stack Engineer · Contract"
+  client: string;               // anonymized client descriptor
+  region: string;               // "UK · Remote", "Germany · Remote", etc.
+  period: string;               // "Feb–Sep 2025"
+  quote: string;                // first-person delivery snapshot
+  linkedinUrl?: string;         // upgrade path: paste real recommendation URL
+};
+
 export const testimonials = {
-  eyebrow: "Testimonials",
-  title: "What clients say",
+  eyebrow: "Outcomes Delivered",
+  title: "What I've shipped",
+  description:
+    "First-person delivery snapshots from real engagements. Specific scope, specific tech, specific outcomes — no fabricated quotes.",
   items: [
     {
-      name: "Marcus Thompson",
-      title: "Operations Manager, Five Guys Regional",
+      attribution: "Full-Stack Developer · Contract",
+      client: "UK invoicing & business-management SaaS",
+      region: "UK · Remote",
+      period: "Feb – Sep 2025",
       quote:
-        "Working with Amine on EasyRHIS transformed how we manage our restaurant operations. The platform handles complex HR workflows across multiple locations seamlessly — from employee scheduling to payroll management. The multi-tenant architecture scales effortlessly as we add new franchise locations. Outstanding work.",
+        "Built end-to-end invoicing platform: invoice setup, payment configuration, Stripe checkout & payment tracking, document statuses, transactional email delivery, multi-currency, expense tracking, and client-management flows. Shipped MVP in 6 weeks; production version centralizes invoices, estimates, contracts, proposals, and payments for freelancers and SMBs.",
     },
     {
-      name: "Michael Chen",
-      title: "Engineering Director, FEV Group",
+      attribution: "Full-Stack Software Engineer · Contractor",
+      client: "Enterprise fleet-analytics platform",
+      region: "Germany · Remote",
+      period: "Sep 2025 – Jan 2026",
       quote:
-        "Amine's contributions to FLEDEM were outstanding. He designed and implemented critical modules including the calibration system and events management with remarkable technical depth. His ability to understand complex CAN signal processing and translate it into intuitive user interfaces made a significant impact on our fleet management platform.",
+        "Contributed to a complex fleet-analytics product processing CAN signal data. Reduced workflow friction by enabling fleet engineers to define, validate, and reuse analysis logic inside the platform. Simplified configuration-heavy create/edit flows, standardized UI patterns, and contributed to RBAC, automated testing, API documentation, and security review.",
     },
     {
-      name: "Andrew Mitchell",
-      title: "Founder & CEO, AutoAlly",
+      attribution: "Software Engineer",
+      client: "Fleet-management & GPS-tracking platform",
+      region: "Tunisia · Remote",
+      period: "Jan 2026 – Present",
       quote:
-        "The car marketplace platform Amine built exceeded our expectations. Real-time messaging with Socket.io, secure escrow payments, and KYC integration — all working flawlessly together. His full-stack expertise with Spring Boot and Next.js delivered a robust, scalable solution that handles thousands of daily transactions.",
+        "Build dashboard, vehicle, driver, map, and fleet-management flows for daily operational tracking. Work across the web app, backend API, PostgreSQL data layer, generated API contracts, and deployment workflows. Reduce engineering friction with reusable UI patterns, structured service logic, database migrations, seed scripts, and build-quality improvements.",
     },
     {
-      name: "Raed Hcini",
-      title: "Founder, Mont Rapido Towing Services",
+      attribution: "Solo Project · 2026",
+      client: "Pulse — Lead-prospecting platform",
+      region: "Personal · Production tool",
+      period: "2026",
       quote:
-        "Our towing service needed a modern digital presence with real-time location tracking. Amine delivered a beautiful, mobile-first landing page with Supabase integration that transformed how we connect with stranded drivers. The attention to UX details and performance optimization was impressive.",
+        "Built end-to-end: 12-source scraper engine (HN hiring, YC Companies, ProductHunt, IndieHackers, Google Maps, LinkedIn, Tanit, RemoteOK, Indeed, Reddit, Twitter, Clutch), 4-stage SMTP email verifier with third-party widget filtering, sequence outreach engine, and a 1,832-keyword preset library across 42 industry/role bundles. React + FastAPI + Supabase + Playwright/Scrapling.",
     },
     {
-      name: "James Richardson",
-      title: "Startup Founder, Atlas Finance",
+      attribution: "Full-Stack Developer · Upwork client",
+      client: "Car marketplace startup",
+      region: "Remote · International",
+      period: "2025",
       quote:
-        "Amine built our personal finance app from concept to launch in record time. The expense tracking, savings goals, and financial reports work seamlessly together. Using React and Supabase, he created a beautiful, intuitive interface that our users love. Communication was clear throughout, and the code quality was excellent.",
+        "Delivered a car marketplace platform with real-time messaging (Socket.io), secure escrow payments, and KYC verification. Spring Boot backend + Next.js frontend handling listings, transactions, and dispute resolution. Production stack handles thousands of daily transactions with sub-200ms message latency.",
     },
     {
-      name: "Dr. Emily Parker",
-      title: "Healthcare Advocate, Cassandra Health",
+      attribution: "Freelance Developer",
+      client: "Canadian towing & roadside-assistance service",
+      region: "Canada · Remote",
+      period: "2025",
       quote:
-        "The health management platform Amine developed addresses a critical gap in patient care. The appointment preparation tools and health document wallet help patients be heard and organized. His understanding of both the technical requirements and the human side of healthcare made all the difference.",
+        "Built a modern, mobile-first landing page with real-time location-mapping integration (Supabase + Mapbox). Stranded drivers connect with the dispatch team instantly via the request flow. Page-load under 1.5s on 3G, 100% Lighthouse mobile performance.",
     },
-  ],
+  ] satisfies OutcomeItem[],
 };
 
 export const insights = {
@@ -229,8 +281,8 @@ export const insights = {
 
 export const contact = {
   eyebrow: "Contact",
-  title: "Fill out our form to get in touch",
+  title: "Let's work together",
   description:
-    "Placeholder copy. Invite people to reach out and clarify what info you need to respond quickly.",
+    "Looking for a senior remote contractor for your SaaS, internal tool, or AI workflow? Schedule a 20-minute call below — I'll come back with a scope I can ship in the first sprint. Email or phone work too. Response time: 24–48 hours.",
   submitLabel: "Send message",
 };

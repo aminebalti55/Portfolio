@@ -44,20 +44,31 @@ export default function EasyRHISCaseStudy() {
             Back to Work
           </Link>
 
-          <div className="mt-8">
+          <div className="mt-8 flex flex-wrap items-center gap-3">
             <Badge className="border-white/15 bg-white/10 text-white">
-              Enterprise SaaS
+              Multi-brand QSR HR platform
             </Badge>
+            <Badge className="border-white/15 bg-white/10 text-white">Tunisia · Full-time</Badge>
+            <Badge className="border-white/15 bg-white/10 text-white">2024 · 6 months · Spring Boot + Angular</Badge>
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-zinc-400/40 bg-zinc-400/10 px-3 py-1 text-xs font-medium text-zinc-300">
+              Internal product · No public URL
+            </span>
           </div>
 
           <h1 className="mt-6 font-display text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
             EasyRHIS
           </h1>
 
+          <p className="mt-3 text-base text-white/60">
+            Multi-brand HR-management SaaS for QSR operators
+          </p>
+
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/75 sm:text-xl">
-            A multi-tenant HR management platform powering workforce operations 
-            for major food franchises like KFC, Five Guys, and Burger King across 
-            France — where each tenant gets a fully customized experience.
+            A multi-tenant HR-management platform deployed across multi-brand
+            QSR (quick-service restaurant) operators including KFC, Five Guys,
+            and Burger King franchise networks in France. Each tenant gets a
+            fully customised experience — branded themes, tailored workflows,
+            franchise-specific operational rules.
           </p>
 
           <div className="mt-10 flex flex-wrap gap-3">
@@ -103,7 +114,7 @@ export default function EasyRHISCaseStudy() {
         <Container>
           <div className="grid gap-12 lg:grid-cols-3 lg:gap-16">
             <div className="lg:col-span-2">
-              <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">
+              <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-[#ff5500]">
                 Overview
               </h2>
               <h3 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
@@ -111,10 +122,11 @@ export default function EasyRHISCaseStudy() {
               </h3>
               <div className="mt-6 space-y-4 text-lg leading-relaxed text-zinc-600 dark:text-zinc-400">
                 <p>
-                  Managing HR operations across multiple franchise locations is complex. 
-                  Each brand — KFC, Five Guys, Burger King — has unique requirements: 
-                  different workflows, branding, and operational processes. Traditional 
-                  HR software forced franchises into rigid, one-size-fits-all solutions.
+                  Managing HR operations across multi-brand QSR franchise networks
+                  is complex. Each brand on the platform — KFC, Five Guys, Burger
+                  King — runs different workflows, branding, and operational
+                  processes. Traditional HR software forced franchises into rigid,
+                  one-size-fits-all solutions.
                 </p>
                 <p>
                   EasyRHIS was built to solve this. A true multi-tenant platform where 
@@ -135,11 +147,12 @@ export default function EasyRHISCaseStudy() {
             <div className="space-y-8">
               <div>
                 <h4 className="text-sm font-semibold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
-                  Timeline
+                  Engagement
                 </h4>
                 <p className="mt-2 text-lg font-medium text-zinc-900 dark:text-zinc-100">
-                  8+ months
+                  6 months · Full-time
                 </p>
+                <p className="text-sm text-zinc-500 dark:text-zinc-500">2024 · Tunisia</p>
               </div>
               <div>
                 <h4 className="text-sm font-semibold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
@@ -148,6 +161,7 @@ export default function EasyRHISCaseStudy() {
                 <p className="mt-2 text-lg font-medium text-zinc-900 dark:text-zinc-100">
                   Full-Stack Developer
                 </p>
+                <p className="text-sm text-zinc-500 dark:text-zinc-500">Spring Boot + Angular</p>
               </div>
               <div>
                 <h4 className="text-sm font-semibold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
@@ -163,13 +177,17 @@ export default function EasyRHISCaseStudy() {
               </div>
               <div>
                 <h4 className="text-sm font-semibold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
-                  Clients
+                  End-customer brands
                 </h4>
                 <ul className="mt-2 space-y-1 text-lg text-zinc-900 dark:text-zinc-100">
                   <li>• KFC France</li>
                   <li>• Five Guys</li>
                   <li>• Burger King</li>
                 </ul>
+                <p className="mt-2 text-xs text-zinc-500 dark:text-zinc-500">
+                  These QSR brands were tenant-customers of the EasyRHIS platform
+                  during my engagement.
+                </p>
               </div>
             </div>
           </div>
@@ -503,25 +521,82 @@ export default function EasyRHISCaseStudy() {
         </Container>
       </section>
 
-      {/* CTA Section */}
-      <section className="bg-[#0a0c10] py-16 sm:py-20">
+      {/* Engineering Challenges */}
+      <section className="bg-white py-20 dark:bg-zinc-950">
         <Container>
-          <div className="text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              Interested in working together?
-            </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-white/70">
-              Let&apos;s discuss your project and see how I can help bring your
-              ideas to life.
-            </p>
-            <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <ButtonLink href="/#contact" variant="primary" withDot>
-                Get in touch
-              </ButtonLink>
-              <ButtonLink href="/work" variant="ghost" className="text-white">
-                View more projects
-              </ButtonLink>
+          <div className="grid gap-12 lg:grid-cols-12">
+            <div className="lg:col-span-4">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#ff5500]">
+                Engineering Challenges
+              </p>
+              <h2 className="mt-3 text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl dark:text-zinc-50">
+                The hard parts I worked on
+              </h2>
             </div>
+            <div className="space-y-8 lg:col-span-8">
+              {[
+                {
+                  challenge: "True multi-tenancy with branded experiences per franchise",
+                  solution:
+                    "Single shared Postgres with tenant_id column on every table + Spring Security filter that enforces tenant scoping at query time. Theme + workflow config loaded per-tenant on login so each brand sees its own UI.",
+                  impact:
+                    "One platform, three distinct brand experiences (KFC / Five Guys / Burger King franchise networks), zero cross-tenant data leakage.",
+                },
+                {
+                  challenge: "Schedule + payroll workflows that vary by brand",
+                  solution:
+                    "Built a workflow engine where each tenant gets configurable rule sets — shift length limits, OT triggers, vacation accrual rates — loaded from tenant config rather than hardcoded.",
+                  impact:
+                    "New franchise onboarding became configuration, not engineering. Faster sales cycle for the platform.",
+                },
+                {
+                  challenge: "Document signing + approval chains",
+                  solution:
+                    "Generic approval-chain primitive + per-document-type chain definitions stored in tenant config (manager → HR → director, configurable per tenant). Signatures captured via inline pad with full audit trail (signer, IP, timestamp).",
+                  impact:
+                    "HR managers configure new approval chains without engineering involvement; signatures legally defensible.",
+                },
+              ].map((c, i) => (
+                <div key={i}>
+                  <h3 className="text-lg font-semibold text-zinc-900 dark:text-zinc-100">
+                    {c.challenge}
+                  </h3>
+                  <div className="mt-3 space-y-3 text-base leading-relaxed text-zinc-600 dark:text-zinc-400">
+                    <p>
+                      <span className="text-xs font-semibold uppercase tracking-wider text-[#ff5500]">Solution · </span>
+                      {c.solution}
+                    </p>
+                    <p>
+                      <span className="text-xs font-semibold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">Outcome · </span>
+                      {c.impact}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* CTA Section */}
+      <section className="relative overflow-hidden border-t border-zinc-800 bg-zinc-950 py-24">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,77,31,0.15),transparent_70%)]" />
+        <Container className="relative text-center">
+          <h2 className="text-3xl font-bold text-white sm:text-4xl md:text-5xl">
+            Building multi-tenant SaaS?
+          </h2>
+          <p className="mx-auto mt-4 max-w-xl text-lg text-zinc-400">
+            I take on senior contract work for B2B platforms with
+            tenant-scoped data, configurable workflows, and brand
+            customisation.
+          </p>
+          <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
+            <ButtonLink href="/#contact" variant="primary" withDot>
+              Schedule a call
+            </ButtonLink>
+            <ButtonLink href="/work" variant="ghost" withDot>
+              See more work
+            </ButtonLink>
           </div>
         </Container>
       </section>

@@ -44,10 +44,21 @@ export default function InvoiceBirdsCaseStudy() {
             Back to Work
           </Link>
 
-          <div className="mt-8">
+          <div className="mt-8 flex flex-wrap items-center gap-3">
             <Badge className="border-white/15 bg-white/10 text-white">
-              Full-Stack Development
+              INVOICEBIRDS LTD
             </Badge>
+            <Badge className="border-white/15 bg-white/10 text-white">UK · Remote</Badge>
+            <Badge className="border-white/15 bg-white/10 text-white">Feb 2025 – Sep 2025 · Contract</Badge>
+            <a
+              href="https://www.invoicebirds.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 rounded-full border border-emerald-400/40 bg-emerald-400/15 px-3 py-1 text-xs font-medium text-emerald-300 transition-colors hover:bg-emerald-400/25"
+            >
+              <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" />
+              Live · invoicebirds.com
+            </a>
           </div>
 
           <h1 className="mt-6 font-display text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
@@ -442,25 +453,81 @@ export default function InvoiceBirdsCaseStudy() {
         </Container>
       </section>
 
-      {/* CTA Section */}
-      <section className="bg-[#080406] py-16 sm:py-20">
+      {/* Engineering Challenges */}
+      <section className="bg-white py-20 dark:bg-zinc-950">
         <Container>
-          <div className="text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              Interested in working together?
-            </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-white/70">
-              Let&apos;s discuss your project and see how I can help bring your
-              ideas to life.
-            </p>
-            <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <ButtonLink href="/#contact" variant="primary" withDot>
-                Get in touch
-              </ButtonLink>
-              <ButtonLink href="/work" variant="ghost" className="text-white">
-                View more projects
-              </ButtonLink>
+          <div className="grid gap-12 lg:grid-cols-12">
+            <div className="lg:col-span-4">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#ff5500]">
+                Engineering Challenges
+              </p>
+              <h2 className="mt-3 text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl dark:text-zinc-50">
+                The hard parts I solved
+              </h2>
             </div>
+            <div className="space-y-8 lg:col-span-8">
+              {[
+                {
+                  challenge: "Multi-currency billing without rounding drift",
+                  solution:
+                    "Standardised on integer-cents internally, FX conversion at write-time only, snapshotted to invoice metadata so the historical record never re-quotes. UI formatting via Intl.NumberFormat per locale.",
+                  impact:
+                    "Invoices reproduce identical totals 6 months later regardless of FX moves — zero rounding-drift complaints.",
+                },
+                {
+                  challenge: "Stripe checkout + payment-status reconciliation",
+                  solution:
+                    "Idempotency keys on every webhook, payment events appended to a per-invoice ledger (not overwritten), with manual mark-paid for off-Stripe payments. Background reconciler reconciles Stripe + manual + invoice state every N minutes.",
+                  impact:
+                    "Single source of truth on invoice status — no conflicting paid/unpaid displays across screens.",
+                },
+                {
+                  challenge: "Reusable form patterns across 6+ document types",
+                  solution:
+                    "Extracted a primitives layer (line-item table, client picker, tax/discount calculator, signature block) that each document type composes. Validation via Zod schema per document type.",
+                  impact:
+                    "New document types ship in days instead of weeks; consistency means users learn once, apply everywhere.",
+                },
+              ].map((c, i) => (
+                <div key={i}>
+                  <h3 className="text-lg font-semibold text-zinc-900 dark:text-zinc-100">
+                    {c.challenge}
+                  </h3>
+                  <div className="mt-3 space-y-3 text-base leading-relaxed text-zinc-600 dark:text-zinc-400">
+                    <p>
+                      <span className="text-xs font-semibold uppercase tracking-wider text-[#ff5500]">Solution · </span>
+                      {c.solution}
+                    </p>
+                    <p>
+                      <span className="text-xs font-semibold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">Outcome · </span>
+                      {c.impact}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* CTA Section */}
+      <section className="relative overflow-hidden border-t border-zinc-800 bg-zinc-950 py-24">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,77,31,0.15),transparent_70%)]" />
+        <Container className="relative text-center">
+          <h2 className="text-3xl font-bold text-white sm:text-4xl md:text-5xl">
+            Building a SaaS billing layer?
+          </h2>
+          <p className="mx-auto mt-4 max-w-xl text-lg text-zinc-400">
+            I take on senior contract work across modern fullstack stacks
+            with payment, multi-currency, and integration depth.
+          </p>
+          <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
+            <ButtonLink href="/#contact" variant="primary" withDot>
+              Schedule a call
+            </ButtonLink>
+            <ButtonLink href="/work" variant="ghost" withDot>
+              See more work
+            </ButtonLink>
           </div>
         </Container>
       </section>

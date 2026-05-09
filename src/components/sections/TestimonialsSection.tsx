@@ -17,7 +17,8 @@ export function TestimonialsSection() {
               <Balancer>{testimonials.title}</Balancer>
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-base text-zinc-600 dark:text-zinc-400">
-              Trusted by clients across healthcare, automotive, finance, and enterprise sectors
+              {testimonials.description ??
+                "Production work across SaaS, fleet, marketplaces, and AI tools — delivered remote across the UK, Germany, Canada, and Tunisia."}
             </p>
           </div>
 

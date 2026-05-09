@@ -42,8 +42,8 @@ export function ScheduleDialog({
                     Quick contact
                   </Dialog.Title>
                   <Dialog.Description className="mt-2 text-sm leading-6 text-white/70">
-                    Placeholder dialog. Add your real booking link and contact info
-                    later.
+                    Two ways to reach me — email or copy the address. I reply
+                    within 24–48 hours, or schedule a call below.
                   </Dialog.Description>
                 </div>
                 <Dialog.Close asChild>

@@ -32,8 +32,36 @@ const interFont = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio — Placeholder",
-  description: "Dribbble-inspired portfolio landing page built with Next.js.",
+  metadataBase: new URL("https://aminebdev.vercel.app"),
+  title: {
+    default: "Med Amine Balti — Senior Full-Stack Engineer",
+    template: "%s · Med Amine Balti",
+  },
+  description:
+    "Tunisia-based full-stack engineer building production SaaS, fleet, and AI tools. React + Next.js + NestJS + Postgres. Available for senior remote contracts.",
+  keywords: [
+    "full-stack developer", "Next.js engineer", "React engineer",
+    "TypeScript", "NestJS", "Spring Boot", "PostgreSQL",
+    "freelance developer Tunisia", "remote contractor",
+    "founding engineer", "scraper engineer", "automation engineer",
+  ],
+  authors: [{ name: "Med Amine Balti", url: "https://aminebdev.vercel.app" }],
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://aminebdev.vercel.app",
+    siteName: "Med Amine Balti — Portfolio",
+    title: "Med Amine Balti — Senior Full-Stack Engineer",
+    description:
+      "Senior full-stack engineer (React, Next.js, NestJS, Postgres) shipping production SaaS, fleet platforms, and AI tools end-to-end. Open to remote contracts.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Med Amine Balti — Senior Full-Stack Engineer",
+    description:
+      "Production SaaS, fleet, and AI tools. React + Next.js + NestJS + Postgres. Remote-friendly.",
+  },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({

@@ -11,38 +11,42 @@ import BlurText from "@/components/reactbits/BlurText";
 import CountUp from "@/components/reactbits/CountUp";
 import SpotlightCard from "@/components/reactbits/SpotlightCard";
 
+// Featured case studies on the home About section. Pulse leads
+// because it solves a real freelance lead-gen problem the existing
+// $99-300/mo SaaS market never addressed.
 const caseStudies = [
   {
     id: "01",
-    title: "InvoiceBirds",
-    slug: "invoicebirds",
-    category: "Full-Stack Development",
-    year: "2025",
+    title: "Pulse",
+    slug: "pulse",
+    category: "Lead-Prospecting Platform",
+    year: "2026",
     description:
-      "A comprehensive invoicing and business management platform for freelancers and small businesses",
+      "Personal lead engine for freelance devs — 12 source scrapers, 4-stage SMTP email verifier, sequence outreach, and a 1,832-keyword preset library across 42 bundles.",
     color: "#ff5500",
-    image: "/images/projects/invoicebirds/invoicebirds-01-hero.png",
+    image: "/images/projects/pulse/pulse-01-inbox-overview.png",
   },
   {
     id: "02",
-    title: "EasyRHIS",
-    slug: "easyrhis",
-    category: "HR Software Management",
-    year: "2024",
+    title: "InvoiceBirds",
+    slug: "invoicebirds",
+    category: "Full-Stack SaaS",
+    year: "2025",
     description:
-      "A comprehensive HR management software for streamlining employee operations and workflows",
+      "Comprehensive invoicing & business-management platform for freelancers and SMBs — Stripe checkout, multi-currency billing, automated reminders.",
     color: "#ff7733",
-    image: "/images/projects/easyrhis/easyrhis.png",
+    image: "/images/projects/invoicebirds/invoicebirds-01-hero.png",
   },
   {
     id: "03",
-    title: "Cassandra",
-    slug: "cassandra",
-    category: "Health Tech",
+    title: "AutoAlly",
+    slug: "autoally",
+    category: "Marketplace Platform",
     year: "2025",
-    description: "A personal health organization platform helping people document their health journey and prepare for doctor appointments",
+    description:
+      "Car marketplace with real-time Socket.io messaging, secure escrow payments, and KYC verification — Spring Boot + Next.js handling thousands of daily transactions.",
     color: "#8b5cf6",
-    image: "/images/projects/cassandra/herosection.png",
+    image: "/images/projects/autoally/herosectioj.png",
   },
 ];
 

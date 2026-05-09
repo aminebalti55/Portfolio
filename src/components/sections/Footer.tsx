@@ -15,11 +15,11 @@ export function Footer() {
               {brand.location}
             </p>
             <h3 className="mt-4 max-w-xl text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-              Create a striking visual identity that leaves a lasting impression.
+              Have a SaaS, internal tool, or AI workflow to ship?
             </h3>
             <p className="mt-4 max-w-xl text-base leading-7 text-white/70">
-              Placeholder footer text. Add a short closing pitch, availability, and
-              what you’re looking for next.
+              Currently open to senior full-stack contracts — remote, EU/US time
+              zones, ~20–40h per week. Reply within 24–48 hours.
             </p>
           </div>
 
