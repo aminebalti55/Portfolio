@@ -1,14 +1,6 @@
 @import "tailwindcss";
 
 @layer base {
-  html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 80px; /* clear sticky header on anchor jump */
-  }
-  @media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
-  }
-
   html * {
     scrollbar-width: thin !important;
     scrollbar-color: #ff4d1f transparent !important;
