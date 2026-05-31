@@ -44,7 +44,7 @@ function MobileMenu() {
               href="/#contact"
               className="block rounded-xl px-3 py-2 text-sm font-medium text-white outline-none transition hover:bg-white/10 focus:bg-white/10"
             >
-              Get in touch
+              Book a 20-min call
             </Link>
           </DropdownMenu.Item>
         </DropdownMenu.Content>
@@ -107,7 +107,7 @@ export function SiteHeader({ className }: { className?: string }) {
               href="/#contact"
               className="group flex items-center gap-3 rounded-full border border-white/15 bg-white/95 px-5 py-2 text-sm font-semibold text-zinc-900 shadow-[0_18px_40px_rgba(0,0,0,0.35)] transition hover:bg-white"
             >
-              Get in touch
+              Book a 20-min call
               <span className="flex h-8 w-8 items-center justify-center rounded-full bg-orange-500 text-white transition-transform duration-300 group-hover:rotate-45">
                 <svg
                   viewBox="0 0 24 24"

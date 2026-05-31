@@ -86,9 +86,12 @@ export function Footer() {
 
         <div className="mt-14 border-t border-white/10 pt-10">
           <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-            <div className="text-sm text-white/60">
+            <div className="space-y-1 text-sm text-white/60">
               <p>
-                © {new Date().getFullYear()} {brand.wordmark}. Crafted with intention.
+                © {new Date().getFullYear()} {brand.legalName}. All rights reserved.
+              </p>
+              <p className="text-white/40">
+                Designed and built by Amine with Next.js, Tailwind CSS, and Framer Motion. Deployed on Vercel.
               </p>
             </div>
             <div className="flex items-center gap-4 text-sm text-white/70">

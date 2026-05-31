@@ -160,7 +160,7 @@ export function AboutSection() {
                 withDot
                 className="sm:w-auto"
               >
-                Get in touch
+                Book a 20-min call
               </Button>
               <Button href="#work" variant="secondary" className="sm:w-auto">
                 View all projects

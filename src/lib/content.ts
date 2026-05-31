@@ -5,6 +5,7 @@ export type NavLink = {
 
 export const brand = {
   name: "Amine",
+  legalName: "Med Amine Balti",
   wordmark: "Amine",
   role: "Senior Full-Stack Engineer",
   location: "Tunisia · Remote-friendly · GMT+1",
@@ -27,12 +28,12 @@ export const navLinks: NavLink[] = [
 ];
 
 export const hero = {
-  greeting: "Hey, I am",
-  headlineTop: "Software",
-  headlineBottom: "Engineer",
+  greeting: "Senior Full-Stack Engineer",
+  headlineTop: "I Build",
+  headlineBottom: "Production SaaS",
   description:
-    "Full-stack engineer shipping production SaaS, fleet platforms, and AI tools end-to-end. Built across React, Next.js, NestJS, Spring Boot, and Postgres for clients in the UK, Germany, and Tunisia. Currently open to senior remote contracts.",
-  primaryCta: { label: "Schedule a Free Call", href: "#contact" },
+    "Internal tools and AI workflows for founders and teams who need senior execution without agency overhead. Remote, EU and US time zones.",
+  primaryCta: { label: "Book a 20-min call", href: "#contact" },
   secondaryCta: { label: "View Work", href: "#work" },
 };
 
@@ -89,7 +90,7 @@ export const services = {
   title: "Senior execution without agency overhead.",
   description:
     "I take SaaS MVPs, internal tools, and AI workflows from concept to production — fast. You get one engineer who owns the stack end-to-end (frontend, API, database, deployment) instead of a four-person agency contract.",
-  cta: { label: "Book a 20-minute scoping call", href: "#contact" },
+  cta: { label: "Book a 20-min call", href: "#contact" },
   items: [
     {
       title: "Full-Stack Development",
@@ -180,7 +181,7 @@ export const ctaBand = {
   title: "Have a SaaS MVP, internal tool, or backend rescue to ship?",
   description:
     "I'm open to one new senior remote contract this quarter. 20-minute scoping call → scope I can ship in the first sprint. SaaS MVPs in 6 weeks, internal tools in 2–3 weeks, API rescues on a fixed scope.",
-  cta: { label: "Book a scoping call", href: "#contact" },
+  cta: { label: "Book a 20-min call", href: "#contact" },
 };
 
 // "Outcomes Delivered" — first-person, anonymized client snapshots.

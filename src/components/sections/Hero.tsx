@@ -117,15 +117,15 @@ export function Hero() {
               >
                 <span className="inline-flex items-center gap-2 rounded-full border border-emerald-400/40 bg-emerald-400/10 px-3 py-1 text-[11px] font-medium text-emerald-300">
                   <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" />
-                  Available · Q2 2026
+                  Available for new projects
                 </span>
                 <p className="mt-4 text-[11px] font-medium tracking-[0.2em] uppercase text-white/50">
-                  Hey, I Am
+                  Senior Full-Stack Engineer
                 </p>
                 <h1 className="font-inter mt-3 text-[clamp(2.8rem,7vw,5.5rem)] font-extrabold uppercase leading-[0.88] tracking-[-0.03em] text-white">
-                  Software
+                  I Build
                   <br />
-                  Engineer
+                  Production SaaS
                 </h1>
               </motion.div>
 
@@ -165,13 +165,12 @@ export function Hero() {
                 custom={0.3}
               >
                 <p className="max-w-[400px] text-[13px] leading-[1.8] text-white/80 lg:max-w-[360px]">
-                  I build production SaaS, internal tools, and AI workflows
-                  for founders and teams who need senior execution without
-                  agency overhead. Remote across the UK, Germany, Canada, and
-                  Tunisia.
+                  Internal tools and AI workflows for founders and teams who
+                  need senior execution without agency overhead. Remote, EU
+                  and US time zones.
                 </p>
                 <p className="mt-3 max-w-[400px] text-[12px] leading-[1.6] text-white/55 lg:max-w-[360px]">
-                  $55–75/hr · One contract slot open this quarter.
+                  $55–75/hr · Open to new freelance & contract work.
                 </p>
 
                 {/* Primary CTA — anchor to #contact (smooth scroll via CSS) */}
@@ -184,7 +183,7 @@ export function Hero() {
                   }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  <span className="whitespace-nowrap">Schedule a Free Call</span>
+                  <span className="whitespace-nowrap">Book a 20-min call</span>
                   <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#ff5500] text-white transition-transform duration-300 group-hover:rotate-45">
                     <svg
                       viewBox="0 0 24 24"
