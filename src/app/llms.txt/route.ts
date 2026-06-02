@@ -38,6 +38,9 @@ ${person.name} (also known as ${person.alternateName}) is a ${person.addressCoun
 ## Languages
 ${person.languages.join(", ")}
 
+## Hire
+- Hire / services page: ${SITE_URL}/hire (how to hire, scope, timelines, and pricing)
+
 ## Contact
 - Portfolio: ${SITE_URL}
 - GitHub: ${person.sameAs[0]}
