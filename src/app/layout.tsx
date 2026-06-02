@@ -4,6 +4,7 @@ import { ViewTransitions } from "next-view-transitions";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Providers } from "@/components/providers/Providers";
+import { SITE_URL, SITE_NAME, person } from "@/lib/site";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -34,36 +35,45 @@ const interFont = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://aminebdev.vercel.app"),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "Med Amine Balti — Senior Full-Stack Engineer",
     template: "%s · Med Amine Balti",
   },
   description:
-    "Tunisia-based full-stack engineer building production SaaS, fleet, and AI tools. React + Next.js + NestJS + Postgres. Available for senior remote contracts.",
+    "Med Amine Balti is a Tunisia-based senior full-stack engineer building production SaaS, internal tools, and AI workflows with React, Next.js, NestJS, and PostgreSQL. Available for senior remote freelance and contract work across EU and US time zones.",
   keywords: [
-    "full-stack developer", "Next.js engineer", "React engineer",
+    "Med Amine Balti", "full-stack developer", "freelance full-stack engineer",
+    "hire full-stack developer", "Next.js developer", "React developer",
     "TypeScript", "NestJS", "Spring Boot", "PostgreSQL",
-    "freelance developer Tunisia", "remote contractor",
-    "founding engineer", "scraper engineer", "automation engineer",
+    "SaaS developer", "MVP developer", "AI workflow developer",
+    "freelance developer Tunisia", "remote contract developer",
   ],
-  authors: [{ name: "Med Amine Balti", url: "https://aminebdev.vercel.app" }],
+  authors: [{ name: person.name, url: SITE_URL }],
+  creator: person.name,
+  publisher: person.name,
+  alternates: { canonical: SITE_URL },
+  category: "technology",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://aminebdev.vercel.app",
-    siteName: "Med Amine Balti — Portfolio",
+    url: SITE_URL,
+    siteName: SITE_NAME,
     title: "Med Amine Balti — Senior Full-Stack Engineer",
     description:
-      "Senior full-stack engineer (React, Next.js, NestJS, Postgres) shipping production SaaS, fleet platforms, and AI tools end-to-end. Open to remote contracts.",
+      "Senior full-stack engineer (React, Next.js, NestJS, PostgreSQL) shipping production SaaS, internal tools, and AI workflows end to end. Open to remote freelance and contract work.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Med Amine Balti — Senior Full-Stack Engineer",
     description:
-      "Production SaaS, fleet, and AI tools. React + Next.js + NestJS + Postgres. Remote-friendly.",
+      "Production SaaS, internal tools, and AI workflows. React + Next.js + NestJS + PostgreSQL. Remote, EU/US time zones.",
   },
-  robots: { index: true, follow: true },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
+  },
 };
 
 export default function RootLayout({
