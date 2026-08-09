@@ -1,10 +1,11 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Metadata } from "next";
 import { Container } from "@/components/ui/Container";
 import { Badge } from "@/components/ui/Badge";
-import { ButtonLink } from "@/components/ui/ButtonLink";
 import { SiteHeader } from "@/components/sections/SiteHeader";
 import { Footer } from "@/components/sections/Footer";
+import { CaseStudySystemSection } from "@/components/ui/CaseStudySystemSection";
 
 export const metadata: Metadata = {
   title: "FLEDEM @ FEV Software GmbH — Case Study",
@@ -31,44 +32,13 @@ const STATS = [
   { value: "Enterprise", label: "scale & complexity" },
 ];
 
-const MODULES = [
-  {
-    number: "01",
-    title: "Scripts module",
-    description:
-      "User-facing CRUD for Python analytics scripts — Monaco editor for in-platform editing, channel-mapping UI for binding inputs to CAN signals with unit conversion, and fleet-scoped access so scripts only run against authorized vehicle data.",
-    tech: "React · Monaco Editor · ASP.NET Core API · Python runtime",
-  },
-  {
-    number: "02",
-    title: "Calibration module",
-    description:
-      "Calibration management linking calibrations to projects, scripts, and analysis packages. Backend schema design, REST endpoints, and a React UI with file-storage integration so engineers could attach, version, and reuse calibration files alongside analysis runs.",
-    tech: "MongoDB · ASP.NET Core · React · Azure Blob Storage",
-  },
-  {
-    number: "03",
-    title: "Events module",
-    description:
-      "Event detection and management — severity classification, attachment handling, configurable definitions, filtering system, and statistics visualization. Built the event-definitions UI and the supporting REST contracts.",
-    tech: "React · SignalR · Chart.js · PDF export",
-  },
-  {
-    number: "04",
-    title: "Analysis Package module",
-    description:
-      "Integration layer connecting analytics scripts to CAN signal configurations. Built the signal-mapping UI (unit conversion, logger slot management) and the configuration-GUID resolution layer using a URN/UUID scheme so signals stay stable across config revisions.",
-    tech: "React · TypeScript · CAN signal configuration parsing",
-  },
-];
-
 const CHALLENGES = [
   {
     challenge: "Configuration-heavy flows that confused users",
     solution:
       "Refactored dominant create/edit patterns into a consistent stepper + side-panel model, deduped form components, and aligned validation feedback so the same edit primitives behaved identically across modules.",
     impact:
-      "Reduced cognitive load on configuration-heavy screens — engineers stopped relying on external scripts for routine setup work.",
+      "Configuration-heavy screens now share a clearer interaction pattern instead of teaching a different editing model in each module.",
   },
   {
     challenge: "Bringing analysis logic inside the platform",
@@ -93,45 +63,6 @@ const CHALLENGES = [
   },
 ];
 
-const STACK_GROUPS = [
-  {
-    title: "Backend",
-    items: [
-      "ASP.NET Core (.NET 8)",
-      "SignalR — real-time hubs",
-      "Python — analytics runtime",
-      "JWT authentication + RBAC",
-    ],
-  },
-  {
-    title: "Frontend",
-    items: [
-      "React + TypeScript",
-      "Tailwind CSS",
-      "Monaco Editor",
-      "Chart.js",
-    ],
-  },
-  {
-    title: "Database",
-    items: [
-      "MongoDB",
-      "Binary UUID indexing",
-      "Apache Parquet — time-series",
-      "Fleet-scoped access patterns",
-    ],
-  },
-  {
-    title: "Infrastructure",
-    items: [
-      "Azure Blob Storage",
-      "Webpack",
-      "Python simulation tooling",
-      "Visual Studio 2022",
-    ],
-  },
-];
-
 const OUTCOMES = [
   "Reduced workflow friction for fleet engineers by enabling them to define, validate, and reuse analysis logic directly inside the platform — instead of relying on fragmented external scripts.",
   "Improved platform usability and consistency by simplifying complex create/edit flows, standardizing UI patterns, and making configuration-heavy screens easier to operate.",
@@ -142,7 +73,7 @@ const OUTCOMES = [
 
 export default function FledemCaseStudy() {
   return (
-    <main className="min-h-screen bg-white text-zinc-950 dark:bg-zinc-950 dark:text-zinc-50">
+    <main className="case-detail min-h-screen bg-white text-zinc-950 dark:bg-zinc-950 dark:text-zinc-50">
       {/* ─── Hero — matches Pulse / InvoiceBirds / AutoAlly ──────────── */}
       <section className="relative overflow-hidden bg-[#080406] text-white">
         <div className="absolute inset-0 bg-[radial-gradient(1100px_circle_at_70%_0%,rgba(255,77,31,0.55),transparent_55%),radial-gradient(900px_circle_at_20%_10%,rgba(255,0,92,0.25),transparent_55%)]" />
@@ -179,9 +110,8 @@ export default function FledemCaseStudy() {
           </p>
 
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/75 sm:text-xl">
-            Contracted as a full-stack engineer to help transform FEV&apos;s
-            fleet analytics platform into a more reliable, usable, and
-            scalable product. Worked on core analysis workflows, data
+            Contracted as a full-stack engineer inside FEV&apos;s fleet analytics
+            platform. Worked on core analysis workflows, data
             configuration flows, and engineering-facing tools — across a
             large React + ASP.NET Core + MongoDB codebase processing CAN
             signal data from connected vehicle fleets.
@@ -201,6 +131,24 @@ export default function FledemCaseStudy() {
       </section>
 
       {/* ─── Stats Strip — same band as Pulse ───────────────────────── */}
+      <section className="case-detail__visual">
+        <Container>
+          <div className="case-detail__visual-frame">
+            <Image
+              src="/images/projects/fledem/fledem-telemetry-cover-v1.png"
+              alt="Abstract telemetry landscape representing FLEDEM fleet analytics"
+              fill
+              priority
+              sizes="(max-width: 768px) 100vw, 1200px"
+            />
+          </div>
+          <div className="case-detail__visual-note">
+            <span>NDA-safe system portrait</span>
+            <p>Vehicle telemetry, analysis pipelines, and fleet-scale signal processing—visualized without exposing private product screens.</p>
+          </div>
+        </Container>
+      </section>
+
       <section className="border-y border-zinc-200 bg-zinc-50 py-12 dark:border-zinc-800 dark:bg-zinc-900/40">
         <Container>
           <div className="grid grid-cols-2 gap-8 sm:grid-cols-4">
@@ -259,44 +207,44 @@ export default function FledemCaseStudy() {
         </Container>
       </section>
 
-      {/* ─── Modules — same card style as Pulse architecture cards ──── */}
-      <section className="bg-zinc-50 py-20 dark:bg-zinc-900/40">
-        <Container>
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#ff5500]">
-            Modules
-          </p>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl dark:text-zinc-50">
-            Four interconnected modules
-          </h2>
-          <p className="mt-4 max-w-2xl text-base leading-relaxed text-zinc-600 dark:text-zinc-400">
-            As a contractor inside a distributed engineering team, I owned
-            features across these four modules — each bridging user-facing
-            flows, REST API contracts, and the data layer.
-          </p>
-
-          <div className="mt-12 grid gap-6 md:grid-cols-2">
-            {MODULES.map((m) => (
-              <div
-                key={m.number}
-                className="rounded-2xl border border-zinc-200 bg-white p-8 dark:border-zinc-800 dark:bg-zinc-950"
-              >
-                <div className="text-5xl font-black text-[#ff5500]/20">
-                  {m.number}
-                </div>
-                <h3 className="mt-4 text-xl font-bold text-zinc-900 dark:text-zinc-50">
-                  {m.title}
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
-                  {m.description}
-                </p>
-                <p className="mt-4 text-xs font-medium text-[#ff5500] dark:text-[#ff7733]">
-                  {m.tech}
-                </p>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
+      <CaseStudySystemSection
+        variant="dark"
+        eyebrow="Analysis workflow"
+        title="Configuration becomes a reusable engineering system."
+        intro="FLEDEM brings the pieces of fleet analysis—scripts, calibrations, signal mappings, and detected events—into one controlled product workflow instead of leaving them in disconnected engineering tools."
+        accent="#ff7a45"
+        background="linear-gradient(145deg, #101112 0%, #303236 58%, #17191b 100%)"
+        items={[
+          {
+            step: "01",
+            label: "Define",
+            title: "Analytics scripts",
+            description:
+              "Engineers author and reuse Python analysis logic with in-platform editing and explicit bindings to authorized vehicle signals.",
+          },
+          {
+            step: "02",
+            label: "Calibrate",
+            title: "Project configuration",
+            description:
+              "Calibration files connect to projects, scripts, and analysis packages through versionable records and managed attachments.",
+          },
+          {
+            step: "03",
+            label: "Connect",
+            title: "Signal mapping",
+            description:
+              "CAN channels, units, logger slots, and stable configuration identifiers make analysis inputs explicit across revisions.",
+          },
+          {
+            step: "04",
+            label: "Review",
+            title: "Detected events",
+            description:
+              "Event definitions, severity, evidence, filters, and statistics turn analysis output into a workflow users can investigate.",
+          },
+        ]}
+      />
 
       {/* ─── Engineering Challenges — Pulse-style narrative blocks ──── */}
       <section className="bg-white py-20 dark:bg-zinc-950">
@@ -324,7 +272,7 @@ export default function FledemCaseStudy() {
                       {c.solution}
                     </p>
                     <p>
-                      <span className="text-xs font-semibold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
+                      <span className="text-xs font-semibold uppercase tracking-wider text-[#ff5500]">
                         Outcome ·{" "}
                       </span>
                       {c.impact}
@@ -337,45 +285,47 @@ export default function FledemCaseStudy() {
         </Container>
       </section>
 
-      {/* ─── Stack — same 4-card pattern as Pulse ───────────────────── */}
-      <section className="bg-zinc-50 py-20 dark:bg-zinc-900/40">
-        <Container>
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#ff5500]">
-            The Stack
-          </p>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl dark:text-zinc-50">
-            How it&apos;s built
-          </h2>
-          <p className="mt-4 max-w-2xl text-base leading-relaxed text-zinc-600 dark:text-zinc-400">
-            Enterprise-grade stack chosen to handle real-time CAN telemetry,
-            Python analytics, and multi-tenant fleet operations end-to-end.
-          </p>
-
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {STACK_GROUPS.map((g) => (
-              <div
-                key={g.title}
-                className="rounded-2xl border border-zinc-200 bg-white p-6 dark:border-zinc-800 dark:bg-zinc-950"
-              >
-                <h3 className="text-sm font-bold uppercase tracking-wider text-[#ff5500]">
-                  {g.title}
-                </h3>
-                <ul className="mt-4 space-y-2">
-                  {g.items.map((item) => (
-                    <li
-                      key={item}
-                      className="flex items-start gap-2 text-sm text-zinc-700 dark:text-zinc-300"
-                    >
-                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#ff5500]" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
+      <CaseStudySystemSection
+        variant="light"
+        eyebrow="Enterprise architecture"
+        title="A cross-stack path from vehicle signal to product decision."
+        intro="The platform joins a typed React product surface, .NET domain services, real-time events, analytics execution, and multiple storage formats behind consistent access and interaction patterns."
+        accent="#a73d19"
+        image={{
+          src: "/images/projects/fledem/fledem-telemetry-cover-v1.png",
+          alt: "FLEDEM fleet telemetry and vehicle analytics visual",
+        }}
+        items={[
+          {
+            step: "01",
+            label: "Interface",
+            title: "React engineering tools",
+            description:
+              "TypeScript, Monaco, charts, and shared interaction patterns support dense configuration work without hiding domain detail.",
+          },
+          {
+            step: "02",
+            label: "Domain",
+            title: "ASP.NET Core services",
+            description:
+              "REST contracts, authentication, permissions, and module logic provide stable boundaries for cross-team delivery.",
+          },
+          {
+            step: "03",
+            label: "Analysis",
+            title: "Python and SignalR",
+            description:
+              "Analytics execution and real-time event delivery connect vehicle-derived results back to the product experience.",
+          },
+          {
+            step: "04",
+            label: "Storage",
+            title: "MongoDB and Parquet",
+            description:
+              "Operational documents, binary identifiers, time-series output, and file assets use storage suited to their access patterns.",
+          },
+        ]}
+      />
 
       {/* ─── Outcomes — single column list ─────────────────────────── */}
       <section className="bg-white py-20 dark:bg-zinc-950">
@@ -419,29 +369,35 @@ export default function FledemCaseStudy() {
       </section>
 
       {/* ─── CTA — exact same pattern as Pulse closing ──────────────── */}
-      <section className="relative overflow-hidden border-t border-zinc-800 bg-zinc-950 py-24">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,77,31,0.15),transparent_70%)]" />
-        <Container className="relative text-center">
-          <h2 className="text-3xl font-bold text-white sm:text-4xl md:text-5xl">
-            Need an engineer for your enterprise platform?
-          </h2>
-          <p className="mx-auto mt-4 max-w-xl text-lg text-zinc-400">
-            I take on senior contract work across React, .NET, MongoDB,
-            Python, and SignalR — comfortable shipping inside large
-            distributed engineering teams.
-          </p>
-          <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
-            <ButtonLink href="/#contact" variant="primary" withDot>
-              Schedule a call
-            </ButtonLink>
-            <ButtonLink href="/work" variant="ghost" withDot>
-              See more work
-            </ButtonLink>
+      <section className="case-detail__cta">
+        <Container>
+          <p className="case-detail__cta-label">Available for senior contract work</p>
+          <div className="case-detail__cta-grid">
+            <h2>Need an engineer for your enterprise platform?</h2>
+            <div>
+              <p>
+                I join established teams to ship high-stakes product work across
+                React, .NET, MongoDB, Python, and SignalR.
+              </p>
+              <div className="case-detail__cta-actions">
+                <a
+                  href="https://calendly.com/mohamedamine-balti-esprit"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="case-detail__cta-primary"
+                >
+                  Schedule a call <span aria-hidden="true">↗</span>
+                </a>
+                <Link href="/work" className="case-detail__cta-secondary">
+                  See more work <span aria-hidden="true">→</span>
+                </Link>
+              </div>
+            </div>
           </div>
         </Container>
       </section>
 
-      <Footer />
+      <Footer compact />
     </main>
   );
 }

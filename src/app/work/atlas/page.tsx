@@ -1,21 +1,23 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
+import { LivePill } from "@/components/ui/LivePill";
 import { Container } from "@/components/ui/Container";
 import { Badge } from "@/components/ui/Badge";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { SiteHeader } from "@/components/sections/SiteHeader";
 import { Footer } from "@/components/sections/Footer";
+import { CaseStudySystemSection } from "@/components/ui/CaseStudySystemSection";
 
 export const metadata: Metadata = {
   title: "Atlas — Case Study",
   description:
-    "A comprehensive personal finance management app with expense tracking, income management, savings goals, and detailed financial reports.",
+    "A personal finance workspace for expenses, income, recurring payments, savings goals, and month-by-month review.",
 };
 
 export default function AtlasCaseStudy() {
   return (
-    <main className="min-h-screen bg-white text-zinc-950 dark:bg-zinc-950 dark:text-zinc-50">
+    <main className="case-detail min-h-screen bg-white text-zinc-950 dark:bg-zinc-950 dark:text-zinc-50">
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-[#0a1628] text-white">
         <div className="absolute inset-0 bg-[radial-gradient(1100px_circle_at_70%_0%,rgba(16,185,129,0.45),transparent_55%),radial-gradient(900px_circle_at_20%_10%,rgba(34,197,94,0.25),transparent_55%)]" />
@@ -49,15 +51,7 @@ export default function AtlasCaseStudy() {
               Personal product
             </span>
             <Badge className="border-white/15 bg-white/10 text-white">2025 · Solo build</Badge>
-            <a
-              href="https://atlas-wealth-app.netlify.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 rounded-full border border-emerald-400/40 bg-emerald-400/15 px-3 py-1 text-xs font-medium text-emerald-300 transition-colors hover:bg-emerald-400/25"
-            >
-              <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" />
-              Live · atlas-wealth-app.netlify.app
-            </a>
+            <LivePill href="https://atlas-wealth-app.netlify.app/" />
           </div>
 
           <h1 className="mt-6 font-display text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
@@ -65,9 +59,9 @@ export default function AtlasCaseStudy() {
           </h1>
 
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/75 sm:text-xl">
-            A comprehensive personal finance management application that helps users 
-            take control of their money with expense tracking, income management, 
-            savings goals, recurring expense monitoring, and detailed financial reports.
+            A personal finance workspace I built for my own money triage: capture
+            expenses quickly, keep recurring payments visible, follow savings goals,
+            and review income against spending without maintaining a spreadsheet.
           </p>
 
           <div className="mt-10 flex flex-wrap gap-3">
@@ -110,7 +104,7 @@ export default function AtlasCaseStudy() {
         <Container>
           <div className="grid gap-12 lg:grid-cols-3 lg:gap-16">
             <div className="lg:col-span-2">
-              <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-600">
+              <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-[#ff5500]">
                 Overview
               </h2>
               <h3 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
@@ -118,24 +112,21 @@ export default function AtlasCaseStudy() {
               </h3>
               <div className="mt-6 space-y-4 text-lg leading-relaxed text-zinc-600 dark:text-zinc-400">
                 <p>
-                  Managing personal finances is overwhelming. People struggle to track 
-                  where their money goes, savings goals feel impossible to reach, 
-                  recurring subscriptions drain accounts unnoticed, and budgeting apps 
-                  are either too complicated or too simplistic to be useful.
+                  My own finance tracking was split between statements, notes, and a
+                  spreadsheet I updated too late. The problem was less about advanced
+                  budgeting and more about making daily capture easy enough to keep the
+                  month accurate.
                 </p>
                 <p>
-                  Atlas was built to solve this exact problem — a beautiful, intuitive 
-                  personal finance app that makes money management effortless. Track 
-                  every expense with custom categories, monitor multiple income streams, 
-                  set and achieve savings goals with visual progress tracking, and never 
-                  miss a recurring payment again.
+                  Atlas brings expenses, income, categories, savings goals, and recurring
+                  payments into one small workspace. Quick entry is intentionally simple;
+                  the heavier analysis stays in monthly and category views where it is
+                  useful.
                 </p>
                 <p>
-                  The app goes beyond basic tracking with comprehensive financial reports 
-                  — see spending patterns by category, compare income vs expenses over 
-                  time, analyze monthly trends, and get actionable insights to improve 
-                  your financial health. All wrapped in a clean, modern interface that 
-                  works seamlessly across devices.
+                  This was an independent product and a practical design exercise: test
+                  whether fast capture, visible recurring costs, and progress-led feedback
+                  could make a personal tool worth reopening after the first week.
                 </p>
               </div>
             </div>
@@ -182,73 +173,49 @@ export default function AtlasCaseStudy() {
         </Container>
       </section>
 
-      {/* Features Section */}
-      <section className="bg-zinc-50 py-16 sm:py-20 dark:bg-zinc-900/50">
-        <Container>
-          <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-600">
-            Features
-          </h2>
-          <h3 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
-            Everything You Need to Manage Your Money
-          </h3>
-          <p className="mt-4 max-w-3xl text-lg text-zinc-600 dark:text-zinc-400">
-            From daily expense tracking to long-term financial planning — all the 
-            tools you need in one beautiful interface.
-          </p>
-
-          <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {[
-              {
-                title: "Expense Tracking",
-                description:
-                  "Log expenses instantly with custom categories, tags, and notes. Track where every dollar goes with detailed transaction history.",
-              },
-              {
-                title: "Income Management",
-                description:
-                  "Monitor multiple income sources — salary, freelance work, investments. See your total earnings and track payment schedules.",
-              },
-              {
-                title: "Savings Goals",
-                description:
-                  "Set financial targets and watch progress in real-time. Visual indicators show how close you are to reaching each goal.",
-              },
-              {
-                title: "Recurring Expenses",
-                description:
-                  "Never forget subscriptions or bills again. Track all recurring payments and get notified before they're due.",
-              },
-              {
-                title: "Financial Reports",
-                description:
-                  "Comprehensive charts and graphs showing spending patterns, income vs expenses, category breakdowns, and monthly trends.",
-              },
-              {
-                title: "Budget Planning",
-                description:
-                  "Set monthly budgets by category and get alerts when you're approaching limits. Stay on track with visual indicators.",
-              },
-            ].map((feature) => (
-              <div
-                key={feature.title}
-                className="rounded-2xl border border-zinc-200 bg-white p-6 dark:border-zinc-800 dark:bg-zinc-900"
-              >
-                <h4 className="text-lg font-semibold text-zinc-900 dark:text-zinc-100">
-                  {feature.title}
-                </h4>
-                <p className="mt-2 text-zinc-600 dark:text-zinc-400">
-                  {feature.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
+      <CaseStudySystemSection
+        variant="dark"
+        eyebrow="Money model"
+        title="Every movement needs context."
+        intro="Atlas turns scattered transactions into a readable financial system: capture what changed, plan what comes next, and make progress visible without turning personal finance into accounting software."
+        accent="#69d7a3"
+        background="linear-gradient(145deg, #071522 0%, #102d3a 58%, #0a1d2a 100%)"
+        items={[
+          {
+            step: "01",
+            label: "Capture",
+            title: "Transaction layer",
+            description:
+              "Expenses and income share one consistent record model with categories, notes, dates, and an audit-friendly history.",
+          },
+          {
+            step: "02",
+            label: "Plan",
+            title: "Budget layer",
+            description:
+              "Category limits translate monthly intent into something users can check against real spending as it happens.",
+          },
+          {
+            step: "03",
+            label: "Progress",
+            title: "Goal layer",
+            description:
+              "Savings targets connect contributions to a clear destination, with progress that stays understandable at a glance.",
+          },
+          {
+            step: "04",
+            label: "Understand",
+            title: "Reporting layer",
+            description:
+              "Trends and comparisons surface the decisions behind the numbers instead of filling the dashboard with decorative charts.",
+          },
+        ]}
+      />
 
       {/* Dashboard Section */}
       <section className="bg-white py-16 sm:py-20 dark:bg-zinc-950">
         <Container>
-          <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-600">
+          <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-[#ff5500]">
             Dashboard
           </h2>
           <h3 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
@@ -284,7 +251,7 @@ export default function AtlasCaseStudy() {
       {/* Financial Management */}
       <section className="bg-zinc-50 py-16 sm:py-20 dark:bg-zinc-900/50">
         <Container>
-          <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-600">
+          <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-[#ff5500]">
             Financial Management
           </h2>
           <h3 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
@@ -331,15 +298,15 @@ export default function AtlasCaseStudy() {
       {/* Reports & Analytics */}
       <section className="bg-white py-16 sm:py-20 dark:bg-zinc-950">
         <Container>
-          <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-600">
+          <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-[#ff5500]">
             Reports & Analytics
           </h2>
           <h3 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
             Understand Your Financial Patterns
           </h3>
           <p className="mt-4 max-w-2xl text-lg text-zinc-600 dark:text-zinc-400">
-            Visualize your spending habits, income trends, and category breakdowns 
-            with comprehensive charts and reports.
+            Compare spending, income, and categories across the month without turning
+            the dashboard into an accounting suite.
           </p>
 
           <div className="mt-12 overflow-hidden rounded-2xl border border-zinc-200 bg-zinc-100 dark:border-zinc-800 dark:bg-zinc-900">
@@ -354,84 +321,73 @@ export default function AtlasCaseStudy() {
         </Container>
       </section>
 
-      {/* Technical Stack */}
-      <section className="bg-zinc-50 py-16 sm:py-20 dark:bg-zinc-900/50">
-        <Container>
-          <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-600">
-            Technical Stack
-          </h2>
-          <h3 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
-            Built with Modern Technologies
-          </h3>
-
-          <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-            {[
-              {
-                step: "01",
-                title: "React",
-                description:
-                  "Component-based architecture for a fast, responsive user interface with smooth interactions.",
-              },
-              {
-                step: "02",
-                title: "Supabase",
-                description:
-                  "Real-time database, authentication, and API — secure backend infrastructure with PostgreSQL.",
-              },
-              {
-                step: "03",
-                title: "Tailwind CSS",
-                description:
-                  "Utility-first styling for a beautiful, consistent design system across all screens.",
-              },
-              {
-                step: "04",
-                title: "Chart.js",
-                description:
-                  "Interactive charts and graphs for visualizing financial data and spending trends.",
-              },
-            ].map((phase) => (
-              <div key={phase.step}>
-                <span className="text-5xl font-black text-zinc-200 dark:text-zinc-800">
-                  {phase.step}
-                </span>
-                <h4 className="mt-4 text-lg font-semibold text-zinc-900 dark:text-zinc-100">
-                  {phase.title}
-                </h4>
-                <p className="mt-2 text-zinc-600 dark:text-zinc-400">
-                  {phase.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
+      <CaseStudySystemSection
+        variant="light"
+        eyebrow="System architecture"
+        title="Simple on the surface. Structured underneath."
+        intro="The build keeps financial records, access, visualization, and interface concerns separate so new money workflows can grow without making the product harder to reason about."
+        accent="#0b7355"
+        image={{
+          src: "/images/projects/Atlas/dashboard.png",
+          alt: "Atlas financial dashboard and reporting interface",
+        }}
+        items={[
+          {
+            step: "01",
+            label: "Interface",
+            title: "React workspace",
+            description:
+              "Reusable financial primitives keep transaction entry, filters, summaries, and goal views consistent across the product.",
+          },
+          {
+            step: "02",
+            label: "Data",
+            title: "Supabase foundation",
+            description:
+              "PostgreSQL-backed records and authenticated ownership rules keep each user’s financial data isolated and queryable.",
+          },
+          {
+            step: "03",
+            label: "Reporting",
+            title: "Derived insight layer",
+            description:
+              "Chart.js consumes normalized totals so every visual is tied back to the same transaction source of truth.",
+          },
+          {
+            step: "04",
+            label: "Design",
+            title: "Tailwind system",
+            description:
+              "A compact token-led UI keeps dense financial information readable across dashboard and mobile breakpoints.",
+          },
+        ]}
+      />
 
       {/* Impact Section */}
       <section className="bg-white py-16 sm:py-20 dark:bg-zinc-950">
         <Container>
-          <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-600">
-            Impact
+          <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-[#ff5500]">
+            Working scope
           </h2>
           <h3 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
-            Take Control of Your Finances
+            The loop the product needed
           </h3>
           <p className="mt-4 max-w-2xl text-lg text-zinc-600 dark:text-zinc-400">
-            Atlas makes personal finance management simple, beautiful, and effective.
+            Capture the transaction, understand the month, and decide what to change.
           </p>
 
           <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { value: "Complete", label: "Expense Tracking" },
-              { value: "Real-Time", label: "Financial Reports" },
-              { value: "Savings", label: "Goal Progress" },
-              { value: "Recurring", label: "Payment Alerts" },
+              { value: "Capture", label: "Expenses and income" },
+              { value: "Review", label: "Categories and monthly totals" },
+              { value: "Plan", label: "Savings goal progress" },
+              { value: "Remember", label: "Recurring payments" },
             ].map((stat) => (
               <div
                 key={stat.label}
                 className="rounded-2xl border border-zinc-200 bg-white p-8 text-center dark:border-zinc-800 dark:bg-zinc-900"
               >
-                <p className="text-3xl font-bold text-emerald-600">{stat.value}</p>
+                <p className="text-3xl font-bold text-[#ff5500]">{stat.value}</p>
                 <p className="mt-2 text-zinc-600 dark:text-zinc-400">
                   {stat.label}
                 </p>
@@ -456,25 +412,25 @@ export default function AtlasCaseStudy() {
             <div className="space-y-8 lg:col-span-8">
               {[
                 {
-                  challenge: "Quick add — expense entry in under 5 seconds",
+                  challenge: "Quick add without opening a long form",
                   solution:
                     "Single-input quick-add with smart parsing (e.g. \"12.50 lunch\" → amount + auto-categorised). Default category from history. Submit on Enter. The whole flow lives behind one keystroke.",
                   impact:
-                    "I actually log expenses daily instead of monthly batches that drift from reality. App stays useful instead of dying after week 2.",
+                    "The shortest path handles the routine entry; full editing remains available for exceptions.",
                 },
                 {
                   challenge: "Smart categorisation that learns from history",
                   solution:
                     "Simple frequency table per merchant string + fallback to keyword rules. Wrong category = one tap to correct, which updates the rule. No heavy ML model required.",
                   impact:
-                    "After 2 weeks of corrections, the categoriser is right ~90% of the time on new transactions — the friction-removal target was hit without infrastructure cost.",
+                    "Corrections improve future suggestions without introducing a separate machine-learning service.",
                 },
                 {
-                  challenge: "Visual analytics that motivate, not depress",
+                  challenge: "Progress without turning the dashboard into a warning screen",
                   solution:
-                    "Most personal-finance UIs lead with red and \"over budget\" — that disengages users. I lead with progress (savings goals, percent complete), use red sparingly, and surface a \"wins this month\" call-out.",
+                    "Savings progress and month context lead the hierarchy. Warning colours are reserved for information that actually requires attention.",
                   impact:
-                    "I open the app to celebrate, not to be scolded. Motivational design = repeat opens = the app actually works.",
+                    "The dashboard supports review and planning instead of treating every visit as a failure state.",
                 },
               ].map((c, i) => (
                 <div key={i}>
@@ -487,7 +443,7 @@ export default function AtlasCaseStudy() {
                       {c.solution}
                     </p>
                     <p>
-                      <span className="text-xs font-semibold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">Outcome · </span>
+                      <span className="text-xs font-semibold uppercase tracking-wider text-[#ff5500]">Outcome · </span>
                       {c.impact}
                     </p>
                   </div>
@@ -499,7 +455,7 @@ export default function AtlasCaseStudy() {
       </section>
 
       {/* CTA Section */}
-      <section className="relative overflow-hidden border-t border-zinc-800 bg-zinc-950 py-24">
+      <section className="case-study-closing relative overflow-hidden border-t border-zinc-800 bg-zinc-950 py-24">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,77,31,0.15),transparent_70%)]" />
         <Container className="relative text-center">
           <h2 className="text-3xl font-bold text-white sm:text-4xl md:text-5xl">
@@ -520,7 +476,7 @@ export default function AtlasCaseStudy() {
         </Container>
       </section>
 
-      <Footer />
+      <Footer compact />
     </main>
   );
 }

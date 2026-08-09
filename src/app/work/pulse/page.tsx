@@ -6,54 +6,12 @@ import { Badge } from "@/components/ui/Badge";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { SiteHeader } from "@/components/sections/SiteHeader";
 import { Footer } from "@/components/sections/Footer";
+import { CaseStudySystemSection } from "@/components/ui/CaseStudySystemSection";
 
 export const metadata: Metadata = {
   title: "Pulse — Lead-Prospecting Platform for Freelance Devs",
   description:
-    "A personal lead engine — 12-source scraper pipeline, 4-stage email verification, sequence outreach, and a 1,832-keyword library. Built solo to solve a real freelance lead-gen problem the existing $99-300/mo SaaS tools don't.",
-};
-
-// Stack — broken into honest groupings so reviewers can see how the
-// frontend, backend, data layer, and scraping infra fit together.
-const STACK = {
-  Frontend: [
-    "Next.js 16",
-    "React 19",
-    "TypeScript",
-    "Tailwind CSS 4",
-    "TanStack Query",
-    "Framer Motion",
-    "Radix UI",
-    "Vite (Pulse SPA)",
-  ],
-  Backend: [
-    "FastAPI",
-    "Python 3.12",
-    "Pydantic",
-    "asyncio",
-    "httpx",
-    "BeautifulSoup",
-  ],
-  "Data & Auth": [
-    "PostgreSQL (Supabase)",
-    "Supabase Auth",
-    "Row-Level Security",
-    "Edge Functions",
-  ],
-  "Scraping & Anti-Bot": [
-    "Scrapling",
-    "Playwright",
-    "Camoufox (Stealthy)",
-    "Cloudflare bypass",
-    "Algolia public-API integration",
-  ],
-  "Email & Outreach": [
-    "SMTP handshake verification",
-    "DNS MX lookup",
-    "Catch-all probe",
-    "IMAP reply detection",
-    "Spintax + Liquid templating",
-  ],
+    "A solo-built prospecting workspace that brings twelve lead sources, email verification, saved searches, and outreach sequences into one review queue.",
 };
 
 const STATS = [
@@ -65,7 +23,7 @@ const STATS = [
 
 export default function PulseCaseStudy() {
   return (
-    <main className="min-h-screen bg-white text-zinc-950 dark:bg-zinc-950 dark:text-zinc-50">
+    <main className="case-detail min-h-screen bg-white text-zinc-950 dark:bg-zinc-950 dark:text-zinc-50">
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-[#080406] text-white">
         <div className="absolute inset-0 bg-[radial-gradient(1100px_circle_at_70%_0%,rgba(255,77,31,0.55),transparent_55%),radial-gradient(900px_circle_at_20%_10%,rgba(255,0,92,0.25),transparent_55%)]" />
@@ -97,12 +55,10 @@ export default function PulseCaseStudy() {
           </h1>
 
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/75 sm:text-xl">
-            A personal lead engine for freelance devs. Twelve scrapers feeding a
-            single inbox of founding-engineer roles, just-funded startups, indie
-            launches, and local SMBs — with a 4-stage email verifier, sequence
-            outreach, and a 1,832-keyword library tuned for senior fullstack
-            work. Solves the lead-gen problem that $99-300/mo SaaS tools were
-            never built to solve.
+            A personal acquisition workspace for reviewing leads from twelve
+            different sources in one queue. It combines source-specific collection,
+            email verification, saved searches, and outreach sequences around a
+            keyword library tuned to the work I actually pursue.
           </p>
 
           {/* Tech badge row removed from hero — full stack breakdown lives
@@ -161,18 +117,18 @@ export default function PulseCaseStudy() {
             </div>
             <div className="space-y-6 text-base leading-relaxed text-zinc-600 lg:col-span-8 dark:text-zinc-400">
               <p>
-                I needed a steady pipeline of remote contracts and
-                founding-engineer roles. Every commercial option failed in a
-                specific way:
+                I needed one review queue for remote contracts, product roles,
+                recently funded companies, and local businesses. The existing tools
+                I tried were built around different acquisition workflows:
               </p>
               <ul className="space-y-3 border-l-2 border-[#ff5500]/30 pl-5">
                 <li>
                   <span className="font-semibold text-zinc-900 dark:text-zinc-100">
                     Apollo, Hunter, Lemlist
                   </span>{" "}
-                  — $99-300/mo, optimized for SDR teams selling enterprise
-                  software. None surface the leads I actually want: founding
-                  engineers, recently-funded YC companies, indie founders.
+                  — optimised for SDR teams working from established company
+                  lists. My search starts earlier, with roles, funding events,
+                  product launches, and founder activity.
                 </li>
                 <li>
                   <span className="font-semibold text-zinc-900 dark:text-zinc-100">
@@ -212,64 +168,44 @@ export default function PulseCaseStudy() {
         </Container>
       </section>
 
-      {/* Architecture Highlights — 3 deep-dives */}
-      <section className="bg-zinc-50 py-20 dark:bg-zinc-900/40">
-        <Container>
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#ff5500]">
-            Architecture
-          </p>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl dark:text-zinc-50">
-            Three pieces that took the most engineering
-          </h2>
-
-          <div className="mt-12 grid gap-8 lg:grid-cols-3">
-            {/* Card 1 */}
-            <div className="rounded-2xl border border-zinc-200 bg-white p-8 dark:border-zinc-800 dark:bg-zinc-950">
-              <div className="text-5xl font-black text-[#ff5500]/20">01</div>
-              <h3 className="mt-4 text-xl font-bold text-zinc-900 dark:text-zinc-50">
-                Source-aware scraper engine
-              </h3>
-              <p className="mt-3 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
-                12 scrapers behind a uniform <code className="rounded bg-zinc-100 px-1 py-0.5 text-xs dark:bg-zinc-800">DirectLead</code>{" "}
-                contract. Each picks its own fetcher tier — HTTP for HN
-                Firebase + YC Algolia, Stealthy + Camoufox for Cloudflare-gated
-                ProductHunt and IndieHackers. Per-source rate limits, retry
-                with backoff, and React-SPA `wait_selector` for sources that
-                hydrate client-side.
-              </p>
-            </div>
-            {/* Card 2 */}
-            <div className="rounded-2xl border border-zinc-200 bg-white p-8 dark:border-zinc-800 dark:bg-zinc-950">
-              <div className="text-5xl font-black text-[#ff5500]/20">02</div>
-              <h3 className="mt-4 text-xl font-bold text-zinc-900 dark:text-zinc-50">
-                4-stage email verifier
-              </h3>
-              <p className="mt-3 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
-                Syntax → DNS MX → SMTP handshake → catch-all probe. Filters
-                third-party widget emails (Stripe checkout, Sentry trackers,
-                Intercom CDN) and prefers domain-matching addresses over
-                anything that leaked from a footer pixel. Domain-protection
-                layer prevents Gmail spam-flagging from cold sends.
-              </p>
-            </div>
-            {/* Card 3 */}
-            <div className="rounded-2xl border border-zinc-200 bg-white p-8 dark:border-zinc-800 dark:bg-zinc-950">
-              <div className="text-5xl font-black text-[#ff5500]/20">03</div>
-              <h3 className="mt-4 text-xl font-bold text-zinc-900 dark:text-zinc-50">
-                42-bundle keyword library
-              </h3>
-              <p className="mt-3 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
-                1,832 unique keywords across roles (Frontend, Backend, AI/ML,
-                DevOps), stages (Founding-eng, Contract, Remote), specialties
-                (AR/VR, Embedded, Quant), verticals (Fintech, Healthtech,
-                Climate), and locale (French/Tunisian variants for Tanit
-                listings). Quick-add bundles toggle whole role/stack groups in
-                one tap.
-              </p>
-            </div>
-          </div>
-        </Container>
-      </section>
+      <CaseStudySystemSection
+        variant="dark"
+        eyebrow="Lead pipeline"
+        title="Signal enters messy. Opportunity leaves structured."
+        intro="Pulse treats prospecting as a pipeline, not a list of scraped links. Each stage removes noise or adds context until a lead is useful enough to review, contact, and track."
+        accent="#bfff57"
+        background="linear-gradient(145deg, #071008 0%, #19341d 58%, #0b170d 100%)"
+        items={[
+          {
+            step: "01",
+            label: "Collect",
+            title: "Source-aware acquisition",
+            description:
+              "Twelve connectors share one lead contract while each source keeps its own fetch strategy, rate limit, retry behavior, and hydration rules.",
+          },
+          {
+            step: "02",
+            label: "Verify",
+            title: "Contact confidence",
+            description:
+              "Syntax, MX, SMTP, and catch-all checks filter weak addresses before outreach and prefer contacts that match the company domain.",
+          },
+          {
+            step: "03",
+            label: "Qualify",
+            title: "Opportunity model",
+            description:
+              "Keywords, bundles, source context, and saved-search criteria turn raw posts into comparable opportunities in one inbox.",
+          },
+          {
+            step: "04",
+            label: "Act",
+            title: "Outreach workflow",
+            description:
+              "Reviewed leads move into sequenced contact and reply tracking without losing the source evidence that made them relevant.",
+          },
+        ]}
+      />
 
       {/* Screenshot — Sources page */}
       <section className="bg-white py-20 dark:bg-zinc-950">
@@ -537,49 +473,50 @@ export default function PulseCaseStudy() {
         </Container>
       </section>
 
-      {/* Stack — full breakdown */}
-      <section className="bg-zinc-50 py-20 dark:bg-zinc-900/40">
-        <Container>
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#ff5500]">
-            The Stack
-          </p>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl dark:text-zinc-50">
-            How it&apos;s built end-to-end
-          </h2>
-          <p className="mt-4 max-w-2xl text-base leading-relaxed text-zinc-600 dark:text-zinc-400">
-            Modern fullstack stack picked for two reasons: I trust each piece
-            in production, and the combination supports the long-running
-            scrape jobs without forcing me into a dedicated worker queue.
-          </p>
-
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {Object.entries(STACK).map(([category, items]) => (
-              <div
-                key={category}
-                className="rounded-2xl border border-zinc-200 bg-white p-6 dark:border-zinc-800 dark:bg-zinc-950"
-              >
-                <h3 className="text-sm font-bold uppercase tracking-wider text-[#ff5500]">
-                  {category}
-                </h3>
-                <ul className="mt-4 space-y-2">
-                  {items.map((tech) => (
-                    <li
-                      key={tech}
-                      className="flex items-start gap-2 text-sm text-zinc-700 dark:text-zinc-300"
-                    >
-                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#ff5500]" />
-                      <span>{tech}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
+      <CaseStudySystemSection
+        variant="light"
+        eyebrow="System architecture"
+        title="Interactive product above. Long-running work below."
+        intro="The architecture separates the fast review experience from source-specific collection and verification jobs, while one shared record model keeps the entire prospecting workflow coherent."
+        accent="#477b18"
+        image={{
+          src: "/images/projects/pulse/pulse-03-sources-page.png",
+          alt: "Pulse saved searches and source pipeline interface",
+        }}
+        items={[
+          {
+            step: "01",
+            label: "Product",
+            title: "Next.js workspace",
+            description:
+              "React, TypeScript, TanStack Query, and reusable interface primitives power fast triage, filters, editors, and command-driven navigation.",
+          },
+          {
+            step: "02",
+            label: "Jobs",
+            title: "FastAPI workers",
+            description:
+              "Python, asyncio, Pydantic, and source adapters handle scheduled acquisition and verification outside the interactive request path.",
+          },
+          {
+            step: "03",
+            label: "Records",
+            title: "Supabase data layer",
+            description:
+              "PostgreSQL, authentication, and row-level rules provide one durable home for saved searches, leads, contacts, and outreach state.",
+          },
+          {
+            step: "04",
+            label: "Acquisition",
+            title: "Tiered fetch system",
+            description:
+              "Direct APIs, HTTP parsing, Scrapling, and browser automation are selected per source instead of forcing every target through one brittle scraper.",
+          },
+        ]}
+      />
 
       {/* CTA */}
-      <section className="relative overflow-hidden border-t border-zinc-800 bg-zinc-950 py-24">
+      <section className="case-study-closing relative overflow-hidden border-t border-zinc-800 bg-zinc-950 py-24">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,77,31,0.15),transparent_70%)]" />
         <Container className="relative text-center">
           <h2 className="text-3xl font-bold text-white sm:text-4xl md:text-5xl">
@@ -600,7 +537,7 @@ export default function PulseCaseStudy() {
         </Container>
       </section>
 
-      <Footer />
+      <Footer compact />
     </main>
   );
 }

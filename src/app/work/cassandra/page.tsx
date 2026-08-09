@@ -6,16 +6,17 @@ import { Badge } from "@/components/ui/Badge";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { SiteHeader } from "@/components/sections/SiteHeader";
 import { Footer } from "@/components/sections/Footer";
+import { CaseStudySystemSection } from "@/components/ui/CaseStudySystemSection";
 
 export const metadata: Metadata = {
   title: "Cassandra — Case Study",
   description:
-    "A personal health organization platform helping people document their health journey, prepare for doctor visits, and finally be believed.",
+    "A private health-organisation workspace for symptom notes, medical documents, medications, and appointment preparation.",
 };
 
 export default function CassandraCaseStudy() {
   return (
-    <main className="min-h-screen bg-white text-zinc-950 dark:bg-zinc-950 dark:text-zinc-50">
+    <main className="case-detail min-h-screen bg-white text-zinc-950 dark:bg-zinc-950 dark:text-zinc-50">
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-[#0a0814] text-white">
         <div className="absolute inset-0 bg-[radial-gradient(1100px_circle_at_70%_0%,rgba(139,92,246,0.45),transparent_55%),radial-gradient(900px_circle_at_20%_10%,rgba(59,130,246,0.25),transparent_55%)]" />
@@ -57,9 +58,9 @@ export default function CassandraCaseStudy() {
           </h1>
 
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/75 sm:text-xl">
-            A personal health organization platform that helps people document 
-            their symptoms, organize medical records, and prepare for doctor 
-            appointments — so they can finally be heard and believed.
+            A private health-organisation workspace for documenting symptoms,
+            keeping medical records together, tracking medications, and preparing
+            a concise brief before an appointment.
           </p>
 
           <div className="mt-10 flex flex-wrap gap-3">
@@ -113,27 +114,21 @@ export default function CassandraCaseStudy() {
               </h3>
               <div className="mt-6 space-y-4 text-lg leading-relaxed text-zinc-600 dark:text-zinc-400">
                 <p>
-                  Millions of people experience a modern healthcare crisis: they know 
-                  something is wrong with their bodies, but when they walk into a 
-                  doctor&apos;s office with only 15 minutes, scattered memories, and no 
-                  organized documentation — their concerns get dismissed. They&apos;re told 
-                  it&apos;s &quot;just anxiety,&quot; that they&apos;re &quot;overthinking it,&quot; 
-                  or that &quot;the tests look fine.&quot;
+                  Health information is often split between memory, phone notes,
+                  downloaded files, and different provider portals. When an appointment
+                  is short, reconstructing a useful timeline becomes another task for
+                  the patient.
                 </p>
                 <p>
-                  Cassandra was born from this exact problem. Named after the Greek 
-                  mythological figure cursed to speak the truth but never be believed, 
-                  the platform transforms scattered symptoms into organized evidence, 
-                  forgotten details into documented history, and dismissed patients 
-                  into prepared advocates.
+                  Cassandra explores a patient-owned workspace for that preparation.
+                  Notes, symptoms, medications, providers, and files can be organised
+                  around a timeline and assembled into a deliberate pre-visit summary.
                 </p>
                 <p>
-                  The solution isn&apos;t just another health app with streaks and 
-                  gamification. It&apos;s a serious tool for serious needs: a personal 
-                  health journal with body mapping, a document wallet for medical 
-                  records, a medication tracker, and most importantly — an Appointment 
-                  Prep Pack that turns months of observations into a clear, 
-                  professional summary doctors can&apos;t ignore.
+                  The product does not diagnose, interpret results, or replace clinical
+                  advice. Its job is narrower: help a person organise their own record,
+                  decide what to share, and arrive with the questions and context they
+                  do not want to forget.
                 </p>
               </div>
             </div>
@@ -188,7 +183,7 @@ export default function CassandraCaseStudy() {
             Brand Story
           </h2>
           <h3 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
-            &quot;Finally Believed.&quot;
+            Why the name Cassandra
           </h3>
           <div className="mt-6 max-w-3xl space-y-4 text-lg leading-relaxed text-zinc-600 dark:text-zinc-400">
             <p>
@@ -197,33 +192,33 @@ export default function CassandraCaseStudy() {
               wooden horse. No one listened. The city fell.
             </p>
             <p>
-              For millions of people, that curse is real. They know something is wrong. 
-              They tell their doctors. They describe their symptoms. And they&apos;re 
-              dismissed — repeatedly.
+              The name became a prompt for the product question: how can software help
+              a person communicate a long, messy history without pretending to decide
+              what that history means?
             </p>
             <p className="text-xl font-medium text-violet-600 dark:text-violet-400">
-              Cassandra is the cure to that curse.
+              Organise the record. Keep interpretation with the clinician.
             </p>
             <p>
-              We organize health truth — symptoms, patterns, documents, stories — so 
-              that when you walk into a doctor&apos;s office, you have evidence. You have 
-              proof. You have something they can&apos;t dismiss.
+              Cassandra keeps notes, measurements, documents, and questions under the
+              user&apos;s control. The output is a clearer brief for a conversation, not
+              evidence of a diagnosis.
             </p>
           </div>
 
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[
               {
-                title: "We Believe You",
-                description: "Your symptoms are real. Your experience matters. No gaslighting.",
+                title: "User-owned record",
+                description: "The person decides what to capture, retain, and share.",
               },
               {
-                title: "You Own Your Data",
-                description: "Your health information belongs to you. Full control. Full privacy.",
+                title: "Deliberate sharing",
+                description: "A brief or document leaves the workspace only through an explicit action.",
               },
               {
-                title: "Evidence Over Opinion",
-                description: "Organized data speaks louder than scattered complaints.",
+                title: "No diagnosis layer",
+                description: "The product organises information without making a clinical interpretation.",
               },
             ].map((value) => (
               <div
@@ -242,68 +237,44 @@ export default function CassandraCaseStudy() {
         </Container>
       </section>
 
-      {/* Features Section */}
-      <section className="bg-white py-16 sm:py-20 dark:bg-zinc-950">
-        <Container>
-          <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-violet-600">
-            Features
-          </h2>
-          <h3 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
-            Organize Your Health Truth
-          </h3>
-          <p className="mt-4 max-w-3xl text-lg text-zinc-600 dark:text-zinc-400">
-            Every feature was designed with one goal: help you be heard and believed 
-            by healthcare providers.
-          </p>
-
-          <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {[
-              {
-                title: "Personal Health Journal",
-                description:
-                  "Document symptoms with body mapping, severity ratings, and timestamped notes. See patterns emerge over time.",
-              },
-              {
-                title: "Appointment Prep Pack",
-                description:
-                  "Generate professional summaries of your health observations to share with doctors before appointments.",
-              },
-              {
-                title: "Document Wallet",
-                description:
-                  "Store prescriptions, lab results, insurance cards, and medical records in one secure, organized place.",
-              },
-              {
-                title: "Medication Tracking",
-                description:
-                  "Keep track of current medications, dosages, and schedules. Get refill reminders and cost tracking.",
-              },
-              {
-                title: "Provider Management",
-                description:
-                  "Organize your healthcare team — doctors, specialists, pharmacies — with contact info and visit history.",
-              },
-              {
-                title: "Health Education",
-                description:
-                  "Access trusted health information from reputable sources. No AI interpretation, just reliable resources.",
-              },
-            ].map((feature) => (
-              <div
-                key={feature.title}
-                className="rounded-2xl border border-zinc-200 bg-zinc-50 p-6 dark:border-zinc-800 dark:bg-zinc-900/40"
-              >
-                <h4 className="text-lg font-semibold text-zinc-900 dark:text-zinc-100">
-                  {feature.title}
-                </h4>
-                <p className="mt-2 text-zinc-600 dark:text-zinc-400">
-                  {feature.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
+      <CaseStudySystemSection
+        variant="dark"
+        eyebrow="Care model"
+        title="Turn a scattered health history into a usable record."
+        intro="Cassandra is organized around the moments when personal context usually gets lost: noticing a change, preparing to explain it, finding the right document, and following a care routine over time."
+        accent="#efb0ff"
+        background="linear-gradient(145deg, #130c21 0%, #32204a 58%, #171024 100%)"
+        items={[
+          {
+            step: "01",
+            label: "Observe",
+            title: "Symptom journal",
+            description:
+              "Timestamped notes, severity, and body context give users a consistent way to capture what changed and when.",
+          },
+          {
+            step: "02",
+            label: "Prepare",
+            title: "Appointment brief",
+            description:
+              "Relevant observations become a concise visit summary so the conversation can start with context instead of recall under pressure.",
+          },
+          {
+            step: "03",
+            label: "Organize",
+            title: "Document wallet",
+            description:
+              "Prescriptions, results, insurance details, and provider records stay grouped around the person—not scattered by file type.",
+          },
+          {
+            step: "04",
+            label: "Continue",
+            title: "Care routine",
+            description:
+              "Medication, condition, and measurement tracking supports continuity between appointments without presenting itself as diagnosis.",
+          },
+        ]}
+      />
 
       {/* Health Journal Section */}
       <section className="bg-zinc-50 py-16 sm:py-20 dark:bg-zinc-900/50">
@@ -360,12 +331,11 @@ export default function CassandraCaseStudy() {
             Appointment Prep Pack
           </h2>
           <h3 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
-            Be Prepared, Be Heard
+            Turn notes into a visit brief
           </h3>
           <p className="mt-4 max-w-2xl text-lg text-zinc-600 dark:text-zinc-400">
-            Transform months of journal entries into a professional summary. Share it 
-            with your doctor before the appointment so they can review your concerns 
-            ahead of time.
+            Select the relevant dates, edit the questions and priorities, and export a
+            concise document for the appointment or for deliberate pre-visit sharing.
           </p>
 
           <div className="mt-12 overflow-hidden rounded-2xl border border-zinc-200 bg-zinc-100 dark:border-zinc-800 dark:bg-zinc-900">
@@ -424,7 +394,7 @@ export default function CassandraCaseStudy() {
             Document Management
           </h2>
           <h3 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
-            Everything in One Place
+            Records grouped around the person
           </h3>
           <p className="mt-4 max-w-2xl text-lg text-zinc-600 dark:text-zinc-400">
             Store prescriptions, lab results, insurance cards, and medical records 
@@ -458,14 +428,14 @@ export default function CassandraCaseStudy() {
       <section className="bg-white py-16 sm:py-20 dark:bg-zinc-950">
         <Container>
           <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-violet-600">
-            Smart Features
+            Supporting context
           </h2>
           <h3 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
-            Comprehensive Health Management
+            Weather, patterns, and dashboard views
           </h3>
           <p className="mt-4 max-w-2xl text-lg text-zinc-600 dark:text-zinc-400">
-            From environmental tracking to detailed dashboards — Cassandra provides 
-            all the tools you need to understand your health.
+            Environmental context and dashboard views help organise observations. They
+            are presented as context, not as medical conclusions.
           </p>
 
           <div className="mt-12 grid gap-8 md:grid-cols-2">
@@ -541,79 +511,68 @@ export default function CassandraCaseStudy() {
         </Container>
       </section>
 
-      {/* Architecture & Privacy */}
-      <section className="bg-white py-16 sm:py-20 dark:bg-zinc-950">
-        <Container>
-          <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-violet-600">
-            Privacy & Security
-          </h2>
-          <h3 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
-            Your Data, Your Control
-          </h3>
-
-          <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-            {[
-              {
-                step: "01",
-                title: "End-to-End Encryption",
-                description:
-                  "All health documents encrypted at rest and in transit. Military-grade security standards.",
-              },
-              {
-                step: "02",
-                title: "Full Data Ownership",
-                description:
-                  "Your health information belongs to you. Export everything. Delete anytime.",
-              },
-              {
-                step: "03",
-                title: "No AI Interpretation",
-                description:
-                  "We organize and present your data. We never diagnose or interpret medical information.",
-              },
-              {
-                step: "04",
-                title: "GDPR & HIPAA Aligned",
-                description:
-                  "Built with privacy regulations in mind. Transparent data handling policies.",
-              },
-            ].map((phase) => (
-              <div key={phase.step}>
-                <span className="text-5xl font-black text-zinc-200 dark:text-zinc-800">
-                  {phase.step}
-                </span>
-                <h4 className="mt-4 text-lg font-semibold text-zinc-900 dark:text-zinc-100">
-                  {phase.title}
-                </h4>
-                <p className="mt-2 text-zinc-600 dark:text-zinc-400">
-                  {phase.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
+      <CaseStudySystemSection
+        variant="light"
+        eyebrow="Product boundaries"
+        title="Helpful organization without pretending to be a clinician."
+        intro="The system separates private records, presentation logic, and educational content. Its role is to help users organize and communicate their own information—not interpret it or make medical decisions."
+        accent="#7540a8"
+        image={{
+          src: "/images/projects/cassandra/dashboard2.png",
+          alt: "Cassandra personal health organization dashboard",
+        }}
+        items={[
+          {
+            step: "01",
+            label: "Access",
+            title: "Authenticated workspace",
+            description:
+              "Private journals and documents live behind account ownership rules rather than public or shared-by-default records.",
+          },
+          {
+            step: "02",
+            label: "Storage",
+            title: "Structured health records",
+            description:
+              "Notes, measurements, providers, and files use separate models that can be assembled into a timeline when needed.",
+          },
+          {
+            step: "03",
+            label: "Safety",
+            title: "No diagnostic layer",
+            description:
+              "The interface summarizes user-entered facts and trusted resources without generating diagnoses or treatment advice.",
+          },
+          {
+            step: "04",
+            label: "Control",
+            title: "User-led sharing",
+            description:
+              "Appointment briefs are created for deliberate sharing, keeping the user in control of what leaves the workspace.",
+          },
+        ]}
+      />
 
       {/* Impact Section */}
       <section className="bg-zinc-50 py-16 sm:py-20 dark:bg-zinc-900/50">
         <Container>
           <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-violet-600">
-            Impact
+            Product boundaries
           </h2>
           <h3 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
-            Building Trust in Healthcare
+            Useful without pretending to be a clinician
           </h3>
           <p className="mt-4 max-w-2xl text-lg text-zinc-600 dark:text-zinc-400">
-            Cassandra is changing how people prepare for medical appointments — 
-            turning anxiety into confidence, confusion into clarity.
+            The product is designed around four promises that can be inspected in the
+            interface rather than broad claims about health outcomes.
           </p>
 
           <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { value: "Healthcare", label: "Empowerment" },
-              { value: "Privacy", label: "First Design" },
-              { value: "No AI", label: "Interpretation" },
-              { value: "Full", label: "Data Control" },
+              { value: "Private", label: "Personal workspace" },
+              { value: "Explicit", label: "Sharing actions" },
+              { value: "No diagnosis", label: "Organisation only" },
+              { value: "Portable", label: "Visit brief export" },
             ].map((stat) => (
               <div
                 key={stat.label}
@@ -648,21 +607,21 @@ export default function CassandraCaseStudy() {
                   solution:
                     "Encrypted upload + tag system (lab result, prescription, scan, insurance) with quick-access cards for upcoming appointments. Files live in Supabase storage with row-level security so each user only sees their own.",
                   impact:
-                    "Doctor visits start with the right docs in one swipe instead of \"let me find that lab result somewhere on my phone\".",
+                    "Files remain grouped and searchable instead of depending on the original download location.",
                 },
                 {
                   challenge: "Appointment-prep notes",
                   solution:
                     "Pre-visit note template (current symptoms, questions, recent changes, medications taken) that the patient fills out and can show on-screen during the visit.",
                   impact:
-                    "Visits feel productive instead of rushed. Patients leave with answers because they came in with the right questions.",
+                    "The user can keep the questions and recent changes they want to discuss in one deliberate view.",
                 },
                 {
                   challenge: "Sharing controls without exposing everything",
                   solution:
                     "Per-document share links with expiry + access logs (who viewed, when). No \"share my whole account\" button — granularity by design.",
                   impact:
-                    "Patients control exactly what each provider sees. Audit trail covers compliance + peace of mind.",
+                    "A user can share a specific item for a limited period without exposing the rest of the workspace.",
                 },
               ].map((c, i) => (
                 <div key={i}>
@@ -675,7 +634,7 @@ export default function CassandraCaseStudy() {
                       {c.solution}
                     </p>
                     <p>
-                      <span className="text-xs font-semibold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">Outcome · </span>
+                      <span className="text-xs font-semibold uppercase tracking-wider text-[#ff5500]">Outcome · </span>
                       {c.impact}
                     </p>
                   </div>
@@ -687,7 +646,7 @@ export default function CassandraCaseStudy() {
       </section>
 
       {/* CTA Section */}
-      <section className="relative overflow-hidden border-t border-zinc-800 bg-zinc-950 py-24">
+      <section className="case-study-closing relative overflow-hidden border-t border-zinc-800 bg-zinc-950 py-24">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,77,31,0.15),transparent_70%)]" />
         <Container className="relative text-center">
           <h2 className="text-3xl font-bold text-white sm:text-4xl md:text-5xl">
@@ -708,7 +667,7 @@ export default function CassandraCaseStudy() {
         </Container>
       </section>
 
-      <Footer />
+      <Footer compact />
     </main>
   );
 }

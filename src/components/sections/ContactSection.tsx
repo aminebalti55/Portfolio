@@ -32,7 +32,7 @@ export function ContactSection() {
                 Contact
               </p>
               <h2 className="mt-4 text-3xl font-semibold tracking-tight text-zinc-950 sm:text-4xl dark:text-zinc-50">
-                <Balancer>Let's work together</Balancer>
+                <Balancer>Let&apos;s work together</Balancer>
               </h2>
               <p className="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-300">
                 Schedule a call to discuss your project, or reach out directly via email or phone.

@@ -33,7 +33,6 @@ export default function Magnet({
 
   useEffect(() => {
     if (disabled) {
-      setPosition({ x: 0, y: 0 });
       return;
     }
 
@@ -66,6 +65,7 @@ export default function Magnet({
   }, [padding, disabled, magnetStrength]);
 
   const transitionStyle = isActive ? activeTransition : inactiveTransition;
+  const visiblePosition = disabled ? { x: 0, y: 0 } : position;
 
   return (
     <div
@@ -77,7 +77,7 @@ export default function Magnet({
       <div
         className={innerClassName}
         style={{
-          transform: `translate3d(${position.x}px, ${position.y}px, 0)`,
+          transform: `translate3d(${visiblePosition.x}px, ${visiblePosition.y}px, 0)`,
           transition: transitionStyle,
           willChange: "transform",
         }}

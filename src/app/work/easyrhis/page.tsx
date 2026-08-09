@@ -6,19 +6,20 @@ import { Badge } from "@/components/ui/Badge";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { SiteHeader } from "@/components/sections/SiteHeader";
 import { Footer } from "@/components/sections/Footer";
+import { CaseStudySystemSection } from "@/components/ui/CaseStudySystemSection";
 
 export const metadata: Metadata = {
   title: "EasyRHIS — Case Study",
   description:
-    "A multi-tenant HR management platform serving major food franchises across France, featuring customizable employee portals and workflow automation.",
+    "Work on a multi-tenant workforce platform for franchise networks across employee records, scheduling, requests, documents, and brand-specific administration.",
 };
 
 export default function EasyRHISCaseStudy() {
   return (
-    <main className="min-h-screen bg-white text-zinc-950 dark:bg-zinc-950 dark:text-zinc-50">
+    <main className="case-detail min-h-screen bg-white text-zinc-950 dark:bg-zinc-950 dark:text-zinc-50">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-[#0a0c10] text-white">
-        <div className="absolute inset-0 bg-[radial-gradient(1100px_circle_at_70%_0%,rgba(59,130,246,0.45),transparent_55%),radial-gradient(900px_circle_at_20%_10%,rgba(16,185,129,0.25),transparent_55%)]" />
+      <section className="relative overflow-hidden bg-[#14080a] text-white">
+        <div className="absolute inset-0 bg-[radial-gradient(1100px_circle_at_72%_0%,rgba(189,38,52,0.62),transparent_56%),radial-gradient(900px_circle_at_18%_18%,rgba(112,18,30,0.34),transparent_58%)]" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/30 to-black/60" />
 
         <SiteHeader />
@@ -64,11 +65,10 @@ export default function EasyRHISCaseStudy() {
           </p>
 
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/75 sm:text-xl">
-            A multi-tenant HR-management platform deployed across multi-brand
-            QSR (quick-service restaurant) operators including KFC, Five Guys,
-            and Burger King franchise networks in France. Each tenant gets a
-            fully customised experience — branded themes, tailored workflows,
-            franchise-specific operational rules.
+            Multi-tenant workforce software used across franchise networks in
+            France. My work covered Angular and Spring Boot flows for employee
+            records, schedules, requests, documents, permissions, and the
+            brand-specific configuration behind each employer workspace.
           </p>
 
           <div className="mt-10 flex flex-wrap gap-3">
@@ -122,24 +122,22 @@ export default function EasyRHISCaseStudy() {
               </h3>
               <div className="mt-6 space-y-4 text-lg leading-relaxed text-zinc-600 dark:text-zinc-400">
                 <p>
-                  Managing HR operations across multi-brand QSR franchise networks
-                  is complex. Each brand on the platform — KFC, Five Guys, Burger
-                  King — runs different workflows, branding, and operational
-                  processes. Traditional HR software forced franchises into rigid,
-                  one-size-fits-all solutions.
+                  Workforce operations across franchise networks cannot be reduced to
+                  one schedule and one permission model. Each employer needs its own
+                  identity, employee records, approval paths, documents, and rules,
+                  while the product still has to remain one maintainable system.
                 </p>
                 <p>
-                  EasyRHIS was built to solve this. A true multi-tenant platform where 
-                  each employer gets their own fully customized tenant — complete with 
-                  branded themes, tailored functionalities, and specific workflow 
-                  configurations. HR managers can deploy custom workflows to employees, 
-                  manage schedules, and handle requests seamlessly.
+                  EasyRHIS gives each employer a tenant-aware workspace with brand
+                  settings, role-specific actions, and configurable workflows. My work
+                  covered Angular interfaces and Spring Boot services across employee,
+                  scheduling, request, document, and administration flows.
                 </p>
                 <p>
-                  For employees, the experience is equally streamlined. From onboarding 
-                  to daily operations, they access a dedicated portal for schedules, 
-                  documents, vacation requests, and real-time notifications — all 
-                  through an intuitive interface that works on any device.
+                  Employees use a dedicated surface for schedules, documents, leave
+                  requests, and notifications. Managers use the same underlying model
+                  to review work and administer their organisation without crossing a
+                  tenant boundary.
                 </p>
               </div>
             </div>
@@ -194,81 +192,57 @@ export default function EasyRHISCaseStudy() {
         </Container>
       </section>
 
-      {/* Features Section */}
-      <section className="bg-zinc-50 py-16 sm:py-20 dark:bg-zinc-900/50">
-        <Container>
-          <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">
-            Features
-          </h2>
-          <h3 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
-            Two Portals, One Ecosystem
-          </h3>
-          <p className="mt-4 max-w-3xl text-lg text-zinc-600 dark:text-zinc-400">
-            EasyRHIS operates on a dual-portal system: the HR Management Portal for 
-            managers and the Employee Portal for staff — both seamlessly integrated.
-          </p>
-
-          <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {[
-              {
-                title: "Multi-Tenant Architecture",
-                description:
-                  "Each franchise gets a dedicated tenant with custom branding, themes, and feature configurations — complete isolation with shared infrastructure.",
-              },
-              {
-                title: "Workflow Builder",
-                description:
-                  "HR managers create custom workflows for any process — vacation requests, sick leave, uniform orders — deployed directly to employee portals.",
-              },
-              {
-                title: "Employee Onboarding",
-                description:
-                  "New hires complete a guided onboarding flow before accessing their portal. Documents, contracts, and training — all digitized.",
-              },
-              {
-                title: "Real-Time Notifications",
-                description:
-                  "Employees receive instant updates on schedules, shift changes, and request approvals. No more missed communications.",
-              },
-              {
-                title: "Document Management",
-                description:
-                  "Centralized access to payslips, contracts, and company documents. Employees view their history; managers distribute at scale.",
-              },
-              {
-                title: "Schedule Management",
-                description:
-                  "Visual scheduling with real-time updates. Employees see their shifts instantly; managers handle coverage effortlessly.",
-              },
-            ].map((feature) => (
-              <div
-                key={feature.title}
-                className="rounded-2xl border border-zinc-200 bg-white p-6 dark:border-zinc-800 dark:bg-zinc-900"
-              >
-                <h4 className="text-lg font-semibold text-zinc-900 dark:text-zinc-100">
-                  {feature.title}
-                </h4>
-                <p className="mt-2 text-zinc-600 dark:text-zinc-400">
-                  {feature.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
+      <CaseStudySystemSection
+        variant="dark"
+        eyebrow="Tenant model"
+        title="One platform. Many operating realities."
+        intro="EasyRHIS separates what every employer shares from what each brand must control. The result is one product that can adapt its identity, processes, permissions, and employee experience without becoming a collection of forks."
+        accent="#ff7682"
+        background="linear-gradient(145deg, #17080b 0%, #6c1721 58%, #240b10 100%)"
+        items={[
+          {
+            step: "01",
+            label: "Separate",
+            title: "Tenant boundary",
+            description:
+              "Employer data and settings are resolved through a tenant context so shared infrastructure never means a shared business space.",
+          },
+          {
+            step: "02",
+            label: "Adapt",
+            title: "Brand configuration",
+            description:
+              "Themes, terminology, enabled modules, and portal behavior adapt to each franchise network without branching the product.",
+          },
+          {
+            step: "03",
+            label: "Operate",
+            title: "Workflow engine",
+            description:
+              "Managers turn HR processes into forms, steps, approvals, and events that can be deployed consistently across sites.",
+          },
+          {
+            step: "04",
+            label: "Serve",
+            title: "Employee portal",
+            description:
+              "Schedules, documents, requests, and notifications meet employees in a focused self-service experience across devices.",
+          },
+        ]}
+      />
 
       {/* HR Portal Section */}
       <section className="bg-white py-16 sm:py-20 dark:bg-zinc-950">
         <Container>
-          <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">
+          <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-[#bd2634]">
             HR Portal
           </h2>
           <h3 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
-            Powerful Tools for HR Managers
+            The manager&apos;s operating view
           </h3>
           <p className="mt-4 max-w-2xl text-lg text-zinc-600 dark:text-zinc-400">
-            The management portal gives HR teams complete control over their workforce 
-            operations — from employee data to workflow deployment.
+            Employee records, requests, schedules, and workflow administration live in
+            one tenant-scoped management surface.
           </p>
 
           {/* Dashboard Overview */}
@@ -433,85 +407,74 @@ export default function EasyRHISCaseStudy() {
         </Container>
       </section>
 
-      {/* Architecture Section */}
-      <section className="bg-zinc-50 py-16 sm:py-20 dark:bg-zinc-900/50">
-        <Container>
-          <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">
-            Architecture
-          </h2>
-          <h3 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
-            Built for Scale
-          </h3>
-
-          <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-            {[
-              {
-                step: "01",
-                title: "Microservices",
-                description:
-                  "Independent services for auth, workflows, notifications, and documents — each scaling independently based on demand.",
-              },
-              {
-                step: "02",
-                title: "Multi-Tenancy",
-                description:
-                  "Schema-per-tenant isolation in PostgreSQL ensures data security while sharing infrastructure for cost efficiency.",
-              },
-              {
-                step: "03",
-                title: "AWS Cloud",
-                description:
-                  "Deployed on AWS with auto-scaling, load balancing, and managed databases for high availability.",
-              },
-              {
-                step: "04",
-                title: "Real-Time Sync",
-                description:
-                  "WebSocket connections keep employees and managers in sync — schedule changes appear instantly.",
-              },
-            ].map((phase) => (
-              <div key={phase.step}>
-                <span className="text-5xl font-black text-zinc-200 dark:text-zinc-800">
-                  {phase.step}
-                </span>
-                <h4 className="mt-4 text-lg font-semibold text-zinc-900 dark:text-zinc-100">
-                  {phase.title}
-                </h4>
-                <p className="mt-2 text-zinc-600 dark:text-zinc-400">
-                  {phase.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
+      <CaseStudySystemSection
+        variant="light"
+        eyebrow="Platform architecture"
+        title="Configuration at the edge. Discipline at the core."
+        intro="The implementation keeps tenant context, domain workflows, data access, and permissions explicit across the stack so configuration can grow without weakening isolation or maintainability."
+        accent="#b04417"
+        image={{
+          src: "/images/projects/easyrhis/dashbiard.png",
+          alt: "EasyRHIS multi-tenant HR management dashboard",
+        }}
+        items={[
+          {
+            step: "01",
+            label: "Frontend",
+            title: "Angular portals",
+            description:
+              "Shared UI foundations support distinct management and employee journeys while tenant configuration supplies the final experience.",
+          },
+          {
+            step: "02",
+            label: "Domain",
+            title: "Spring Boot services",
+            description:
+              "Workflows, employees, documents, events, and authentication are handled behind clear service boundaries.",
+          },
+          {
+            step: "03",
+            label: "Persistence",
+            title: "PostgreSQL tenancy",
+            description:
+              "Tenant-aware data access makes organisation scope a first-class concern in reads, writes, and administration paths.",
+          },
+          {
+            step: "04",
+            label: "Control",
+            title: "Role-based access",
+            description:
+              "Managers, franchise operators, and employees see only the actions and records appropriate to their role and tenant.",
+          },
+        ]}
+      />
 
       {/* Results Section */}
       <section className="bg-white py-16 sm:py-20 dark:bg-zinc-950">
         <Container>
-          <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">
-            Impact
+          <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-[#bd2634]">
+            Product scope
           </h2>
           <h3 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
-            Powering France&apos;s Food Industry
+            One system, several operating models
           </h3>
           <p className="mt-4 max-w-2xl text-lg text-zinc-600 dark:text-zinc-400">
-            EasyRHIS has transformed HR operations for major franchises, 
-            reducing administrative overhead and improving employee satisfaction.
+            The work focused on the boundaries a multi-brand workforce product must
+            hold in everyday use, without claiming results the product did not measure.
           </p>
 
           <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { value: "3+", label: "Major Brands" },
-              { value: "1000+", label: "Employees Managed" },
-              { value: "60%", label: "Less Admin Time" },
-              { value: "100%", label: "Digital Onboarding" },
+              { value: "Tenant-aware", label: "Data and permissions" },
+              { value: "Brand-led", label: "Identity and configuration" },
+              { value: "Role-based", label: "Manager and employee views" },
+              { value: "Configurable", label: "Requests and approvals" },
             ].map((stat) => (
               <div
                 key={stat.label}
                 className="rounded-2xl border border-zinc-200 bg-white p-8 text-center dark:border-zinc-800 dark:bg-zinc-900"
               >
-                <p className="text-4xl font-bold text-blue-600">{stat.value}</p>
+                <p className="text-3xl font-bold text-[#bd2634]">{stat.value}</p>
                 <p className="mt-2 text-zinc-600 dark:text-zinc-400">
                   {stat.label}
                 </p>
@@ -540,21 +503,21 @@ export default function EasyRHISCaseStudy() {
                   solution:
                     "Single shared Postgres with tenant_id column on every table + Spring Security filter that enforces tenant scoping at query time. Theme + workflow config loaded per-tenant on login so each brand sees its own UI.",
                   impact:
-                    "One platform, three distinct brand experiences (KFC / Five Guys / Burger King franchise networks), zero cross-tenant data leakage.",
+                    "One product can present distinct employer experiences while keeping organisation scope explicit in the service layer.",
                 },
                 {
                   challenge: "Schedule + payroll workflows that vary by brand",
                   solution:
                     "Built a workflow engine where each tenant gets configurable rule sets — shift length limits, OT triggers, vacation accrual rates — loaded from tenant config rather than hardcoded.",
                   impact:
-                    "New franchise onboarding became configuration, not engineering. Faster sales cycle for the platform.",
+                    "Legitimate employer variation lives in configuration instead of spreading client-specific conditions through the codebase.",
                 },
                 {
                   challenge: "Document signing + approval chains",
                   solution:
                     "Generic approval-chain primitive + per-document-type chain definitions stored in tenant config (manager → HR → director, configurable per tenant). Signatures captured via inline pad with full audit trail (signer, IP, timestamp).",
                   impact:
-                    "HR managers configure new approval chains without engineering involvement; signatures legally defensible.",
+                    "Approval steps and signing records follow a visible, tenant-specific path with the actor and time retained for review.",
                 },
               ].map((c, i) => (
                 <div key={i}>
@@ -567,7 +530,7 @@ export default function EasyRHISCaseStudy() {
                       {c.solution}
                     </p>
                     <p>
-                      <span className="text-xs font-semibold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">Outcome · </span>
+                      <span className="text-xs font-semibold uppercase tracking-wider text-[#ff5500]">Outcome · </span>
                       {c.impact}
                     </p>
                   </div>
@@ -579,7 +542,7 @@ export default function EasyRHISCaseStudy() {
       </section>
 
       {/* CTA Section */}
-      <section className="relative overflow-hidden border-t border-zinc-800 bg-zinc-950 py-24">
+      <section className="case-study-closing relative overflow-hidden border-t border-zinc-800 bg-zinc-950 py-24">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,77,31,0.15),transparent_70%)]" />
         <Container className="relative text-center">
           <h2 className="text-3xl font-bold text-white sm:text-4xl md:text-5xl">
@@ -601,7 +564,7 @@ export default function EasyRHISCaseStudy() {
         </Container>
       </section>
 
-      <Footer />
+      <Footer compact />
     </main>
   );
 }

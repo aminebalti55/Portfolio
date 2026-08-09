@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local browser and visual-QA artifacts
+/.playwright-mcp/
+/.codex-dev-*.log
+/*.png

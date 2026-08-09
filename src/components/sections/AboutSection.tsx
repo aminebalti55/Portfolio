@@ -1,7 +1,5 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
 import { motion } from "framer-motion";
 import { about } from "@/lib/content";
 import { Badge } from "@/components/ui/Badge";
@@ -11,46 +9,6 @@ import BlurText from "@/components/reactbits/BlurText";
 import CountUp from "@/components/reactbits/CountUp";
 import SpotlightCard from "@/components/reactbits/SpotlightCard";
 
-// Featured case studies on the home About section. Pulse leads
-// because it solves a real freelance lead-gen problem the existing
-// $99-300/mo SaaS market never addressed.
-const caseStudies = [
-  {
-    id: "01",
-    title: "Pulse",
-    slug: "pulse",
-    category: "Lead-Prospecting Platform",
-    year: "2026",
-    description:
-      "Personal lead engine for freelance devs — 12 source scrapers, 4-stage SMTP email verifier, sequence outreach, and a 1,832-keyword preset library across 42 bundles.",
-    color: "#ff5500",
-    image: "/images/projects/pulse/pulse-01-inbox-overview.png",
-  },
-  {
-    id: "02",
-    title: "InvoiceBirds",
-    slug: "invoicebirds",
-    category: "Full-Stack SaaS",
-    year: "2025",
-    description:
-      "Comprehensive invoicing & business-management platform for freelancers and SMBs — Stripe checkout, multi-currency billing, automated reminders.",
-    color: "#ff7733",
-    image: "/images/projects/invoicebirds/invoicebirds-01-hero.png",
-  },
-  {
-    id: "03",
-    title: "AutoAlly",
-    slug: "autoally",
-    category: "Marketplace Platform",
-    year: "2025",
-    description:
-      "Car marketplace with real-time Socket.io messaging, secure escrow payments, and KYC verification — Spring Boot + Next.js handling thousands of daily transactions.",
-    color: "#8b5cf6",
-    image: "/images/projects/autoally/herosectioj.png",
-  },
-];
-
-// Animation variants
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -223,123 +181,6 @@ export function AboutSection() {
           }}
         />
 
-        {/* Case Studies Section */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-          variants={containerVariants}
-        >
-          {/* Section Header */}
-          <motion.div
-            className="mb-12 flex items-end justify-between"
-            variants={itemVariants}
-          >
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-zinc-500 dark:text-zinc-400">
-                Featured Work
-              </p>
-              <h3 className="mt-2 text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50">
-                Recent Case Studies
-              </h3>
-            </div>
-            <Button href="/work" variant="ghost" className="hidden sm:flex">
-              View all →
-            </Button>
-          </motion.div>
-
-          {/* Case Study Cards */}
-          <div className="grid gap-6 sm:grid-cols-3">
-            {caseStudies.map((study, index) => (
-              <motion.div
-                key={study.id}
-                variants={cardVariants}
-                custom={index}
-                whileHover={{ y: -12 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                <Link
-                  href={`/work/${study.slug}`}
-                  className="group block h-full cursor-pointer overflow-hidden rounded-2xl border border-zinc-200 bg-white transition-colors hover:border-zinc-300 dark:border-zinc-800 dark:bg-zinc-900/80 dark:hover:border-zinc-700"
-                >
-                  {/* Cover Image - No overlay, clean display */}
-                  {study.image && (
-                    <div className="relative aspect-[16/9] w-full overflow-hidden">
-                      <Image
-                        src={study.image}
-                        alt={study.title}
-                        fill
-                        sizes="(min-width: 640px) 33vw, 100vw"
-                        className="object-cover transition-transform duration-500 group-hover:scale-105"
-                      />
-                    </div>
-                  )}
-                  
-                  <div className="p-6">
-                    {/* Number Badge */}
-                    <div className={`${study.image ? 'mb-4' : 'mb-8'} flex items-center justify-between`}>
-                      <motion.span
-                        className="text-6xl font-black text-zinc-100 transition-colors group-hover:text-zinc-200 dark:text-zinc-800/80 dark:group-hover:text-zinc-700"
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.3 + index * 0.1 }}
-                      >
-                        {study.id}
-                      </motion.span>
-                      <span className="rounded-full bg-zinc-100 px-3 py-1 text-xs font-medium text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400">
-                        {study.year}
-                      </span>
-                    </div>
-
-                    {/* Category */}
-                    <p
-                      className="text-xs font-bold uppercase tracking-wider"
-                      style={{ color: study.color }}
-                    >
-                      {study.category}
-                    </p>
-
-                    {/* Title */}
-                    <h4 className="mt-2 text-xl font-bold text-zinc-900 dark:text-zinc-50">
-                      {study.title}
-                    </h4>
-
-                    {/* Description */}
-                    <p className="mt-3 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
-                      {study.description}
-                    </p>
-
-                    {/* Hover Arrow */}
-                    <div className="mt-8 flex items-center gap-2 text-sm font-medium text-zinc-400 transition-colors group-hover:text-zinc-600">
-                      <span>View project</span>
-                      <svg
-                        className="h-4 w-4 transition-transform group-hover:translate-x-1"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M17 8l4 4m0 0l-4 4m4-4H3"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                </Link>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* Mobile View All Button */}
-          <motion.div className="mt-8 sm:hidden" variants={itemVariants}>
-            <Button href="/work" variant="secondary" className="w-full">
-              View all projects →
-            </Button>
-          </motion.div>
-        </motion.div>
       </Container>
     </section>
   );

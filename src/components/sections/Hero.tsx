@@ -5,6 +5,7 @@ import { Container } from "@/components/ui/Container";
 import { SiteHeader } from "@/components/sections/SiteHeader";
 import { socials } from "@/lib/content";
 import { motion } from "framer-motion";
+import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 
 const services = [
   { id: "01", label: "Full-Stack Development" },
@@ -66,11 +67,9 @@ const staggerItem = {
 
 export function Hero() {
   return (
-    <section className="relative isolate min-h-screen overflow-hidden rounded-b-[48px] bg-[#1a0a08] text-white">
-      {/* Background orange ambient glow - more prominent */}
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_70%_at_50%_40%,rgba(255,80,20,0.18)_0%,rgba(200,50,10,0.08)_40%,transparent_65%)]" />
-      {/* Dark vignette overlay for dramatic depth */}
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_50%_40%,transparent_0%,rgba(15,5,5,0.3)_50%,rgba(10,5,5,0.8)_80%,#0a0505_100%)]" />
+    <section className="relative isolate min-h-screen overflow-hidden rounded-b-[48px] bg-[#100706] text-white">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_75%_72%_at_50%_42%,rgba(155,44,12,0.25)_0%,rgba(68,20,10,0.18)_46%,transparent_72%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(17,7,6,0.12)_0%,rgba(12,5,4,0.02)_38%,rgba(5,3,3,0.56)_100%)]" />
       
       <SiteHeader />
 
@@ -88,9 +87,8 @@ export function Hero() {
               animate="visible"
               variants={fadeInScale}
             >
-              <div className="pointer-events-none absolute bottom-[0%] left-1/2 z-0 h-[500px] w-[700px] -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse_at_50%_60%,rgba(255,90,25,0.4)_0%,rgba(255,60,15,0.25)_30%,rgba(200,45,10,0.12)_55%,transparent_75%)] blur-[60px] lg:h-[620px] lg:w-[900px]" />
-              <div className="absolute bottom-[8%] left-1/2 z-0 h-[320px] w-[320px] -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse_100%_120%_at_50%_15%,#ff7b25_0%,#ff6018_20%,#ff4d10_35%,#e83d12_50%,#c52a0a_65%,#8a1805_80%,rgba(60,12,5,0.4)_92%,transparent_100%)] blur-[2px] sm:bottom-[10%] sm:h-[420px] sm:w-[420px] lg:bottom-[4%] lg:h-[540px] lg:w-[540px]" />
-              <div className="absolute bottom-[14%] left-1/2 z-0 h-[180px] w-[180px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle_at_50%_45%,rgba(255,160,100,0.4)_0%,rgba(255,120,60,0.2)_50%,transparent_75%)] blur-[25px] sm:bottom-[16%] sm:h-[260px] sm:w-[260px] lg:bottom-[10%] lg:h-[340px] lg:w-[340px]" />
+              <div className="pointer-events-none absolute bottom-[0%] left-1/2 z-0 h-[500px] w-[700px] -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse_at_50%_60%,rgba(255,81,19,0.30)_0%,rgba(180,44,10,0.16)_42%,transparent_73%)] blur-[68px] lg:h-[620px] lg:w-[900px]" />
+              <div className="absolute bottom-[8%] left-1/2 z-0 h-[320px] w-[320px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle_at_43%_34%,#ff7b35_0%,#ff571c_42%,#e43a10_70%,#9f210a_100%)] shadow-[0_0_90px_rgba(255,73,15,0.18)] sm:bottom-[10%] sm:h-[420px] sm:w-[420px] lg:bottom-[4%] lg:h-[540px] lg:w-[540px]" />
 
               <div className="relative z-10 -mb-24 h-[520px] w-[400px] sm:-mb-28 sm:h-[620px] sm:w-[480px] lg:-mb-32 lg:h-[750px] lg:w-[600px]">
                 <Image
@@ -98,10 +96,10 @@ export function Hero() {
                   alt="Amine - Senior Software Engineer"
                   fill
                   sizes="(min-width: 1024px) 600px, (min-width: 640px) 480px, 400px"
-                  className="object-contain object-bottom"
+                  className="object-contain object-bottom [filter:contrast(1.04)_saturate(.88)_brightness(.98)]"
                   priority
                 />
-                <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#0a0505] via-[#0f0808]/80 to-transparent sm:h-48 lg:h-56" />
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#100706] via-[#100706]/80 to-transparent sm:h-48 lg:h-56" />
               </div>
             </motion.div>
 
@@ -115,12 +113,12 @@ export function Hero() {
                 variants={fadeInUp}
                 custom={0.1}
               >
-                <span className="inline-flex items-center gap-2 rounded-full border border-emerald-400/40 bg-emerald-400/10 px-3 py-1 text-[11px] font-medium text-emerald-300">
-                  <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" />
-                  Available for new projects
+                <span className="inline-flex items-center gap-2 rounded-full border border-[#ff7740]/35 bg-[#ff5a1f]/10 px-3 py-1 text-[11px] font-semibold text-[#ff9b73]">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#ff641f] shadow-[0_0_12px_rgba(255,100,31,0.8)]" />
+                  Open for select engagements
                 </span>
-                <p className="mt-4 text-[11px] font-medium tracking-[0.2em] uppercase text-white/50">
-                  Senior Full-Stack Engineer
+                <p className="mt-4 text-[11px] font-semibold tracking-[0.2em] uppercase text-white/55">
+                  Senior full-stack product engineer
                 </p>
                 <h1 className="font-inter mt-3 text-[clamp(2.8rem,7vw,5.5rem)] font-extrabold uppercase leading-[0.88] tracking-[-0.03em] text-white">
                   I Build
@@ -138,18 +136,18 @@ export function Hero() {
                 animate="visible"
                 variants={fadeInScale}
               >
-                <div className="pointer-events-none absolute bottom-[10%] left-1/2 h-[280px] w-[320px] -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse_at_50%_55%,rgba(255,90,25,0.45)_0%,rgba(255,60,15,0.22)_45%,transparent_75%)] blur-[40px]" />
-                <div className="absolute bottom-[12%] left-1/2 h-[220px] w-[220px] -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse_100%_120%_at_50%_15%,#ff7b25_0%,#ff6018_20%,#ff4d10_35%,#e83d12_50%,#c52a0a_65%,#8a1805_80%,rgba(60,12,5,0.4)_92%,transparent_100%)] blur-[1px]" />
+                <div className="pointer-events-none absolute bottom-[10%] left-1/2 h-[280px] w-[320px] -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse_at_50%_55%,rgba(255,81,19,0.32)_0%,rgba(180,44,10,0.14)_50%,transparent_75%)] blur-[44px]" />
+                <div className="absolute bottom-[12%] left-1/2 h-[220px] w-[220px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle_at_43%_34%,#ff7b35_0%,#ff571c_42%,#e43a10_70%,#9f210a_100%)] shadow-[0_0_65px_rgba(255,73,15,0.18)]" />
                 <div className="relative z-10 h-[340px] w-[260px] sm:h-[400px] sm:w-[300px]">
                   <Image
                     src="/images/amine-portrait.png"
                     alt="Amine - Senior Software Engineer"
                     fill
                     sizes="(max-width: 640px) 260px, 300px"
-                    className="object-contain object-bottom"
+                    className="object-contain object-bottom [filter:contrast(1.04)_saturate(.88)_brightness(.98)]"
                     priority
                   />
-                  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#0a0505] via-[#0f0808]/80 to-transparent" />
+                  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#100706] via-[#100706]/80 to-transparent" />
                 </div>
               </motion.div>
 
@@ -158,84 +156,52 @@ export function Hero() {
 
               {/* Right column - Description, CTA, secondary actions */}
               <motion.div
-                className="order-3 flex flex-col items-center text-center lg:items-start lg:pb-28 lg:text-left"
+                className="hero-brief order-3 lg:pb-24"
                 initial="hidden"
                 animate="visible"
                 variants={fadeInUp}
                 custom={0.3}
               >
-                <p className="max-w-[400px] text-[13px] leading-[1.8] text-white/80 lg:max-w-[360px]">
-                  Internal tools and AI workflows for founders and teams who
-                  need senior execution without agency overhead. Remote, EU
-                  and US time zones.
+                <h2 className="hero-brief__statement">
+                  From first decision
+                  <span>to production.</span>
+                </h2>
+                <p className="hero-brief__summary">
+                  Senior product engineering for complex SaaS and internal tools, owned end to end.
                 </p>
-                <p className="mt-3 max-w-[400px] text-[12px] leading-[1.6] text-white/55 lg:max-w-[360px]">
-                  $55–75/hr · Open to new freelance & contract work.
-                </p>
+                <div className="hero-brief__engagement">
+                  <span>Remote · EU + US overlap</span>
+                </div>
 
-                {/* Primary CTA — anchor to #contact (smooth scroll via CSS) */}
                 <motion.a
-                  href="#contact"
-                  className="group mt-5 flex w-full max-w-[400px] items-center justify-between rounded-full bg-white py-2.5 pl-5 pr-2 text-[13px] font-medium text-zinc-900 shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all lg:max-w-[360px]"
+                  href={socials.calendly}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hero-brief__cta"
                   whileHover={{
                     scale: 1.02,
-                    boxShadow: "0 25px 60px rgba(0,0,0,0.6)",
                   }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  <span className="whitespace-nowrap">Book a 20-min call</span>
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#ff5500] text-white transition-transform duration-300 group-hover:rotate-45">
-                    <svg
-                      viewBox="0 0 24 24"
-                      aria-hidden="true"
-                      className="h-3.5 w-3.5"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path d="M7 17L17 7" />
-                      <path d="M10 7h7v7" />
-                    </svg>
-                  </span>
+                  <span>Book a 20-minute call</span>
+                  <strong aria-hidden="true">↗</strong>
                 </motion.a>
 
-                {/* Secondary: direct email — no JS, no form, no friction. */}
-                <a
-                  href={`mailto:${socials.email}?subject=Project%20enquiry`}
-                  className="mt-3 inline-flex items-center gap-1.5 text-[12px] text-white/65 transition hover:text-white"
-                >
-                  Or email me directly
-                  <span aria-hidden="true">→</span>
-                </a>
-
-                {/* Profile chips — LinkedIn + GitHub trust signals */}
-                <div className="mt-5 flex items-center gap-2">
-                  <a
-                    href={socials.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="LinkedIn profile"
-                    className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-[11px] text-white/70 backdrop-blur-sm transition hover:border-white/25 hover:bg-white/10 hover:text-white"
-                  >
-                    <svg className="h-3.5 w-3.5" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.95v5.66H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43c-1.14 0-2.06-.93-2.06-2.06s.93-2.06 2.06-2.06 2.06.93 2.06 2.06-.93 2.06-2.06 2.06zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.23.79 24 1.77 24h20.45C23.2 24 24 23.23 24 22.27V1.72C24 .77 23.2 0 22.22 0z" />
-                    </svg>
-                    LinkedIn
+                <div className="hero-brief__contact">
+                  <a href={`mailto:${socials.email}?subject=Project%20enquiry`}>
+                    <span>Email directly</span>
+                    <strong>{socials.email}</strong>
                   </a>
-                  <a
-                    href={socials.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="GitHub profile"
-                    className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-[11px] text-white/70 backdrop-blur-sm transition hover:border-white/25 hover:bg-white/10 hover:text-white"
-                  >
-                    <svg className="h-3.5 w-3.5" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.111.82-.261.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
-                    </svg>
-                    GitHub
-                  </a>
+                  <div>
+                    <a className="inline-flex items-center gap-1.5" href={socials.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+                      <FaLinkedinIn size={13} aria-hidden="true" />
+                      LinkedIn
+                    </a>
+                    <a className="inline-flex items-center gap-1.5" href={socials.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+                      <FaGithub size={13} aria-hidden="true" />
+                      GitHub
+                    </a>
+                  </div>
                 </div>
               </motion.div>
             </div>

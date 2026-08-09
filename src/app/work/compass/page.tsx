@@ -1,20 +1,23 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
+import { LivePill } from "@/components/ui/LivePill";
 import { Container } from "@/components/ui/Container";
 import { Badge } from "@/components/ui/Badge";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { SiteHeader } from "@/components/sections/SiteHeader";
 import { Footer } from "@/components/sections/Footer";
+import { CaseStudySystemSection } from "@/components/ui/CaseStudySystemSection";
 
 export const metadata: Metadata = {
   title: "Compass Solutions — Case Study",
   description:
-    "Software Engineer at Compass Solutions (Tunisia, Remote, 2026 – Present). Production fleet-management & GPS-tracking platform with AI-powered driver, fuel, and maintenance modules. Real-time map, vehicle, alerts, reports, and the Compass Assistant LLM agent.",
+    "Work on Compass Solutions' fleet-operations platform across GPS telemetry, vehicles, alerts, partner tooling, reporting, and a database-grounded assistant.",
 };
 
 const TECH = [
   "Next.js",
+  "Hono",
   "TypeScript",
   "PostgreSQL",
   "Real-time map (Mapbox)",
@@ -28,52 +31,64 @@ const TECH = [
 const STATS = [
   { value: "10+", label: "production modules owned" },
   { value: "Real-time", label: "GPS + telemetry tracking" },
-  { value: "AI-powered", label: "driver / fuel / maintenance" },
+  { value: "Tool-calling", label: "fleet operations assistant" },
   { value: "Multi-tenant", label: "fleet & organization scoping" },
 ];
 
-const MODULES = [
+// Product screens. All captures are ~1908x910 (2.1:1) — keep new ones at
+// that ratio so the gallery panel doesn't jump height between tabs.
+//
+// Split into two groups because Compass is really two surfaces: what the
+// fleet operator uses, and the partner portal the reseller runs the whole
+// book of business from. Collapsing them hid the second one entirely.
+const SCREENS = [
   {
-    number: "01",
-    title: "Live Map",
-    description:
-      "Real-time vehicle positions on an interactive map with cluster markers, route history, and per-vehicle telemetry overlays. Built with Mapbox GL + WebSocket streams from the GPS backend so fleet managers see vehicle state without refreshing.",
-    tech: "Next.js · Mapbox GL · WebSockets · PostgreSQL",
+    group: "Operator",
+    eyebrow: "Overview",
+    title: "The whole fleet on one screen",
+    body: "Fleet status, distance, alert volume and fuel spend for the selected range, over a live satellite map of every active vehicle — then weekly activity, top distances, recent trips and the latest alerts underneath.",
+    src: "compass-app-01-overview.png",
+    alt: "Compass Solutions overview — fleet KPIs, live satellite map and weekly activity",
   },
   {
-    number: "02",
-    title: "Vehicles & Devices",
-    description:
-      "Per-vehicle dashboards with status (moving / stopped / offline), assignment to drivers, geofences, telemetry history, and document attachments. CRUD across the entire fleet with bulk operations and CSV export.",
-    tech: "Next.js · TanStack Query · PostgreSQL · React Hook Form",
+    group: "Operator",
+    eyebrow: "Vehicles",
+    title: "Every vehicle, and whether it is actually reporting",
+    body: "Online / offline / needs-attention split across the fleet, then a card per vehicle with make, plate, device ID, driver assignment and last-seen time. Grouping, sorting and search on top for larger books.",
+    src: "compass-app-02-vehicles.png",
+    alt: "Compass Solutions vehicles — fleet status breakdown and per-vehicle cards with device and last-seen",
   },
   {
-    number: "03",
-    title: "Alerts & Geofences",
-    description:
-      "Configurable alert rules — speed thresholds, geofence enter/exit, harsh braking, idle time. 99+ alert volume per day across the fleet with severity classification, assignment workflows, and acknowledgement tracking.",
-    tech: "PostgreSQL · Cron jobs · Notification fanout · Real-time WebSocket push",
+    group: "Operator",
+    eyebrow: "Alerts",
+    title: "Every incident, triaged and assignable",
+    body: "Speed, geofence, harsh braking and idle events, split by severity with mean response time and treatment rate. Each alert opens evidence — the measured value against the rule, the map position, the source sensor, coordinates — and a one-click intervene action.",
+    src: "compass-app-03-alerts.png",
+    alt: "Compass Solutions alerts — severity KPIs, incident history and an evidence panel with map position",
   },
   {
-    number: "04",
-    title: "AI Modules — Drivers · Fuel · Maintenance",
-    description:
-      "LLM-augmented modules that surface insights from raw telemetry: driver-behavior scoring, fuel-anomaly detection (per-trip vs fleet baseline), and predictive-maintenance recommendations from mileage + sensor patterns.",
-    tech: "LLM agents · Telemetry analytics · PostgreSQL aggregations",
+    group: "Operator",
+    eyebrow: "Compass Assistant",
+    title: "Ask the fleet a question in plain language",
+    body: "LLM tool-calling agent scoped to fleet operations. It resolves plain French or English questions into the right tool calls — vehicles, alerts, trips, drivers, maintenance, fuel — runs them against the live database, and answers from tool output rather than from the model.",
+    src: "compass-app-04-assistant.png",
+    alt: "Compass Assistant — natural-language fleet queries with suggested prompts across six domains",
   },
   {
-    number: "05",
-    title: "Compass Assistant",
-    description:
-      "Natural-language fleet operator — engineers ask questions in plain French/English (\"which vehicles drove the most yesterday?\", \"show me alerts on vehicle 12 this week\") and the assistant returns structured answers with deep-links into the relevant pages.",
-    tech: "LLM · Tool calling · Custom Compass tool registry",
+    group: "Partner",
+    eyebrow: "Partner fleet",
+    title: "879 vehicles across 666 client organisations",
+    body: "The reseller-side portal. Every device across every client organisation in one book: online, offline and never-reported counts, financing state for clients awaiting billing, and search across client, phone, plate, IMEI or SIM.",
+    src: "compass-app-05-partner-fleet.png",
+    alt: "Compass GPS partner portal — 879 devices across 666 client organisations with status and billing state",
   },
   {
-    number: "06",
-    title: "Reports & Documents",
-    description:
-      "Custom report builder with date ranges, vehicle filters, and KPI selectors. PDF/Excel export. Document wallet for vehicle paperwork (insurance, registration, inspection) with expiry-date alerts.",
-    tech: "PDF generation · Cloud storage · Cron jobs",
+    group: "Partner",
+    eyebrow: "Device & SIM",
+    title: "Provisioning down to the SIM and the IMEI",
+    body: "Per-device record tying plate, IMEI, tracker model, SIM and carrier to the owning client and driver, with live position, odometer, document expiry, and an SMS command channel to the tracker itself.",
+    src: "compass-app-06-partner-device.png",
+    alt: "Compass GPS partner portal — device detail with SIM, IMEI, live position and SMS command channel",
   },
 ];
 
@@ -81,72 +96,30 @@ const CHALLENGES = [
   {
     challenge: "Real-time at fleet scale without melting the database",
     solution:
-      "Telemetry streams arrive at high cadence — naive 'just upsert into Postgres' would crush write IOPS. Built a buffered ingestion layer that batches inserts every N ms, separate hot-cache for the live-map view, and aggregated rollups for historical queries so the map stays sub-200ms responsive while the backend isn't constantly contending on row locks.",
+      "Telemetry arrives far more often than the product needs to redraw every screen. The system keeps current map reads and historical reporting on different paths, with buffered writes and aggregated records where the workload calls for them.",
     impact:
-      "Live-map updates feel instant; historical queries don't compete with the ingest pipeline.",
+      "Operators can move between current vehicle state and historical activity without treating them as the same query problem.",
   },
   {
     challenge: "Multi-tenant access across vehicles, drivers, organizations",
     solution:
-      "Each user belongs to one or more organizations; each organization owns vehicles, drivers, geofences, and reports. Built a fleet-scoped access layer at the query level so that no cross-tenant leakage is possible, plus a clean RBAC model surfaced through a Team page where org admins manage roles.",
+      "Users, organisations, vehicles, drivers, geofences, and reports all carry explicit ownership context. Query paths and team-management actions respect that scope rather than relying on the interface to filter records after loading them.",
     impact:
-      "Organizations can grow into thousands of vehicles without leaking data across tenants.",
+      "The same organisation boundary is applied across operator screens, partner tooling, and reporting paths.",
   },
   {
     challenge: "AI assistant that actually answers fleet questions",
     solution:
-      "Built a tool-calling layer specific to fleet operations: vehicles, alerts, geofences, fuel queries, driver lookups. The assistant translates plain-language questions into the right tool calls, fetches the data, and renders an inline answer with deep-links — no hallucinations because it's grounded in the database.",
+      "The assistant uses a fleet-specific tool layer for vehicles, alerts, trips, drivers, maintenance, and fuel. It answers from tool results and links operators back to the relevant product surface instead of presenting free-form model output as operational truth.",
     impact:
-      "Fleet managers get answers in 5 seconds instead of clicking through 6 dashboards.",
+      "Common questions can begin in natural language while the underlying data remains traceable to the product.",
   },
   {
     challenge: "Engineering-friction reduction across the codebase",
     solution:
-      "Introduced reusable UI patterns, structured service logic, database migrations, seed scripts, type-checking, and build-quality improvements across the platform so future contributors ship faster with fewer regressions.",
+      "Introduced reusable interface patterns, structured service logic, migrations, seed scripts, type-checking, and build-quality improvements in the areas I worked on.",
     impact:
-      "New modules now reuse 60-70% of existing primitives instead of reinventing forms, RBAC, and notifications.",
-  },
-];
-
-const STACK_GROUPS = [
-  {
-    title: "Frontend",
-    items: [
-      "Next.js 14 (App Router)",
-      "TypeScript strict mode",
-      "Tailwind CSS · Radix UI",
-      "Mapbox GL JS",
-      "TanStack Query",
-      "React Hook Form · Zod",
-    ],
-  },
-  {
-    title: "Backend",
-    items: [
-      "Node.js · TypeScript",
-      "REST + tRPC",
-      "WebSocket server (real-time)",
-      "Cron jobs (alerts, reports)",
-    ],
-  },
-  {
-    title: "Data",
-    items: [
-      "PostgreSQL",
-      "Prisma ORM",
-      "Telemetry buffering layer",
-      "Multi-tenant row-level scoping",
-      "Aggregated rollups for analytics",
-    ],
-  },
-  {
-    title: "AI & Infra",
-    items: [
-      "LLM tool-calling agent",
-      "Custom Compass tool registry",
-      "Cloud object storage (documents)",
-      "Vercel-style deployment workflow",
-    ],
+      "New work can follow established form, access-control, and notification patterns instead of inventing another local convention.",
   },
 ];
 
@@ -160,10 +133,10 @@ const OUTCOMES = [
 
 export default function CompassCaseStudy() {
   return (
-    <main className="min-h-screen bg-white text-zinc-950 dark:bg-zinc-950 dark:text-zinc-50">
+    <main className="case-detail min-h-screen bg-white text-zinc-950 dark:bg-zinc-950 dark:text-zinc-50">
       {/* ─── Hero ──────────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden bg-[#080406] text-white">
-        <div className="absolute inset-0 bg-[radial-gradient(1100px_circle_at_70%_0%,rgba(255,77,31,0.55),transparent_55%),radial-gradient(900px_circle_at_20%_10%,rgba(255,0,92,0.25),transparent_55%)]" />
+      <section className="relative overflow-hidden bg-[#061a2b] text-white">
+        <div className="absolute inset-0 bg-[radial-gradient(1100px_circle_at_70%_0%,rgba(31,139,197,0.62),transparent_55%),radial-gradient(900px_circle_at_20%_10%,rgba(10,88,143,0.42),transparent_55%)]" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/30 to-black/60" />
 
         <SiteHeader />
@@ -183,15 +156,7 @@ export default function CompassCaseStudy() {
             <Badge className="border-white/15 bg-white/10 text-white">Compass Solutions</Badge>
             <Badge className="border-white/15 bg-white/10 text-white">Tunisia · Remote</Badge>
             <Badge className="border-white/15 bg-white/10 text-white">2026 — Present</Badge>
-            <a
-              href="https://www.compasssolutions.ai/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 rounded-full border border-emerald-400/40 bg-emerald-400/15 px-3 py-1 text-xs font-medium text-emerald-300 transition-colors hover:bg-emerald-400/25"
-            >
-              <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" />
-              Live · compasssolutions.ai
-            </a>
+            <LivePill href="https://www.compasssolutions.ai/" />
           </div>
 
           <h1 className="mt-6 font-display text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
@@ -224,25 +189,6 @@ export default function CompassCaseStudy() {
         </Container>
       </section>
 
-      {/* ─── Hero Screenshot — Live Map ─────────────────────────────── */}
-      <section className="bg-white dark:bg-zinc-950">
-        <Container className="py-12 sm:py-16">
-          <div className="relative aspect-[16/9] overflow-hidden rounded-2xl border border-zinc-200 bg-zinc-100 shadow-2xl dark:border-zinc-800 dark:bg-zinc-900">
-            <Image
-              src="/images/projects/compass/compass-app-02-map.png"
-              alt="Compass Solutions live map view — real-time vehicle positions across a customer fleet"
-              fill
-              className="object-cover object-top"
-              priority
-            />
-          </div>
-          <p className="mx-auto mt-4 max-w-2xl text-center text-sm text-zinc-500 dark:text-zinc-400">
-            Live-map view — every active vehicle on the customer fleet,
-            updated in real time via WebSocket telemetry stream.
-          </p>
-        </Container>
-      </section>
-
       {/* ─── Stats Strip ───────────────────────────────────────────── */}
       <section className="border-y border-zinc-200 bg-zinc-50 py-12 dark:border-zinc-800 dark:bg-zinc-900/40">
         <Container>
@@ -264,7 +210,7 @@ export default function CompassCaseStudy() {
         <Container>
           <div className="grid gap-12 lg:grid-cols-12">
             <div className="lg:col-span-4">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#ff5500]">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#1686c8]">
                 Overview
               </p>
               <h2 className="mt-3 text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl dark:text-zinc-50">
@@ -300,114 +246,87 @@ export default function CompassCaseStudy() {
         </Container>
       </section>
 
-      {/* ─── Modules ───────────────────────────────────────────────── */}
-      <section className="bg-zinc-50 py-20 dark:bg-zinc-900/40">
-        <Container>
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#ff5500]">
-            Modules
-          </p>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl dark:text-zinc-50">
-            Six core modules I work across
-          </h2>
-          <p className="mt-4 max-w-2xl text-base leading-relaxed text-zinc-600 dark:text-zinc-400">
-            Each module spans frontend dashboards, backend services, the
-            PostgreSQL data layer, and the deployment workflow — end-to-end
-            ownership across the stack.
-          </p>
+      <CaseStudySystemSection
+        variant="dark"
+        eyebrow="Operational model"
+        title="From moving vehicle to accountable decision."
+        intro="Compass connects two product surfaces—the fleet operator workspace and the partner portal—through one operational model for live state, incidents, access, and grounded answers."
+        accent="#7ed8ff"
+        background="linear-gradient(145deg, #061a2b 0%, #0b5f99 58%, #08263d 100%)"
+        items={[
+          {
+            step: "01",
+            label: "Observe",
+            title: "Live telemetry",
+            description:
+              "Position, movement, distance, fuel, and device health become current fleet state instead of disconnected tracker messages.",
+          },
+          {
+            step: "02",
+            label: "Respond",
+            title: "Operational rules",
+            description:
+              "Speed, geofence, braking, idle, maintenance, and fuel signals become evidence-backed alerts that teams can triage and assign.",
+          },
+          {
+            step: "03",
+            label: "Administer",
+            title: "Partner control",
+            description:
+              "Client organisations, devices, SIMs, billing state, and provisioning stay manageable from a dedicated reseller-side workspace.",
+          },
+          {
+            step: "04",
+            label: "Understand",
+            title: "Grounded assistant",
+            description:
+              "Natural-language questions resolve to fleet-specific tools and live records, returning useful answers with paths back into the product.",
+          },
+        ]}
+      />
 
-          <div className="mt-12 grid gap-6 md:grid-cols-2">
-            {MODULES.map((m) => (
-              <div
-                key={m.number}
-                className="rounded-2xl border border-zinc-200 bg-white p-8 dark:border-zinc-800 dark:bg-zinc-950"
-              >
-                <div className="text-5xl font-black text-[#ff5500]/20">
-                  {m.number}
-                </div>
-                <h3 className="mt-4 text-xl font-bold text-zinc-900 dark:text-zinc-50">
-                  {m.title}
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
-                  {m.description}
-                </p>
-                <p className="mt-4 text-xs font-medium text-[#ff5500] dark:text-[#ff7733]">
-                  {m.tech}
-                </p>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      {/* ─── Vehicles + AI Assistant screenshots ──────────────────── */}
-      <section className="bg-white py-20 dark:bg-zinc-950">
-        <Container>
-          <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
-            <div className="lg:col-span-5">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#ff5500]">
-                Vehicles & Devices
+      {SCREENS.map((screen, i) => (
+        <section
+          key={screen.src}
+          className={
+            i % 2 === 0
+              ? "bg-white py-16 dark:bg-zinc-950"
+              : "bg-zinc-50 py-16 dark:bg-zinc-900/40"
+          }
+        >
+          <Container>
+            <div className="max-w-2xl">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#1686c8]">
+                {screen.group} · {screen.eyebrow}
               </p>
-              <h3 className="mt-3 text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50">
-                One place to see and manage every vehicle
+              <h3 className="mt-3 text-2xl font-bold tracking-tight text-zinc-900 sm:text-3xl dark:text-zinc-50">
+                {screen.title}
               </h3>
               <p className="mt-4 text-base leading-relaxed text-zinc-600 dark:text-zinc-400">
-                Per-vehicle dashboards showing status (moving / stopped /
-                offline), driver assignment, telemetry history, geofence
-                memberships, document expiries, and alert history. Bulk
-                operations + CSV export for ops teams.
+                {screen.body}
               </p>
             </div>
-            <div className="overflow-hidden rounded-2xl border border-zinc-200 shadow-2xl lg:col-span-7 dark:border-zinc-800">
+            {/* Hairline border, no shadow — a screenshot is a picture, not an
+                object floating above the page. */}
+            <div className="mt-8 overflow-hidden rounded-2xl border border-black/10 dark:border-white/10">
               <Image
-                src="/images/projects/compass/compass-app-03-vehicles.png"
-                alt="Compass Solutions vehicles list — fleet-wide vehicle inventory with status, alerts, and quick actions"
-                width={1920}
-                height={893}
+                src={`/images/projects/compass/${screen.src}`}
+                alt={screen.alt}
+                width={1908}
+                height={912}
                 className="h-auto w-full"
               />
             </div>
-          </div>
-        </Container>
-      </section>
-
-      <section className="bg-zinc-50 py-20 dark:bg-zinc-900/40">
-        <Container>
-          <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
-            <div className="order-2 overflow-hidden rounded-2xl border border-zinc-200 shadow-2xl lg:order-1 lg:col-span-7 dark:border-zinc-800">
-              <Image
-                src="/images/projects/compass/compass-app-04-ai-assistant.png"
-                alt="Compass Assistant — natural-language interface for asking fleet questions and getting structured answers"
-                width={1920}
-                height={893}
-                className="h-auto w-full"
-              />
-            </div>
-            <div className="order-1 lg:order-2 lg:col-span-5">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#ff5500]">
-                Compass Assistant
-              </p>
-              <h3 className="mt-3 text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50">
-                Natural language, grounded answers
-              </h3>
-              <p className="mt-4 text-base leading-relaxed text-zinc-600 dark:text-zinc-400">
-                LLM tool-calling agent purpose-built for fleet operations. It
-                resolves plain-language questions into the right tool calls
-                (vehicles, alerts, geofences, fuel, drivers), executes them
-                against the live database, and renders a structured answer
-                with deep-links into the relevant pages — no hallucinations
-                because every answer is grounded in tool output.
-              </p>
-            </div>
-          </div>
-        </Container>
-      </section>
+          </Container>
+        </section>
+      ))}
 
       {/* ─── Engineering Challenges ────────────────────────────────── */}
       <section className="bg-white py-20 dark:bg-zinc-950">
         <Container>
           <div className="grid gap-12 lg:grid-cols-12">
             <div className="lg:col-span-4">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#ff5500]">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#1686c8]">
                 Engineering Challenges
               </p>
               <h2 className="mt-3 text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl dark:text-zinc-50">
@@ -422,13 +341,13 @@ export default function CompassCaseStudy() {
                   </h3>
                   <div className="mt-3 space-y-3 text-base leading-relaxed text-zinc-600 dark:text-zinc-400">
                     <p>
-                      <span className="text-xs font-semibold uppercase tracking-wider text-[#ff5500]">
+                      <span className="text-xs font-semibold uppercase tracking-wider text-[#1686c8]">
                         Solution ·{" "}
                       </span>
                       {c.solution}
                     </p>
                     <p>
-                      <span className="text-xs font-semibold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
+                      <span className="text-xs font-semibold uppercase tracking-wider text-[#1686c8]">
                         Outcome ·{" "}
                       </span>
                       {c.impact}
@@ -441,48 +360,54 @@ export default function CompassCaseStudy() {
         </Container>
       </section>
 
-      {/* ─── Stack ────────────────────────────────────────────────── */}
-      <section className="bg-zinc-50 py-20 dark:bg-zinc-900/40">
-        <Container>
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#ff5500]">
-            The Stack
-          </p>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl dark:text-zinc-50">
-            How it&apos;s built end-to-end
-          </h2>
-
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {STACK_GROUPS.map((g) => (
-              <div
-                key={g.title}
-                className="rounded-2xl border border-zinc-200 bg-white p-6 dark:border-zinc-800 dark:bg-zinc-950"
-              >
-                <h3 className="text-sm font-bold uppercase tracking-wider text-[#ff5500]">
-                  {g.title}
-                </h3>
-                <ul className="mt-4 space-y-2">
-                  {g.items.map((item) => (
-                    <li
-                      key={item}
-                      className="flex items-start gap-2 text-sm text-zinc-700 dark:text-zinc-300"
-                    >
-                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#ff5500]" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
+      <CaseStudySystemSection
+        variant="light"
+        eyebrow="Platform architecture"
+        title="Fast live state without sacrificing durable history."
+        intro="The system separates high-cadence location updates from historical reporting and keeps organisation scope explicit at every boundary—from the map to the assistant."
+        accent="#0d6ea8"
+        image={{
+          src: "/images/projects/compass/compass-app-01-overview.png",
+          alt: "Compass fleet operations overview with map and operational metrics",
+        }}
+        items={[
+          {
+            step: "01",
+            label: "Surface",
+            title: "Next.js + Hono product",
+            description:
+              "Next.js powers the operator experience while Hono provides the typed API layer behind maps, vehicles, alerts, reports, forms, and partner tooling.",
+          },
+          {
+            step: "02",
+            label: "Ingest",
+            title: "Real-time telemetry path",
+            description:
+              "Buffered updates and live channels keep the map responsive while protecting durable storage from high-frequency write contention.",
+          },
+          {
+            step: "03",
+            label: "Data",
+            title: "PostgreSQL operations",
+            description:
+              "Current state, historical records, and aggregated reporting remain queryable through tenant-aware service boundaries.",
+          },
+          {
+            step: "04",
+            label: "Intelligence",
+            title: "Tool-grounded AI",
+            description:
+              "The assistant can access only registered fleet tools and scoped records, making its answers traceable to production data.",
+          },
+        ]}
+      />
 
       {/* ─── Outcomes ─────────────────────────────────────────────── */}
       <section className="bg-white py-20 dark:bg-zinc-950">
         <Container>
           <div className="grid gap-12 lg:grid-cols-12">
             <div className="lg:col-span-4">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#ff5500]">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#1686c8]">
                 What I Deliver
               </p>
               <h2 className="mt-3 text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl dark:text-zinc-50">
@@ -496,7 +421,7 @@ export default function CompassCaseStudy() {
                     key={i}
                     className="flex items-start gap-4 rounded-xl border border-zinc-200 bg-zinc-50 p-5 dark:border-zinc-800 dark:bg-zinc-900/40"
                   >
-                    <span className="font-display text-2xl font-bold text-[#ff5500]/40">
+                    <span className="font-display text-2xl font-bold text-[#1686c8]/55">
                       0{i + 1}
                     </span>
                     <p className="text-base leading-relaxed text-zinc-700 dark:text-zinc-300">
@@ -511,10 +436,10 @@ export default function CompassCaseStudy() {
                   href="https://www.compasssolutions.ai/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-lg border border-emerald-400/40 bg-emerald-400/10 px-5 py-3 text-sm font-medium text-emerald-700 transition-colors hover:bg-emerald-400/20 dark:text-emerald-300"
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-black/12 px-5 py-2.5 text-sm font-medium text-zinc-950 transition-colors hover:border-black/30 hover:bg-black/[0.03] dark:border-white/15 dark:text-zinc-100 dark:hover:border-white/30 dark:hover:bg-white/5"
                 >
-                  <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-500" />
-                  Visit live product →
+                  Visit live product
+                  <span aria-hidden="true">→</span>
                 </a>
               </div>
             </div>
@@ -523,7 +448,7 @@ export default function CompassCaseStudy() {
       </section>
 
       {/* ─── CTA ──────────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden border-t border-zinc-800 bg-zinc-950 py-24">
+      <section className="case-study-closing relative overflow-hidden border-t border-zinc-800 bg-zinc-950 py-24">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,77,31,0.15),transparent_70%)]" />
         <Container className="relative text-center">
           <h2 className="text-3xl font-bold text-white sm:text-4xl md:text-5xl">
@@ -544,7 +469,7 @@ export default function CompassCaseStudy() {
         </Container>
       </section>
 
-      <Footer />
+      <Footer compact />
     </main>
   );
 }

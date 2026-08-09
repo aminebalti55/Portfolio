@@ -1,24 +1,26 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
+import { LivePill } from "@/components/ui/LivePill";
 import { Container } from "@/components/ui/Container";
 import { Badge } from "@/components/ui/Badge";
 import { ButtonLink } from "@/components/ui/ButtonLink";
+import { CaseStudySystemSection } from "@/components/ui/CaseStudySystemSection";
 import { SiteHeader } from "@/components/sections/SiteHeader";
 import { Footer } from "@/components/sections/Footer";
 
 export const metadata: Metadata = {
   title: "InvoiceBirds — Case Study",
   description:
-    "A simple yet powerful invoicing platform built for small businesses who need essential features without the complexity.",
+    "A production invoicing and business-management platform spanning billing, payments, documents, expenses, clients, and reporting.",
 };
 
 export default function InvoiceBirdsCaseStudy() {
   return (
-    <main className="min-h-screen bg-white text-zinc-950 dark:bg-zinc-950 dark:text-zinc-50">
+    <main className="case-detail min-h-screen bg-white text-zinc-950 dark:bg-zinc-950 dark:text-zinc-50">
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-[#080406] text-white">
-        <div className="absolute inset-0 bg-[radial-gradient(1100px_circle_at_70%_0%,rgba(255,77,31,0.55),transparent_55%),radial-gradient(900px_circle_at_20%_10%,rgba(255,0,92,0.25),transparent_55%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(1100px_circle_at_70%_0%,rgba(255,77,0,0.62),transparent_55%),radial-gradient(900px_circle_at_20%_10%,rgba(255,255,255,0.08),transparent_55%)]" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/30 to-black/60" />
 
         <SiteHeader />
@@ -50,15 +52,7 @@ export default function InvoiceBirdsCaseStudy() {
             </Badge>
             <Badge className="border-white/15 bg-white/10 text-white">UK · Remote</Badge>
             <Badge className="border-white/15 bg-white/10 text-white">Feb 2025 – Sep 2025 · Contract</Badge>
-            <a
-              href="https://www.invoicebirds.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 rounded-full border border-emerald-400/40 bg-emerald-400/15 px-3 py-1 text-xs font-medium text-emerald-300 transition-colors hover:bg-emerald-400/25"
-            >
-              <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" />
-              Live · invoicebirds.com
-            </a>
+            <LivePill href="https://www.invoicebirds.com/" />
           </div>
 
           <h1 className="mt-6 font-display text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
@@ -66,29 +60,28 @@ export default function InvoiceBirdsCaseStudy() {
           </h1>
 
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/75 sm:text-xl">
-            Born from a real need — small businesses wanted a simple, intuitive way 
-            to manage their invoices without the bloat. InvoiceBirds delivers 
-            essential features enhanced with smart automation, making invoicing 
-            effortless for entrepreneurs and freelancers.
+            A production billing workspace for freelancers and small businesses—covering
+            document creation, invoice lifecycle, client management, expenses, payments,
+            reporting, and the operational details between them.
           </p>
 
-          <div className="mt-10 flex flex-wrap gap-3">
-            <span className="inline-flex items-center rounded-full border border-white/30 bg-white/20 px-3 py-1 text-xs font-medium text-white">
+          <div className="mt-10 flex flex-wrap gap-2.5">
+            <span className="inline-flex items-center rounded-full border border-white/25 bg-white/10 px-4 py-2 text-[13px] font-semibold text-white/90 backdrop-blur-sm">
               Next.js
             </span>
-            <span className="inline-flex items-center rounded-full border border-white/30 bg-white/20 px-3 py-1 text-xs font-medium text-white">
+            <span className="inline-flex items-center rounded-full border border-white/25 bg-white/10 px-4 py-2 text-[13px] font-semibold text-white/90 backdrop-blur-sm">
               Tailwind CSS
             </span>
-            <span className="inline-flex items-center rounded-full border border-white/30 bg-white/20 px-3 py-1 text-xs font-medium text-white">
+            <span className="inline-flex items-center rounded-full border border-white/25 bg-white/10 px-4 py-2 text-[13px] font-semibold text-white/90 backdrop-blur-sm">
               NestJS
             </span>
-            <span className="inline-flex items-center rounded-full border border-white/30 bg-white/20 px-3 py-1 text-xs font-medium text-white">
+            <span className="inline-flex items-center rounded-full border border-white/25 bg-white/10 px-4 py-2 text-[13px] font-semibold text-white/90 backdrop-blur-sm">
               Next.js API Routes
             </span>
-            <span className="inline-flex items-center rounded-full border border-white/30 bg-white/20 px-3 py-1 text-xs font-medium text-white">
+            <span className="inline-flex items-center rounded-full border border-white/25 bg-white/10 px-4 py-2 text-[13px] font-semibold text-white/90 backdrop-blur-sm">
               Supabase
             </span>
-            <span className="inline-flex items-center rounded-full border border-white/30 bg-white/20 px-3 py-1 text-xs font-medium text-white">
+            <span className="inline-flex items-center rounded-full border border-white/25 bg-white/10 px-4 py-2 text-[13px] font-semibold text-white/90 backdrop-blur-sm">
               Stripe
             </span>
           </div>
@@ -100,8 +93,8 @@ export default function InvoiceBirdsCaseStudy() {
         <Container className="py-12 sm:py-16">
           <div className="relative aspect-[16/9] overflow-hidden rounded-2xl border border-zinc-200 bg-zinc-100 dark:border-zinc-800 dark:bg-zinc-900">
             <Image
-              src="/images/projects/invoicebirds/invoicebirds-01-hero.png"
-              alt="InvoiceBirds Hero"
+              src="/images/projects/invoicebirds/live-2026/landing-hero.png"
+              alt="InvoiceBirds public landing page showing the invoicing product suite"
               fill
               className="object-cover"
               priority
@@ -119,26 +112,23 @@ export default function InvoiceBirdsCaseStudy() {
                 Overview
               </h2>
               <h3 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
-                The Challenge
+                Turning financial admin into one workflow
               </h3>
               <div className="mt-6 space-y-4 text-lg leading-relaxed text-zinc-600 dark:text-zinc-400">
                 <p>
-                  Small business owners were frustrated. The invoicing tools on the market 
-                  were either overly complicated enterprise solutions with steep learning 
-                  curves, or bare-bones apps that lacked the features they actually needed. 
-                  They wanted something in between — simple enough to use right away, but 
-                  powerful enough to grow with their business.
+                  Small businesses often split invoices, payments, client records, expenses,
+                  and reporting across several tools. Every handoff adds another place for a
+                  document state, balance, or customer detail to drift out of sync.
                 </p>
                 <p>
-                  InvoiceBirds was born from this exact need. The goal was clear: build an 
-                  invoicing platform that feels effortless from day one, while packing in 
-                  enhanced features like automated payment reminders, multi-currency support, 
-                  and real-time analytics — all without overwhelming the user.
+                  InvoiceBirds brings those jobs into a single operating model. A document can
+                  move from draft to delivery and payment while the surrounding client and
+                  expense context remains close at hand.
                 </p>
                 <p>
-                  The result is a tool that small businesses actually enjoy using. No 
-                  training required, no hidden complexity — just straightforward invoicing 
-                  that saves time and gets you paid faster.
+                  My work focused on making that depth feel calm: reusable document controls,
+                  clear lifecycle states, consistent navigation, and responsive surfaces that
+                  preserve the same workflow away from the desktop.
                 </p>
               </div>
             </div>
@@ -149,7 +139,7 @@ export default function InvoiceBirdsCaseStudy() {
                   Timeline
                 </h4>
                 <p className="mt-2 text-lg font-medium text-zinc-900 dark:text-zinc-100">
-                  3 months
+                  Feb — Sep 2025
                 </p>
               </div>
               <div>
@@ -157,7 +147,7 @@ export default function InvoiceBirdsCaseStudy() {
                   Role
                 </h4>
                 <p className="mt-2 text-lg font-medium text-zinc-900 dark:text-zinc-100">
-                  Full-Stack Developer & Designer
+                  Full-Stack Contractor
                 </p>
               </div>
               <div>
@@ -188,61 +178,52 @@ export default function InvoiceBirdsCaseStudy() {
         </Container>
       </section>
 
-      {/* Features Section */}
+      {/* Product model */}
       <section className="bg-zinc-50 py-16 sm:py-20 dark:bg-zinc-900/50">
         <Container>
           <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-[#ff5500]">
-            Features
+            Product model
           </h2>
           <h3 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
-            Simple by Design, Powerful When Needed
+            One financial thread, not six disconnected tools
           </h3>
           <p className="mt-4 max-w-3xl text-lg text-zinc-600 dark:text-zinc-400">
-            Every feature was carefully chosen based on what small businesses actually use daily. 
-            No feature bloat — just the essentials, enhanced with smart automation.
+            The interface is organised around three connected jobs. Each can stand alone,
+            but the product becomes more useful when information moves cleanly between them.
           </p>
 
-          <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-12 grid gap-5 lg:grid-cols-3">
             {[
               {
-                title: "One-Click Invoicing",
+                index: "01",
+                title: "Compose",
                 description:
-                  "Create professional invoices in under 30 seconds. Pre-filled templates, automatic tax calculations, and instant PDF generation.",
+                  "Build invoices and business documents through modular controls with a live visual preview.",
               },
               {
-                title: "Get Paid Faster",
+                index: "02",
+                title: "Operate",
                 description:
-                  "Integrated Stripe payments let clients pay directly from the invoice. Automated reminders ensure you never chase payments again.",
+                  "Track document status, clients, expenses, and payment activity without losing the surrounding context.",
               },
               {
-                title: "Real-Time Dashboard",
+                index: "03",
+                title: "Understand",
                 description:
-                  "See your business health at a glance — outstanding invoices, monthly revenue, and payment trends all in one place.",
-              },
-              {
-                title: "Client Management",
-                description:
-                  "Keep all your client information organized. View payment history, send bulk invoices, and maintain professional relationships.",
-              },
-              {
-                title: "Multi-Currency",
-                description:
-                  "Work with international clients effortlessly. Automatic exchange rates and localized invoice formatting.",
-              },
-              {
-                title: "Expense Tracking",
-                description:
-                  "Log business expenses alongside your income. Generate profit reports and stay tax-ready year-round.",
+                  "Bring billing and spending into a shared reporting model designed for fast operational decisions.",
               },
             ].map((feature) => (
               <div
                 key={feature.title}
-                className="rounded-2xl border border-zinc-200 bg-white p-6 dark:border-zinc-800 dark:bg-zinc-900"
+                className="rounded-[24px] border border-zinc-200 bg-white p-7 shadow-[0_18px_60px_rgba(24,24,27,0.04)] dark:border-zinc-800 dark:bg-zinc-900"
               >
-                <h4 className="text-lg font-semibold text-zinc-900 dark:text-zinc-100">
+                <span className="text-xs font-bold tracking-[0.18em] text-[#ff5500]">
+                  {feature.index}
+                </span>
+                <h4 className="mt-12 text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
                   {feature.title}
                 </h4>
-                <p className="mt-2 text-zinc-600 dark:text-zinc-400">
+                <p className="mt-3 text-[15px] leading-7 text-zinc-600 dark:text-zinc-400">
                   {feature.description}
                 </p>
               </div>
@@ -251,207 +232,171 @@ export default function InvoiceBirdsCaseStudy() {
         </Container>
       </section>
 
-      {/* Image Gallery Placeholder 1 */}
+      {/* Product surfaces */}
       <section className="bg-white py-16 sm:py-20 dark:bg-zinc-950">
         <Container>
           <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-[#ff5500]">
-            Design
+            Product surfaces
           </h2>
           <h3 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
-            Designed for Clarity
+            One system, multiple financial jobs
           </h3>
           <p className="mt-4 max-w-2xl text-lg text-zinc-600 dark:text-zinc-400">
-            The interface prioritizes clarity over complexity. Every screen was designed 
-            with one question in mind: &quot;Can a first-time user complete this task without help?&quot;
+            These are current product screens, not presentation mockups. The captions follow
+            the work visible in each surface and explain how the product is structured.
           </p>
 
-          {/* Features Overview Image */}
-          <div className="mt-12 overflow-hidden rounded-2xl border border-zinc-200 bg-zinc-100 dark:border-zinc-800 dark:bg-zinc-900">
+          <figure className="mt-12 overflow-hidden rounded-[28px] border border-zinc-200 bg-zinc-50 shadow-[0_30px_90px_rgba(24,24,27,0.08)] dark:border-zinc-800 dark:bg-zinc-900">
             <Image
-              src="/images/projects/invoicebirds/invoicebirds-01-hero.png"
-              alt="InvoiceBirds Hero"
+              src="/images/projects/invoicebirds/live-2026/invoice-builder.png"
+              alt="InvoiceBirds visual invoice builder with document controls and a live preview"
               width={1920}
               height={1080}
               className="h-auto w-full"
             />
-          </div>
+            <figcaption className="border-t border-zinc-200 bg-white p-6 sm:p-8 dark:border-zinc-800 dark:bg-zinc-950">
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#ff5500]">Document workspace / 01</p>
+              <h4 className="mt-3 text-2xl font-bold tracking-tight text-zinc-950 sm:text-3xl dark:text-white">
+                Compose the invoice and its visual system in one place
+              </h4>
+              <p className="mt-3 max-w-3xl text-[15px] leading-7 text-zinc-600 dark:text-zinc-400">
+                Modular controls sit beside a live document preview, keeping content, styling,
+                payment options, and export actions inside one focused workspace.
+              </p>
+            </figcaption>
+          </figure>
 
-          {/* Two Column Images */}
-          <div className="mt-8 grid gap-8 md:grid-cols-2">
-            {/* Invoice Creation */}
-            <div className="overflow-hidden rounded-2xl border border-zinc-200 bg-zinc-100 dark:border-zinc-800 dark:bg-zinc-900">
+          <div className="mt-6 grid gap-6 md:grid-cols-2">
+            <figure className="overflow-hidden rounded-[24px] border border-zinc-200 bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-900">
               <Image
-                src="/images/projects/invoicebirds/invoicecreation.png"
-                alt="InvoiceBirds Invoice Creation"
+                src="/images/projects/invoicebirds/live-2026/invoices.png"
+                alt="InvoiceBirds invoice lifecycle with drafts, sent, paid, overdue, search, and export controls"
                 width={1200}
                 height={900}
                 className="h-auto w-full"
               />
-            </div>
-
-            {/* Expenses Dashboard */}
-            <div className="overflow-hidden rounded-2xl border border-zinc-200 bg-zinc-100 dark:border-zinc-800 dark:bg-zinc-900">
-              <Image
-                src="/images/projects/invoicebirds/expenses.png"
-                alt="InvoiceBirds Expenses Dashboard"
-                width={1200}
-                height={900}
-                className="h-auto w-full"
-              />
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      {/* Process Section */}
-      <section className="bg-zinc-50 py-16 sm:py-20 dark:bg-zinc-900/50">
-        <Container>
-          <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-[#ff5500]">
-            Process
-          </h2>
-          <h3 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
-            Building the Right Thing, the Right Way
-          </h3>
-
-          <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-            {[
-              {
-                step: "01",
-                title: "Discovery",
-                description:
-                  "Interviewed 20+ small business owners to understand their daily invoicing frustrations and must-have features.",
-              },
-              {
-                step: "02",
-                title: "Architecture",
-                description:
-                  "Designed a scalable architecture with Next.js frontend, NestJS API, and Supabase for real-time data sync.",
-              },
-              {
-                step: "03",
-                title: "Build & Iterate",
-                description:
-                  "Shipped MVP in 6 weeks. Continuous user feedback shaped each iteration, focusing on speed and simplicity.",
-              },
-              {
-                step: "04",
-                title: "Launch & Scale",
-                description:
-                  "Soft launch to beta users, refined based on real usage patterns, then public release with Stripe integration.",
-              },
-            ].map((phase) => (
-              <div key={phase.step}>
-                <span className="text-5xl font-black text-zinc-200 dark:text-zinc-800">
-                  {phase.step}
-                </span>
-                <h4 className="mt-4 text-lg font-semibold text-zinc-900 dark:text-zinc-100">
-                  {phase.title}
+              <figcaption className="border-t border-zinc-200 bg-white p-6 dark:border-zinc-800 dark:bg-zinc-950">
+                <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#ff5500]">Invoice lifecycle / 02</p>
+                <h4 className="mt-3 text-xl font-bold tracking-tight text-zinc-950 dark:text-white">
+                  Every document state remains actionable
                 </h4>
-                <p className="mt-2 text-zinc-600 dark:text-zinc-400">
-                  {phase.description}
+                <p className="mt-3 text-[15px] leading-7 text-zinc-600 dark:text-zinc-400">
+                  Search, filters, status groups, exports, and document actions turn the list
+                  into a working queue rather than a passive archive.
                 </p>
-              </div>
-            ))}
+              </figcaption>
+            </figure>
+
+            <figure className="overflow-hidden rounded-[24px] border border-zinc-200 bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-900">
+              <Image
+                src="/images/projects/invoicebirds/live-2026/expenses.png"
+                alt="InvoiceBirds expense profiles with teams, departments, activity, and category reporting"
+                width={1200}
+                height={900}
+                className="h-auto w-full"
+              />
+              <figcaption className="border-t border-zinc-200 bg-white p-6 dark:border-zinc-800 dark:bg-zinc-950">
+                <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#ff5500]">Expense operations / 03</p>
+                <h4 className="mt-3 text-xl font-bold tracking-tight text-zinc-950 dark:text-white">
+                  Spending is organised around how the business works
+                </h4>
+                <p className="mt-3 text-[15px] leading-7 text-zinc-600 dark:text-zinc-400">
+                  Expense profiles group activity by team, person, department, or project,
+                  making the operational model visible without burying it in settings.
+                </p>
+              </figcaption>
+            </figure>
           </div>
         </Container>
       </section>
 
-      {/* More Images Section */}
+      <CaseStudySystemSection
+        variant="dark"
+        eyebrow="Billing workflow"
+        title="A financial product is a state machine."
+        intro="The interface stays calm because document, money, and operational states are explicit underneath it."
+        accent="#ff6a2b"
+        background="linear-gradient(145deg, #120b08, #2b1109 65%, #120b08)"
+        items={[
+          { step: "01", label: "Document state", title: "Lifecycle first", description: "Draft, sent, viewed, overdue, paid, and void states define what the user can do next." },
+          { step: "02", label: "Money state", title: "Totals stay reproducible", description: "Currency, tax, discount, and payment metadata remain attached to the document that created them." },
+          { step: "03", label: "Operating context", title: "Clients and expenses connect", description: "Billing activity sits beside the customer and spending context needed to understand the business." },
+          { step: "04", label: "Release discipline", title: "Workflows harden together", description: "Validation, permissions, reconciliation, and failure handling ship with the visible product surface." },
+        ]}
+      />
+
+      {/* Responsive product */}
       <section className="bg-white py-16 sm:py-20 dark:bg-zinc-950">
         <Container>
           <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-[#ff5500]">
-            Showcase
+            Responsive product
           </h2>
           <h3 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
-            The Product in Action
+            The workflow survives the small screen
           </h3>
           <p className="mt-4 max-w-2xl text-lg text-zinc-600 dark:text-zinc-400">
-            From dashboard to invoice creation — every interaction was optimized for speed and clarity.
+            Mobile is not a scaled-down poster of the desktop app. Navigation, document
+            controls, and list actions are reflowed around the task that matters in the moment.
           </p>
 
-          {/* Full Dashboard View */}
-          <div className="mt-12 overflow-hidden rounded-2xl border border-zinc-200 bg-zinc-100 dark:border-zinc-800 dark:bg-zinc-900">
-            <Image
-              src="/images/projects/invoicebirds/dashboard.png"
-              alt="InvoiceBirds Full Dashboard"
-              width={1920}
-              height={1080}
-              className="h-auto w-full"
-            />
-          </div>
-
-          {/* Three Column Mobile Views */}
-          <div className="mt-8 grid gap-6 sm:grid-cols-3">
-            {/* Mobile View 1 */}
-            <div className="overflow-hidden rounded-2xl border border-zinc-200 bg-zinc-100 dark:border-zinc-800 dark:bg-zinc-900">
-              <Image
-                src="/images/projects/invoicebirds/mobileview1.png"
-                alt="InvoiceBirds Mobile View 1"
-                width={600}
-                height={800}
-                className="h-auto w-full"
-              />
-            </div>
-
-            {/* Mobile View 2 */}
-            <div className="overflow-hidden rounded-2xl border border-zinc-200 bg-zinc-100 dark:border-zinc-800 dark:bg-zinc-900">
-              <Image
-                src="/images/projects/invoicebirds/mobileview2.png"
-                alt="InvoiceBirds Mobile View 2"
-                width={600}
-                height={800}
-                className="h-auto w-full"
-              />
-            </div>
-
-            {/* Mobile View 3 */}
-            <div className="overflow-hidden rounded-2xl border border-zinc-200 bg-zinc-100 dark:border-zinc-800 dark:bg-zinc-900">
-              <Image
-                src="/images/projects/invoicebirds/mobileview3.png"
-                alt="InvoiceBirds Mobile View 3"
-                width={600}
-                height={800}
-                className="h-auto w-full"
-              />
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      {/* Results Section */}
-      <section className="bg-zinc-50 py-16 sm:py-20 dark:bg-zinc-900/50">
-        <Container>
-          <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-[#ff5500]">
-            Results
-          </h2>
-          <h3 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
-            Measurable Impact
-          </h3>
-          <p className="mt-4 max-w-2xl text-lg text-zinc-600 dark:text-zinc-400">
-            The numbers speak for themselves — InvoiceBirds is helping small businesses 
-            get paid faster and spend less time on admin work.
-          </p>
-
-          <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-12 grid gap-5 sm:grid-cols-3">
             {[
-              { value: "500+", label: "Active Businesses" },
-              { value: "10K+", label: "Invoices Sent" },
-              { value: "45%", label: "Faster Payments" },
-              { value: "$2M+", label: "Processed via Stripe" },
-            ].map((stat) => (
-              <div
-                key={stat.label}
-                className="rounded-2xl border border-zinc-200 bg-white p-8 text-center dark:border-zinc-800 dark:bg-zinc-900"
+              {
+                src: "/images/projects/invoicebirds/live-2026/landing-mobile.png",
+                alt: "InvoiceBirds public product page on mobile",
+                label: "Public product",
+                title: "A clear route into the platform",
+              },
+              {
+                src: "/images/projects/invoicebirds/live-2026/builder-mobile.png",
+                alt: "InvoiceBirds invoice builder on mobile",
+                label: "Document builder",
+                title: "Creation controls reflow for touch",
+              },
+              {
+                src: "/images/projects/invoicebirds/live-2026/invoices-mobile.png",
+                alt: "InvoiceBirds invoice list on mobile",
+                label: "Invoice lifecycle",
+                title: "Status and actions stay within reach",
+              },
+            ].map((screen) => (
+              <figure
+                key={screen.src}
+                className="overflow-hidden rounded-[24px] border border-zinc-200 bg-[#f6f3ec] dark:border-zinc-800 dark:bg-zinc-900"
               >
-                <p className="text-4xl font-bold text-[#ff5500]">{stat.value}</p>
-                <p className="mt-2 text-zinc-600 dark:text-zinc-400">
-                  {stat.label}
-                </p>
-              </div>
+                <Image
+                  src={screen.src}
+                  alt={screen.alt}
+                  width={390}
+                  height={844}
+                  className="h-auto w-full"
+                />
+                <figcaption className="border-t border-zinc-200 bg-white p-5 dark:border-zinc-800 dark:bg-zinc-950">
+                  <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#ff5500]">{screen.label}</p>
+                  <h4 className="mt-2 text-lg font-bold leading-snug tracking-tight text-zinc-950 dark:text-white">
+                    {screen.title}
+                  </h4>
+                </figcaption>
+              </figure>
             ))}
           </div>
         </Container>
       </section>
+
+      <CaseStudySystemSection
+        variant="light"
+        eyebrow="System architecture"
+        title="Clear boundaries behind connected billing."
+        intro="The stack separates experience, application rules, durable data, and payment providers without fragmenting the user journey."
+        accent="#d84309"
+        background="#ebe5da"
+        items={[
+          { step: "01", label: "Experience layer", title: "Next.js workspace", description: "Responsive document, client, expense, and reporting surfaces share reusable interaction patterns." },
+          { step: "02", label: "Application layer", title: "NestJS domain API", description: "Billing rules, document transitions, permissions, and integrations live behind explicit modules." },
+          { step: "03", label: "Data layer", title: "Supabase foundations", description: "Relational records preserve customers, documents, line items, expenses, and historical state." },
+          { step: "04", label: "Payment layer", title: "Stripe reconciliation", description: "Checkout, webhooks, manual payments, and invoice state converge on one auditable payment record." },
+        ]}
+      />
 
       {/* Engineering Challenges */}
       <section className="bg-white py-20 dark:bg-zinc-950">
@@ -472,7 +417,7 @@ export default function InvoiceBirdsCaseStudy() {
                   solution:
                     "Standardised on integer-cents internally, FX conversion at write-time only, snapshotted to invoice metadata so the historical record never re-quotes. UI formatting via Intl.NumberFormat per locale.",
                   impact:
-                    "Invoices reproduce identical totals 6 months later regardless of FX moves — zero rounding-drift complaints.",
+                    "An issued document retains the totals and exchange context it had at issue time instead of changing with a later rate.",
                 },
                 {
                   challenge: "Stripe checkout + payment-status reconciliation",
@@ -486,7 +431,7 @@ export default function InvoiceBirdsCaseStudy() {
                   solution:
                     "Extracted a primitives layer (line-item table, client picker, tax/discount calculator, signature block) that each document type composes. Validation via Zod schema per document type.",
                   impact:
-                    "New document types ship in days instead of weeks; consistency means users learn once, apply everywhere.",
+                    "Document types share the same line-item, client, tax, discount, and signature behaviours instead of drifting into separate form systems.",
                 },
               ].map((c, i) => (
                 <div key={i}>
@@ -499,7 +444,7 @@ export default function InvoiceBirdsCaseStudy() {
                       {c.solution}
                     </p>
                     <p>
-                      <span className="text-xs font-semibold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">Outcome · </span>
+                      <span className="text-xs font-semibold uppercase tracking-wider text-[#ff5500]">Outcome · </span>
                       {c.impact}
                     </p>
                   </div>
@@ -511,14 +456,14 @@ export default function InvoiceBirdsCaseStudy() {
       </section>
 
       {/* CTA Section */}
-      <section className="relative overflow-hidden border-t border-zinc-800 bg-zinc-950 py-24">
+      <section className="case-study-closing relative overflow-hidden border-t border-zinc-800 bg-zinc-950 py-24">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,77,31,0.15),transparent_70%)]" />
         <Container className="relative text-center">
           <h2 className="text-3xl font-bold text-white sm:text-4xl md:text-5xl">
             Building a SaaS billing layer?
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-lg text-zinc-400">
-            I take on senior contract work across modern fullstack stacks
+            I take on senior contract work across modern full-stack stacks
             with payment, multi-currency, and integration depth.
           </p>
           <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
@@ -532,7 +477,7 @@ export default function InvoiceBirdsCaseStudy() {
         </Container>
       </section>
 
-      <Footer />
+      <Footer compact />
     </main>
   );
 }

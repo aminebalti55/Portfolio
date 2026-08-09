@@ -7,7 +7,7 @@ import { SITE_URL, SITE_NAME, person } from "@/lib/site";
 // Three linked entities:
 //   - Person          → the identity node everything else points to
 //   - WebSite         → the site itself
-//   - ProfessionalService → the freelance offering (service types, rate, reach)
+//   - ProfessionalService → the freelance offering (service types and reach)
 export function JsonLd() {
   const graph = {
     "@context": "https://schema.org",
@@ -48,7 +48,6 @@ export function JsonLd() {
           "Freelance and contract full-stack engineering: production SaaS, internal tools, AI workflows, marketplaces, and backend systems, shipped end to end.",
         provider: { "@id": `${SITE_URL}/#person` },
         serviceType: person.serviceTypes,
-        priceRange: person.priceRange,
         areaServed: [
           "Worldwide",
           "European Union",

@@ -57,7 +57,7 @@ export const logoCloud = [
 
 export const about = {
   eyebrow: "About",
-  title: "Building products that feel effortless, useful, and memorable.",
+  title: "Product judgment backed by implementation.",
   description:
     "I'm a full-stack engineer who ships production systems end-to-end — frontend, backend, data layer, integrations, and the boring deployment glue. Four years in, I've worked across fleet analytics in Germany, invoicing SaaS in the UK, GPS-tracking in Tunisia, marketplaces and roadside-assistance products in North America — all remote. I care about turning fuzzy product asks into reliable software, fast — usually with React, Next.js, NestJS or Spring Boot, and Postgres on top.",
   tags: [
@@ -88,95 +88,41 @@ export type ServiceItem = {
 
 export const services = {
   eyebrow: "Services",
-  title: "Senior execution without agency overhead.",
+  title: "One owner from first decision to release.",
   description:
-    "I take SaaS MVPs, internal tools, and AI workflows from concept to production — fast. You get one engineer who owns the stack end-to-end (frontend, API, database, deployment) instead of a four-person agency contract.",
+    "I take on SaaS products, internal tools, and difficult product surfaces where the interface, API, data model, and release plan need to be considered together.",
   cta: { label: "Book a 20-min call", href: "#contact" },
   items: [
     {
       title: "Full-Stack Development",
       description:
-        "Complete web applications built with modern tech stacks — React, Next.js, Node.js, and scalable databases.",
+        "Product interfaces, application logic, data models, integrations, and deployment handled as one connected build.",
       icon: "spark",
       featured: true,
     },
     {
       title: "SaaS Development",
       description:
-        "Multi-tenant platforms with authentication, subscriptions, and enterprise-grade features built to scale.",
+        "Multi-tenant platforms with deliberate boundaries for identity, billing, permissions, and organisation data.",
       icon: "layout",
     },
     {
       title: "API & Backend",
       description:
-        "RESTful APIs, microservices, and robust backend architectures using Node.js, NestJS, Spring Boot, and PostgreSQL.",
+        "APIs and backend services shaped around the product's real workflows, failure modes, and integrations.",
       icon: "compass",
     },
     {
       title: "UI/UX Implementation",
       description:
-        "Pixel-perfect, responsive interfaces with modern design systems, animations, and accessibility in mind.",
+        "Responsive interfaces that make dense workflows understandable, with reusable patterns and accessible interaction states.",
       icon: "users",
     },
   ] satisfies ServiceItem[],
 };
 
-export type ProjectItem = {
-  badge: string;
-  title: string;
-  description: string;
-  image: string;
-  /** Optional case-study slug (e.g. "pulse"), used to deep-link
-   * into /work/<slug>. Omit if no detailed page exists yet. */
-  slug?: string;
-  /** Optional live deployment URL */
-  liveUrl?: string;
-  /** Optional GitHub repo URL */
-  repoUrl?: string;
-};
-
-export const projects = {
-  eyebrow: "Projects",
-  title: "Featured Work",
-  year: "2026",
-  // Featured = the single hero project on the homepage projects rail.
-  // Pulse leads because it solves a real freelance lead-gen pain that
-  // the existing $99-300/mo SaaS market (Apollo, Hunter, Lemlist) was
-  // never built to solve — and it's the deepest end-to-end build in
-  // the portfolio (12 scrapers, 4-stage email verifier, sequence
-  // engine, full custom UI).
-  featured: {
-    badge: "Lead-Prospecting Platform",
-    title: "Pulse",
-    description:
-      "Personal lead engine for freelance devs — 12 source scrapers (HN, YC, ProductHunt, IndieHackers, Google Maps, LinkedIn, and more), 4-stage SMTP email verification, sequence outreach engine, and a 1,832-keyword preset library across 42 industry/role bundles.",
-    image: "/images/projects/pulse/pulse-01-inbox-overview.png",
-    slug: "pulse",
-  },
-  items: [
-    {
-      badge: "Marketplace Platform",
-      title: "AutoAlly",
-      description: "Car marketplace with real-time messaging, secure escrow payments, and KYC verification.",
-      image: "/images/projects/autoally/herosectioj.png",
-      slug: "autoally",
-    },
-    {
-      badge: "Personal Finance",
-      title: "Atlas",
-      description: "Personal finance app with expense tracking, income management, and savings goals.",
-      image: "/images/projects/Atlas/dashboard.png",
-      slug: "atlas",
-    },
-    {
-      badge: "Enterprise Fleet Management",
-      title: "FLEDEM",
-      description: "Enterprise fleet management platform with real-time telemetry, Python analytics, and CAN signal processing.",
-      image: "/placeholders/device.svg",
-      slug: "fledem",
-    },
-  ] satisfies ProjectItem[],
-};
+// Projects now live in src/lib/projects.ts — a single source shared by the
+// home rail and /work. This block used to duplicate them and had drifted.
 
 export const ctaBand = {
   title: "Have a SaaS MVP, internal tool, or backend rescue to ship?",

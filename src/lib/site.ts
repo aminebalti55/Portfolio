@@ -21,7 +21,6 @@ export const person = {
   addressCountryCode: "TN",
   addressCountry: "Tunisia",
   nationality: "Tunisian",
-  priceRange: "$55–$75/hr",
   sameAs: [
     "https://github.com/aminebalti55",
     "https://www.linkedin.com/in/aminebdev/",
@@ -53,5 +52,5 @@ export const person = {
     "Web application development",
   ],
   summary:
-    "Tunisia-based senior full-stack engineer who ships production SaaS, internal tools, and AI workflows end to end — frontend, API, database, and deployment — with React, Next.js, NestJS, Spring Boot, and PostgreSQL. Available for senior remote freelance and contract work across EU and US time zones.",
+    "Tunisia-based senior full-stack engineer working across product interfaces, APIs, data, and deployment. Recent work spans fleet operations, invoicing, workforce software, marketplaces, and internal tools for remote teams in Europe and North America.",
 } as const;

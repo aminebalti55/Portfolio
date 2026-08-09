@@ -8,27 +8,27 @@ import { Reveal } from "@/components/ui/Reveal";
 const faqs = [
   {
     q: "What does Med Amine Balti build?",
-    a: "I build production SaaS platforms, internal tools, marketplaces, and AI workflows end to end — frontend, API, database, and deployment. Recent work includes a car marketplace with escrow and KYC, an invoicing SaaS with Stripe billing, and a lead-prospecting engine with multi-source scrapers.",
+    a: "I work on SaaS platforms, internal tools, marketplaces, and operational software across the interface, API, data model, integrations, and deployment. Recent projects include a verified car marketplace, an invoicing product, fleet operations software, and a multi-source prospecting tool.",
   },
   {
     q: "Are you available for freelance or contract work?",
-    a: "Yes. I'm open to senior remote freelance and contract engagements, working across EU and US time zones. I take on full builds, MVPs, and backend or feature rescues on a fixed scope.",
+    a: "Yes. I take on senior remote freelance and contract engagements with practical overlap for European and US teams. The best fit is a full product build, a difficult product surface, or an existing system that needs a clear owner.",
   },
   {
     q: "What is your tech stack?",
-    a: "Frontend: React, Next.js, TypeScript, and Tailwind CSS. Backend: NestJS, Node.js, and Spring Boot. Data: PostgreSQL, Supabase, and MongoDB. I also handle Stripe payments, real-time WebSockets, AI/LLM integration, and web scraping with Playwright.",
+    a: "I most often use React, Next.js, and TypeScript for product interfaces; NestJS, Hono, or Spring Boot for services; and PostgreSQL or MongoDB for data. The exact stack follows the product constraints, including payments, realtime events, AI integrations, and browser automation where they are actually useful.",
   },
   {
-    q: "How fast can you ship an MVP?",
-    a: "I typically deliver a production SaaS MVP in around 6 weeks, and internal tools in 2 to 3 weeks. A 20-minute scoping call gives you a concrete scope I can ship in the first sprint.",
+    q: "How does an engagement begin?",
+    a: "We start with a short call to identify the user, the difficult constraint, and the smallest release that proves the direction. I then turn that into a concrete first slice, visible milestones, and the decisions that need to be made before implementation expands.",
   },
   {
-    q: "What does it cost to work with you?",
-    a: "My rate is $55 to $75 per hour depending on scope, with fixed-scope pricing available for well-defined builds and rescues. No agency overhead — you work directly with one senior engineer who owns the whole stack.",
+    q: "What kinds of engagements are a good fit?",
+    a: "Work with a meaningful product or engineering constraint is the best fit: a new SaaS build, a critical workflow, or a system rescue where one engineer needs to understand the whole path. Simple brochure sites and disconnected ticket queues are usually not the right match.",
   },
   {
     q: "Do you work remotely, and where are you based?",
-    a: "I work fully remote from Tunisia (GMT+1) and collaborate comfortably across European and US time zones, with reliable overlap and 24 to 48 hour response times.",
+    a: "I work remotely from Tunisia (GMT+1) and collaborate across European and US time zones. Each engagement starts with explicit overlap hours, communication rhythm, and decision owners so the work does not depend on constant meetings.",
   },
 ];
 
@@ -67,7 +67,7 @@ export function FaqSection() {
                 Working with me
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-base text-zinc-600 dark:text-zinc-400">
-                Quick answers on scope, stack, timelines, and pricing.
+                Quick answers on scope, stack, process, and collaboration.
               </p>
             </div>
 

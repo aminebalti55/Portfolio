@@ -1,21 +1,23 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
+import { LivePill } from "@/components/ui/LivePill";
 import { Container } from "@/components/ui/Container";
 import { Badge } from "@/components/ui/Badge";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { SiteHeader } from "@/components/sections/SiteHeader";
 import { Footer } from "@/components/sections/Footer";
+import { CaseStudySystemSection } from "@/components/ui/CaseStudySystemSection";
 
 export const metadata: Metadata = {
   title: "Romorquage Mont Rapido — Case Study",
   description:
-    "A modern towing service landing page with real-time location mapping, helping customers find reliable roadside assistance fast.",
+    "A mobile-first service site for a Montréal towing company, with clear service coverage, location context, and direct contact paths.",
 };
 
 export default function RomorquageCaseStudy() {
   return (
-    <main className="min-h-screen bg-white text-zinc-950 dark:bg-zinc-950 dark:text-zinc-50">
+    <main className="case-detail min-h-screen bg-white text-zinc-950 dark:bg-zinc-950 dark:text-zinc-50">
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-[#0a0c14] text-white">
         <div className="absolute inset-0 bg-[radial-gradient(1100px_circle_at_70%_0%,rgba(234,179,8,0.45),transparent_55%),radial-gradient(900px_circle_at_20%_10%,rgba(249,115,22,0.25),transparent_55%)]" />
@@ -50,15 +52,7 @@ export default function RomorquageCaseStudy() {
             </Badge>
             <Badge className="border-white/15 bg-white/10 text-white">Canada · Montréal</Badge>
             <Badge className="border-white/15 bg-white/10 text-white">2025 · Freelance</Badge>
-            <a
-              href="https://www.remorquagemontrapido.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 rounded-full border border-emerald-400/40 bg-emerald-400/15 px-3 py-1 text-xs font-medium text-emerald-300 transition-colors hover:bg-emerald-400/25"
-            >
-              <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" />
-              Live · remorquagemontrapido.com
-            </a>
+            <LivePill href="https://www.remorquagemontrapido.com/" />
           </div>
 
           <h1 className="mt-6 font-display text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
@@ -66,9 +60,9 @@ export default function RomorquageCaseStudy() {
           </h1>
 
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/75 sm:text-xl">
-            A modern, conversion-focused landing page for a professional towing 
-            service. Features real-time location mapping, service showcase, and 
-            instant contact options to connect stranded drivers with help fast.
+            A mobile-first service site for a Montréal towing company. It puts the
+            coverage area, available services, equipment, and direct phone action in
+            the order a stranded driver is likely to need them.
           </p>
 
           <div className="mt-10 flex flex-wrap gap-3">
@@ -119,25 +113,21 @@ export default function RomorquageCaseStudy() {
               </h3>
               <div className="mt-6 space-y-4 text-lg leading-relaxed text-zinc-600 dark:text-zinc-400">
                 <p>
-                  When your car breaks down on the side of the road, every second 
-                  counts. You need help fast, but finding a reliable towing service 
-                  in the moment of stress is difficult. Most towing company websites 
-                  are outdated, hard to navigate on mobile, and don&apos;t make it easy 
-                  to quickly get in touch.
+                  A towing-site visit often begins on a phone, under time pressure, and
+                  with very little patience for navigation. The first screen has to
+                  answer three practical questions: do you cover this area, can you
+                  handle this vehicle, and how do I reach dispatch?
                 </p>
                 <p>
                   Romorquage Mont Rapido needed a modern, mobile-first landing page 
-                  that would instantly communicate trust, showcase their professional 
-                  equipment and services, and make it dead simple for stranded drivers 
-                  to call for help — all while highlighting their coverage area with 
+                  that would establish the service clearly, show their equipment and
+                  available work, and keep the phone action within easy reach — while highlighting their coverage area with 
                   an interactive map.
                 </p>
                 <p>
-                  The solution: a fast-loading, conversion-optimized landing page 
-                  built with Next.js and Tailwind CSS. Real-time location mapping 
-                  shows service coverage, high-quality imagery builds trust, and 
-                  prominent call-to-action buttons ensure customers can reach help 
-                  with one tap.
+                  The result is a focused Next.js site with service detail, coverage
+                  context, business proof, and repeated direct-contact points. The
+                  interface is intentionally simple because the user&apos;s situation is not.
                 </p>
               </div>
             </div>
@@ -187,68 +177,44 @@ export default function RomorquageCaseStudy() {
         </Container>
       </section>
 
-      {/* Features Section */}
-      <section className="bg-zinc-50 py-16 sm:py-20 dark:bg-zinc-900/50">
-        <Container>
-          <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-yellow-600">
-            Features
-          </h2>
-          <h3 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
-            Built for Conversions
-          </h3>
-          <p className="mt-4 max-w-3xl text-lg text-zinc-600 dark:text-zinc-400">
-            Every element designed to build trust and drive action — from the first 
-            impression to the final call.
-          </p>
-
-          <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {[
-              {
-                title: "Interactive Location Map",
-                description:
-                  "Real-time Google Maps integration showing service coverage area, helping customers instantly see if they're within range.",
-              },
-              {
-                title: "One-Tap Calling",
-                description:
-                  "Prominent phone number buttons throughout the page — mobile users can call with a single tap from any section.",
-              },
-              {
-                title: "Professional Equipment Showcase",
-                description:
-                  "High-quality imagery of tow trucks and equipment builds immediate trust and credibility.",
-              },
-              {
-                title: "Service Categories",
-                description:
-                  "Clear breakdown of services — accident towing, breakdown assistance, long-distance transport, and more.",
-              },
-              {
-                title: "Customer Reviews",
-                description:
-                  "Social proof through testimonials and ratings to reassure stressed customers they're making the right choice.",
-              },
-              {
-                title: "FAQ Section",
-                description:
-                  "Answers to common questions about pricing, response times, and coverage areas to reduce friction.",
-              },
-            ].map((feature) => (
-              <div
-                key={feature.title}
-                className="rounded-2xl border border-zinc-200 bg-white p-6 dark:border-zinc-800 dark:bg-zinc-900"
-              >
-                <h4 className="text-lg font-semibold text-zinc-900 dark:text-zinc-100">
-                  {feature.title}
-                </h4>
-                <p className="mt-2 text-zinc-600 dark:text-zinc-400">
-                  {feature.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
+      <CaseStudySystemSection
+        variant="dark"
+        eyebrow="Roadside journey"
+        title="Four decisions between a stranded driver and help."
+        intro="The experience is designed for urgency. It reduces a service business to the information a driver needs right now, then makes the next action unmistakable on a small screen."
+        accent="#ffd45a"
+        background="linear-gradient(145deg, #11100d 0%, #352b13 58%, #17140d 100%)"
+        items={[
+          {
+            step: "01",
+            label: "Locate",
+            title: "Coverage first",
+            description:
+              "The map and service area answer the first practical question before the user has to read a wall of company copy.",
+          },
+          {
+            step: "02",
+            label: "Identify",
+            title: "Service selection",
+            description:
+              "Breakdown, accident, transport, and recovery options are named in plain language so the request starts with useful context.",
+          },
+          {
+            step: "03",
+            label: "Trust",
+            title: "Operational proof",
+            description:
+              "Equipment, reviews, and direct answers establish credibility for a decision users often make under stress.",
+          },
+          {
+            step: "04",
+            label: "Act",
+            title: "One-tap contact",
+            description:
+              "The primary phone action stays easy to reach throughout the mobile journey instead of hiding at the bottom of the page.",
+          },
+        ]}
+      />
 
       {/* Service Sections */}
       <section className="bg-white py-16 sm:py-20 dark:bg-zinc-950">
@@ -257,11 +223,11 @@ export default function RomorquageCaseStudy() {
             Services
           </h2>
           <h3 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
-            Comprehensive Towing Solutions
+            Services shown before the call
           </h3>
           <p className="mt-4 max-w-2xl text-lg text-zinc-600 dark:text-zinc-400">
-            Clear service offerings with professional imagery to showcase capabilities 
-            and build customer confidence.
+            The page explains what the team can tow and shows the equipment behind the
+            service before asking the visitor to contact dispatch.
           </p>
 
           <div className="mt-12 overflow-hidden rounded-2xl border border-zinc-200 bg-zinc-100 dark:border-zinc-800 dark:bg-zinc-900">
@@ -304,7 +270,7 @@ export default function RomorquageCaseStudy() {
             Trust Signals
           </h2>
           <h3 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
-            Building Customer Confidence
+            Proof near the decision
           </h3>
           <p className="mt-4 max-w-2xl text-lg text-zinc-600 dark:text-zinc-400">
             Reviews, testimonials, and transparency help stressed customers feel 
@@ -360,79 +326,67 @@ export default function RomorquageCaseStudy() {
         </Container>
       </section>
 
-      {/* Technical Implementation */}
-      <section className="bg-zinc-50 py-16 sm:py-20 dark:bg-zinc-900/50">
-        <Container>
-          <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-yellow-600">
-            Technical Stack
-          </h2>
-          <h3 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
-            Modern, Fast, Reliable
-          </h3>
-
-          <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-            {[
-              {
-                step: "01",
-                title: "Next.js 14",
-                description:
-                  "Server-side rendering for instant page loads and optimal SEO performance.",
-              },
-              {
-                step: "02",
-                title: "Google Maps API",
-                description:
-                  "Interactive map showing service coverage area and real-time location display.",
-              },
-              {
-                step: "03",
-                title: "Tailwind CSS",
-                description:
-                  "Utility-first styling for responsive design that looks great on all devices.",
-              },
-              {
-                step: "04",
-                title: "Supabase",
-                description:
-                  "Backend infrastructure for contact forms and customer inquiry management.",
-              },
-            ].map((phase) => (
-              <div key={phase.step}>
-                <span className="text-5xl font-black text-zinc-200 dark:text-zinc-800">
-                  {phase.step}
-                </span>
-                <h4 className="mt-4 text-lg font-semibold text-zinc-900 dark:text-zinc-100">
-                  {phase.title}
-                </h4>
-                <p className="mt-2 text-zinc-600 dark:text-zinc-400">
-                  {phase.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
+      <CaseStudySystemSection
+        variant="light"
+        eyebrow="Delivery architecture"
+        title="A fast service surface with no wasted motion."
+        intro="The implementation prioritizes discoverability, mobile response, location context, and dependable lead capture—the technical requirements that matter most for a local emergency service."
+        accent="#a56400"
+        image={{
+          src: "/images/projects/live-screenshots/romorquage-live-01-hero.png",
+          alt: "Mont Rapido towing service landing page",
+        }}
+        items={[
+          {
+            step: "01",
+            label: "Surface",
+            title: "Next.js delivery",
+            description:
+              "Server-rendered page structure gives service content a fast first load and a strong base for local search discovery.",
+          },
+          {
+            step: "02",
+            label: "Location",
+            title: "Map integration",
+            description:
+              "Coverage context is embedded into the conversion path rather than treated as a separate contact-page detail.",
+          },
+          {
+            step: "03",
+            label: "Inquiry",
+            title: "Supabase capture",
+            description:
+              "Contact submissions become structured requests while direct calling remains available for urgent situations.",
+          },
+          {
+            step: "04",
+            label: "Interface",
+            title: "Responsive system",
+            description:
+              "Touch targets, type scale, imagery, and sticky actions are tuned for drivers using the site from a phone.",
+          },
+        ]}
+      />
 
       {/* Results Section */}
       <section className="bg-white py-16 sm:py-20 dark:bg-zinc-950">
         <Container>
           <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-yellow-600">
-            Impact
+            Delivered scope
           </h2>
           <h3 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
-            Driving Real Results
+            A shorter path from search to dispatch
           </h3>
           <p className="mt-4 max-w-2xl text-lg text-zinc-600 dark:text-zinc-400">
-            A modern, mobile-optimized landing page that converts stressed drivers 
-            into customers.
+            A focused sequence from service fit and coverage to the direct phone action.
           </p>
 
           <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { value: "Mobile-First", label: "Design" },
-              { value: "Real-Time", label: "Location Map" },
-              { value: "One-Tap", label: "Call to Action" },
-              { value: "Fast", label: "Load Times" },
+              { value: "Mobile-first", label: "Primary layout" },
+              { value: "Mapped", label: "Coverage context" },
+              { value: "One tap", label: "Phone action" },
+              { value: "FR + EN", label: "Locale support" },
             ].map((stat) => (
               <div
                 key={stat.label}
@@ -465,23 +419,23 @@ export default function RomorquageCaseStudy() {
                 {
                   challenge: "Mobile-first landing for stranded drivers",
                   solution:
-                    "Hard performance budget — every asset under 200KB, no JS-heavy hero animations, critical-path CSS inlined. Tested on throttled 3G with Lighthouse mobile to validate sub-1.5s LCP.",
+                    "Kept the first screen light, avoided a JavaScript-heavy hero, and tested the contact path at narrow breakpoints and under constrained network conditions.",
                   impact:
-                    "100% Lighthouse mobile performance score. The \"request a tow\" CTA is reachable in under 2s even on poor cellular — exactly what stressed users need.",
+                    "The phone action stays available early in the journey without waiting for the visitor to explore the whole site.",
                 },
                 {
                   challenge: "Real-time location-mapping integration",
                   solution:
-                    "Mapbox GL on the customer side (lightweight tile rendering); Supabase realtime for driver-location updates pushed to subscribed clients. Customer trust signal: see the truck moving, not just an ETA.",
+                    "Location context is presented inside the service journey so the visitor can understand coverage without navigating to a separate contact page.",
                   impact:
-                    "Customers stop calling dispatch \"are you here yet?\" because they can see the answer on the map.",
+                    "Coverage becomes part of the decision path instead of a line of copy in the footer.",
                 },
                 {
                   challenge: "Bilingual (FR + EN) without doubling the codebase",
                   solution:
                     "Next.js i18n routing with translation files per locale, locale detected from browser then user-overrideable. URL prefixes (/fr, /en) for shareability. Locale-aware metadata so social shares feel native per language.",
                   impact:
-                    "One codebase, two languages. Quebec users default to French; the rest of Canada to English. No fork.",
+                    "French and English share one set of components while retaining locale-specific routes and metadata.",
                 },
               ].map((c, i) => (
                 <div key={i}>
@@ -494,7 +448,7 @@ export default function RomorquageCaseStudy() {
                       {c.solution}
                     </p>
                     <p>
-                      <span className="text-xs font-semibold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">Outcome · </span>
+                      <span className="text-xs font-semibold uppercase tracking-wider text-[#ff5500]">Outcome · </span>
                       {c.impact}
                     </p>
                   </div>
@@ -506,7 +460,7 @@ export default function RomorquageCaseStudy() {
       </section>
 
       {/* CTA Section */}
-      <section className="relative overflow-hidden border-t border-zinc-800 bg-zinc-950 py-24">
+      <section className="case-study-closing relative overflow-hidden border-t border-zinc-800 bg-zinc-950 py-24">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,77,31,0.15),transparent_70%)]" />
         <Container className="relative text-center">
           <h2 className="text-3xl font-bold text-white sm:text-4xl md:text-5xl">
@@ -527,7 +481,7 @@ export default function RomorquageCaseStudy() {
         </Container>
       </section>
 
-      <Footer />
+      <Footer compact />
     </main>
   );
 }
