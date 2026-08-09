@@ -46,6 +46,10 @@ export const metadata: Metadata = {
   creator: person.name,
   publisher: person.name,
   alternates: { canonical: SITE_URL },
+  icons: {
+    icon: [{ url: "/mab-icon.svg?v=2", type: "image/svg+xml" }],
+    shortcut: "/mab-icon.svg?v=2",
+  },
   category: "technology",
   openGraph: {
     type: "website",
