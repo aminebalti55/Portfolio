@@ -19,7 +19,7 @@ export default function AutoAllyCaseStudy() {
     <main className="case-detail autoally-case min-h-screen bg-white text-zinc-950 dark:bg-zinc-950 dark:text-zinc-50">
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-[#081a32] text-white">
-        <div className="absolute inset-0 bg-[radial-gradient(1100px_circle_at_72%_0%,rgba(36,195,142,0.34),transparent_55%),radial-gradient(900px_circle_at_18%_14%,rgba(72,112,171,0.32),transparent_56%)]" />
+        <div className="absolute inset-0 project-hero-orbs--autoally" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/30 to-black/60" />
 
         <SiteHeader />

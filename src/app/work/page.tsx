@@ -7,7 +7,7 @@ import { socials } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Selected Work",
-  description: "Nine production case studies across fleet operations, billing, HR, marketplaces, health, and lead intelligence.",
+  description: "Ten production case studies across fleet operations, billing, HR, marketplaces, payments, health, and lead intelligence.",
 };
 
 const clientWork = projects.filter((project) => project.kind === "client");
@@ -20,7 +20,7 @@ export default function WorkPage() {
         <SiteHeader />
         <div className="inner-page-hero__content">
           <p className="kicker kicker--light">Complete project archive</p>
-          <h1>Nine builds.<br /><em>Every one has receipts.</em></h1>
+          <h1>Ten builds.<br /><em>Every one has receipts.</em></h1>
           <div className="inner-page-hero__footer">
             <p>
               Production systems built across the UK, Germany, Canada, and

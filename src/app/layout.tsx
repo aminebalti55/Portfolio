@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist_Mono, Inter_Tight, Manrope, Syne } from "next/font/google";
+import { Geist_Mono, Inter_Tight, Manrope, Press_Start_2P, Syne, VT323 } from "next/font/google";
 import { ViewTransitions } from "next-view-transitions";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -24,6 +24,18 @@ const syne = Syne({
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+const pressStart = Press_Start_2P({
+  variable: "--font-pixel-display",
+  weight: "400",
+  subsets: ["latin"],
+});
+
+const vt323 = VT323({
+  variable: "--font-pixel-body",
+  weight: "400",
   subsets: ["latin"],
 });
 
@@ -81,7 +93,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${manrope.variable} ${interTight.variable} ${syne.variable} ${geistMono.variable} antialiased`}
+        className={`${manrope.variable} ${interTight.variable} ${syne.variable} ${geistMono.variable} ${pressStart.variable} ${vt323.variable} antialiased`}
       >
         <ViewTransitions>
           <Providers>{children}</Providers>

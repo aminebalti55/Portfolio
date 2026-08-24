@@ -20,7 +20,7 @@ export default function AtlasCaseStudy() {
     <main className="case-detail min-h-screen bg-white text-zinc-950 dark:bg-zinc-950 dark:text-zinc-50">
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-[#0a1628] text-white">
-        <div className="absolute inset-0 bg-[radial-gradient(1100px_circle_at_70%_0%,rgba(16,185,129,0.45),transparent_55%),radial-gradient(900px_circle_at_20%_10%,rgba(34,197,94,0.25),transparent_55%)]" />
+        <div className="absolute inset-0 project-hero-orbs--atlas" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/30 to-black/60" />
 
         <SiteHeader />

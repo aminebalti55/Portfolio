@@ -4,6 +4,7 @@ import { SITE_URL } from "@/lib/site";
 // Case-study + blog slugs (must match the route folders under app/work and
 // app/blog). Update when you add a page.
 const workSlugs = [
+  "fallen-throne",
   "pulse",
   "autoally",
   "invoicebirds",

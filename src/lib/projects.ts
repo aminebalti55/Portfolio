@@ -6,7 +6,7 @@
  * had already drifted (Compass carried different descriptions in each). The
  * home page and /work now both read from here.
  *
- * Note there is no per-project `color`. Nine arbitrary accent colours were the
+ * Note there is no per-project `color`. Arbitrary accent colours were the
  * main reason the set read as incoherent; the palette is one accent (#ff5500)
  * plus neutrals, and category is carried by type, not by hue.
  */
@@ -118,6 +118,20 @@ export const projects: Project[] = [
     image: "/images/projects/live-screenshots/romorquage-live-01-hero.png",
     tech: ["Next.js", "Tailwind CSS", "Supabase", "Mapbox"],
     liveUrl: "https://www.remorquagemontrapido.com/",
+  },
+  {
+    slug: "fallen-throne",
+    title: "Fallen Throne",
+    category: "Competitive Bidding Leaderboard",
+    kind: "personal",
+    region: "Independent product experiment",
+    year: "2026",
+    description:
+      "A live pixel-art bidding leaderboard where cumulative spend determines who rules the board. Visitors submit a website or social profile, place a Stripe-backed bid, and climb a public hierarchy.",
+    image: "/images/projects/fallen-throne/fallen-throne-social-share.jpg",
+    tech: ["Next.js", "TypeScript", "Stripe", "Cloudflare Workers", "Durable Objects"],
+    liveUrl: "https://fallenthrone.lol/",
+    featured: true,
   },
   {
     slug: "pulse",

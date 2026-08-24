@@ -5,7 +5,7 @@ import { Container } from "@/components/ui/Container";
 export function CtaBand() {
   return (
     <section className="relative overflow-hidden bg-[#0a0506] py-20 text-white sm:py-24">
-      <div className="absolute inset-0 bg-[radial-gradient(1100px_circle_at_20%_120%,rgba(255,77,31,0.45),transparent_55%),radial-gradient(900px_circle_at_90%_10%,rgba(255,0,92,0.22),transparent_60%)]" />
+      <div className="absolute inset-0 cta-band-orbs" />
       <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/25 to-black/55" />
 
       <Container className="relative">

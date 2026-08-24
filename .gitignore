@@ -40,6 +40,9 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# local asset-generation helper
+scripts/gen-image.mjs
+
 # local browser and visual-QA artifacts
 /.playwright-mcp/
 /.codex-dev-*.log

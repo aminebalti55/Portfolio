@@ -20,7 +20,7 @@ export default function InvoiceBirdsCaseStudy() {
     <main className="case-detail min-h-screen bg-white text-zinc-950 dark:bg-zinc-950 dark:text-zinc-50">
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-[#080406] text-white">
-        <div className="absolute inset-0 bg-[radial-gradient(1100px_circle_at_70%_0%,rgba(255,77,0,0.62),transparent_55%),radial-gradient(900px_circle_at_20%_10%,rgba(255,255,255,0.08),transparent_55%)]" />
+        <div className="absolute inset-0 project-hero-orbs--invoicebirds" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/30 to-black/60" />
 
         <SiteHeader />

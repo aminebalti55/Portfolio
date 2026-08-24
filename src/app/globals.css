@@ -19,6 +19,847 @@
   --accent-foreground: #ffffff;
 }
 
+/* Named layers keep complex gradients out of Tailwind's arbitrary-value parser. */
+.project-hero-orbs--atlas { background: radial-gradient(1100px circle at 70% 0%, rgba(16,185,129,.45), transparent 55%), radial-gradient(900px circle at 20% 10%, rgba(34,197,94,.25), transparent 55%); }
+.project-hero-orbs--cassandra { background: radial-gradient(1100px circle at 70% 0%, rgba(139,92,246,.45), transparent 55%), radial-gradient(900px circle at 20% 10%, rgba(59,130,246,.25), transparent 55%); }
+.project-hero-orbs--romorquage { background: radial-gradient(1100px circle at 70% 0%, rgba(234,179,8,.45), transparent 55%), radial-gradient(900px circle at 20% 10%, rgba(249,115,22,.25), transparent 55%); }
+.project-hero-orbs--fledem,
+.project-hero-orbs--pulse { background: radial-gradient(1100px circle at 70% 0%, rgba(255,77,31,.55), transparent 55%), radial-gradient(900px circle at 20% 10%, rgba(255,0,92,.25), transparent 55%); }
+.project-hero-orbs--easyrhis { background: radial-gradient(1100px circle at 72% 0%, rgba(189,38,52,.62), transparent 56%), radial-gradient(900px circle at 18% 18%, rgba(112,18,30,.34), transparent 58%); }
+.project-hero-orbs--autoally { background: radial-gradient(1100px circle at 72% 0%, rgba(36,195,142,.34), transparent 55%), radial-gradient(900px circle at 18% 14%, rgba(72,112,171,.32), transparent 56%); }
+.project-hero-orbs--invoicebirds { background: radial-gradient(1100px circle at 70% 0%, rgba(255,77,0,.62), transparent 55%), radial-gradient(900px circle at 20% 10%, rgba(255,255,255,.08), transparent 55%); }
+.project-hero-orbs--compass { background: radial-gradient(1100px circle at 70% 0%, rgba(31,139,197,.62), transparent 55%), radial-gradient(900px circle at 20% 10%, rgba(10,88,143,.42), transparent 55%); }
+.cta-band-orbs { background: radial-gradient(1100px circle at 20% 120%, rgba(255,77,31,.45), transparent 55%), radial-gradient(900px circle at 90% 10%, rgba(255,0,92,.22), transparent 60%); }
+
+/* Fallen Throne easter egg: the portfolio gives way to a complete game world. */
+.fallen-throne-case {
+  --ft-ink: #08070a;
+  --ft-stone: #15121a;
+  --ft-stone-2: #211927;
+  --ft-cream: #f6e9bd;
+  --ft-gold: #efbd48;
+  --ft-gold-dark: #8e5d18;
+  --ft-purple: #5b276a;
+  --ft-red: #7d2630;
+  min-height: 100vh;
+  overflow: clip;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(98,49,115,.2), transparent 34rem),
+    #08070a;
+  color: var(--ft-cream);
+  font-family: var(--font-pixel-body), var(--font-geist-mono), monospace;
+  font-size: 22px;
+  line-height: 1.45;
+  image-rendering: pixelated;
+}
+
+.fallen-throne-case *,
+.fallen-throne-case *::before,
+.fallen-throne-case *::after {
+  box-sizing: border-box;
+}
+
+.fallen-throne-case a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.fallen-throne-case h1,
+.fallen-throne-case h2,
+.fallen-throne-case h3,
+.fallen-throne-case p,
+.fallen-throne-case figure,
+.fallen-throne-case blockquote {
+  margin-top: 0;
+}
+
+.ft-nav {
+  position: fixed;
+  top: 18px;
+  left: 50%;
+  z-index: 100;
+  width: min(calc(100% - 32px), 1180px);
+  min-height: 58px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border: 2px solid #b17a25;
+  background: rgba(11,9,14,.9);
+  box-shadow: 0 4px 0 #3d2316, 0 9px 28px rgba(0,0,0,.46);
+  backdrop-filter: blur(12px);
+  transform: translateX(-50%);
+}
+
+.ft-nav::before,
+.ft-nav::after {
+  content: "";
+  width: 8px;
+  align-self: stretch;
+  background: repeating-linear-gradient(#f1c357 0 6px, #845019 6px 12px);
+}
+
+.ft-nav a {
+  min-height: 40px;
+  padding: 0 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #f8e7b0;
+  font-family: var(--font-pixel-display), monospace;
+  font-size: 10px;
+  line-height: 1.5;
+  text-transform: uppercase;
+  transition: color 160ms ease, background-color 160ms ease;
+}
+
+.ft-nav a:hover,
+.ft-nav a:focus-visible {
+  background: #58213a;
+  color: #ffd86d;
+}
+
+.ft-soundtrack {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 110;
+}
+
+.ft-soundtrack button {
+  min-height: 52px;
+  padding: 7px 14px 7px 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 2px solid #d39c2e;
+  border-radius: 0;
+  background: #26142d;
+  color: #ffe4a0;
+  box-shadow: 4px 4px 0 #08070a;
+  cursor: pointer;
+}
+
+.ft-soundtrack button span {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  background: #7d2630;
+  color: #ffda67;
+  font-size: 22px;
+}
+
+.ft-soundtrack button strong {
+  font-family: var(--font-pixel-display), monospace;
+  font-size: 7px;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.ft-hero {
+  position: relative;
+  min-height: max(760px, 100svh);
+  display: grid;
+  align-items: start;
+  isolation: isolate;
+}
+
+.ft-hero__backdrop {
+  z-index: -3;
+  object-fit: cover;
+  object-position: center;
+  image-rendering: pixelated;
+  filter: saturate(.95) contrast(1.04);
+}
+
+.ft-hero__shade {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background:
+    linear-gradient(90deg, rgba(5,4,7,.92) 0%, rgba(5,4,7,.56) 46%, rgba(5,4,7,.12) 78%),
+    linear-gradient(0deg, #08070a 0%, transparent 35%);
+}
+
+.ft-hero__shade::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: .16;
+  background: linear-gradient(transparent 50%, #000 50%);
+  background-size: 100% 4px;
+  pointer-events: none;
+}
+
+.ft-hero__content {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 132px 0 96px;
+}
+
+.ft-kicker {
+  margin-bottom: 22px;
+  color: var(--ft-gold);
+  font-family: var(--font-pixel-display), monospace;
+  font-size: 9px;
+  line-height: 1.75;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.ft-hero__wordmark {
+  width: clamp(340px, 44vw, 620px);
+  height: auto;
+  margin: 0 0 18px clamp(-54px, -3.5vw, -28px);
+  object-fit: contain;
+  object-position: left center;
+  image-rendering: pixelated;
+  filter: drop-shadow(10px 12px 0 rgba(0,0,0,.58));
+}
+
+.fallen-throne-case .ft-hero__wordmark {
+  margin-bottom: 18px;
+}
+
+.ft-hero__lede {
+  max-width: 790px;
+  margin-bottom: 16px;
+  color: #fff0bf;
+  font-size: clamp(1.7rem, 2.8vw, 2.55rem);
+  line-height: 1.08;
+}
+
+.ft-hero__support {
+  max-width: 680px;
+  margin-bottom: 34px;
+  color: rgba(246,233,189,.76);
+  font-size: 22px;
+  line-height: 1.45;
+}
+
+.ft-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.ft-button {
+  position: relative;
+  width: clamp(310px, 28vw, 410px);
+  min-height: 78px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  font-family: var(--font-pixel-body), monospace;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: .035em;
+  text-transform: uppercase;
+  background-color: transparent;
+  background-image: url("/images/projects/fallen-throne/generated/custom-buttons.png");
+  background-repeat: no-repeat;
+  background-size: 100% 300%;
+  image-rendering: pixelated;
+  filter: drop-shadow(5px 6px 0 #08070a);
+  transition: transform 140ms steps(2), filter 140ms steps(2);
+}
+
+.fallen-throne-case .ft-button { font-size: 22px; }
+
+.ft-button__label {
+  position: relative;
+  width: 100%;
+  padding: 18px 68px 17px 86px;
+  display: block;
+  text-align: center;
+  transform: translateY(1px);
+}
+
+.ft-button:hover,
+.ft-button:focus-visible {
+  transform: translate(-2px, -2px);
+  filter: drop-shadow(8px 9px 0 #08070a) brightness(1.08);
+}
+
+.ft-button--gold {
+  background-position: center top;
+  color: #fff0b8;
+}
+
+.ft-button--ghost {
+  background-position: center 50%;
+  color: #f5df9c;
+}
+
+.ft-hero__scroll {
+  position: absolute;
+  right: 28px;
+  bottom: 102px;
+  color: rgba(246,233,189,.58);
+  font-family: var(--font-pixel-display), monospace;
+  font-size: 7px;
+  line-height: 1.6;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+}
+
+.ft-section {
+  position: relative;
+  width: min(1260px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 140px 0;
+  border-top: 2px solid rgba(216,164,50,.28);
+}
+
+.ft-section::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  background: var(--ft-gold);
+  box-shadow: -16px 0 0 #5a264e, 16px 0 0 #5a264e;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.ft-section__heading {
+  display: grid;
+  grid-template-columns: .7fr 1.6fr;
+  gap: clamp(32px, 8vw, 120px);
+  align-items: start;
+  margin-bottom: 78px;
+}
+
+.ft-section__heading h2,
+.ft-judgment h2,
+.ft-reliability h2,
+.ft-tech h2,
+.ft-outcome h2 {
+  margin: 0;
+  color: #f7e7b2;
+  font-family: var(--font-pixel-display), monospace;
+  font-size: clamp(2.1rem, 5.4vw, 5.3rem);
+  line-height: 1.2;
+  letter-spacing: -.045em;
+}
+
+.ft-section__heading h2 em,
+.ft-judgment h2 em,
+.ft-reliability h2 em,
+.ft-tech h2 em,
+.ft-outcome h2 em {
+  color: var(--ft-gold);
+  font-style: normal;
+}
+
+.ft-section__heading--center {
+  display: block;
+  text-align: center;
+}
+
+.ft-section__heading--center h2 {
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+.ft-overview__grid {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: clamp(42px, 9vw, 140px);
+  align-items: start;
+}
+
+.ft-premise-copy {
+  display: grid;
+  grid-template-columns: clamp(92px, 11vw, 138px) 1fr;
+  gap: clamp(18px, 3vw, 34px);
+  align-items: start;
+}
+
+.ft-premise-copy p {
+  margin: 0;
+  color: rgba(246,233,189,.82);
+  font-size: clamp(1.7rem, 2.5vw, 2.45rem);
+  line-height: 1.25;
+}
+
+.ft-illuminated-t {
+  width: 100%;
+  aspect-ratio: .72;
+  display: block;
+  margin-top: -10px;
+  background-image: url("/images/projects/fallen-throne/generated/letter-t.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: contain;
+  filter: drop-shadow(5px 6px 0 #3b1628);
+  image-rendering: pixelated;
+}
+
+.ft-overview dl {
+  margin: 0;
+  display: grid;
+  gap: 14px;
+}
+
+.ft-overview dl > div {
+  display: grid;
+  grid-template-columns: 86px 1fr;
+  gap: 16px;
+  align-items: center;
+  min-height: 118px;
+  padding: 24px 28px 22px;
+  border: 24px solid transparent;
+  border-image: url("/images/projects/fallen-throne/generated/chapter-panel.png") 160 fill / 28px / 0 stretch;
+  filter: drop-shadow(7px 8px 0 #241326);
+}
+
+.ft-overview dt { margin-bottom: 7px; color: var(--ft-gold); font-family: var(--font-pixel-display), monospace; font-size: 7px; line-height: 1.7; text-transform: uppercase; }
+.ft-overview dd { margin: 0; color: rgba(255,241,197,.84); font-size: 19px; line-height: 1.3; }
+
+.ft-meta-asset {
+  width: 82px;
+  height: 84px;
+  display: block;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  image-rendering: pixelated;
+  filter: drop-shadow(3px 4px 0 rgba(0,0,0,.55));
+}
+
+.ft-meta-asset--role { background-image: url("/images/projects/fallen-throne/generated/icon-role.png"); }
+.ft-meta-asset--status { background-image: url("/images/projects/fallen-throne/generated/icon-status.png"); }
+.ft-meta-asset--loop { background-image: url("/images/projects/fallen-throne/generated/icon-loop.png"); }
+.ft-meta-asset--delivery { background-image: url("/images/projects/fallen-throne/generated/icon-delivery.png"); }
+
+.ft-loop__steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(18px, 2.2vw, 30px);
+}
+
+.ft-loop__steps article {
+  position: relative;
+  min-height: 370px;
+  padding: 72px 50px 48px;
+  border: 52px solid transparent;
+  border-image: url("/images/projects/fallen-throne/generated/chapter-panel.png") 170 fill / 52px / 0 stretch;
+  filter: drop-shadow(9px 10px 0 #241326);
+}
+
+.ft-loop__number {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  z-index: 1;
+}
+
+.ft-loop__copy { position: relative; z-index: 1; }
+.ft-loop__steps article > span,
+.ft-reliability__grid article > span,
+.ft-payment__rail article > span { color: var(--ft-gold); font-family: var(--font-pixel-display), monospace; font-size: 10px; }
+.ft-loop__steps h3,
+.ft-payment__rail h3,
+.ft-reliability__grid h3 { margin: 30px 0 18px; color: #fff0bc; font-family: var(--font-pixel-display), monospace; font-size: 14px; line-height: 1.55; }
+.ft-loop__steps p,
+.ft-payment__rail p,
+.ft-reliability__grid p { margin-bottom: 0; color: rgba(246,233,189,.67); font-size: 19px; line-height: 1.45; }
+
+.ft-character-lineup {
+  width: min(100%, 1040px);
+  margin-top: 78px;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: end;
+  gap: 16px;
+}
+
+.ft-character-lineup figure {
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.ft-character {
+  width: 100%;
+  height: clamp(230px, 29vw, 390px);
+  background-image: url("/images/projects/fallen-throne/generated/rank-characters.png");
+  background-repeat: no-repeat;
+  background-size: 400% 100%;
+  background-position-y: center;
+  filter: drop-shadow(7px 9px 0 rgba(0,0,0,.5));
+  transform: translateZ(0);
+  transition: transform 130ms steps(2);
+  will-change: transform;
+}
+
+.ft-character-lineup figure:hover .ft-character {
+  transform: translate3d(0, -6px, 0);
+}
+
+.ft-character--king { background-position-x: 0%; }
+.ft-character--knight { background-position-x: 33.333%; }
+.ft-character--commoner { background-position-x: 66.666%; }
+.ft-character--bidder { background-position-x: 100%; }
+
+.ft-character-lineup figcaption {
+  width: min(100%, 220px);
+  margin: -12px auto 0;
+  padding: 10px 13px;
+  border: 2px solid #95651f;
+  background: #24162a;
+  color: #f7df97;
+  font-family: var(--font-pixel-display), monospace;
+  font-size: 8px;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.ft-character-lineup figcaption strong,
+.ft-character-lineup figcaption span {
+  display: block;
+}
+
+.ft-character-lineup figcaption span {
+  margin-top: 7px;
+  color: rgba(246,233,189,.68);
+  font-family: var(--font-pixel-body), monospace;
+  font-size: 15px;
+  line-height: 1.15;
+  text-transform: none;
+}
+
+.ft-judgment {
+  width: 100%;
+  padding-inline: max(24px, calc((100vw - 1260px) / 2));
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: clamp(56px, 10vw, 150px);
+  background:
+    linear-gradient(rgba(22,16,26,.94), rgba(12,9,14,.98)),
+    url("/images/projects/fallen-throne/generated/throne-room-hero.png") center / cover;
+}
+
+.ft-judgment__quote {
+  align-self: center;
+  padding: 32px;
+  border: 3px solid #b17a25;
+  background: rgba(38,20,45,.9);
+  box-shadow: 10px 10px 0 #08070a;
+}
+
+.ft-judgment blockquote {
+  margin-bottom: 0;
+  color: #ffd467;
+  font-family: var(--font-pixel-display), monospace;
+  font-size: clamp(1.25rem, 2.3vw, 2.25rem);
+  line-height: 1.55;
+}
+
+.ft-judgment__copy p {
+  color: rgba(246,233,189,.74);
+  font-size: 22px;
+  line-height: 1.5;
+}
+
+.ft-judgment__copy h2 { margin-bottom: 38px; }
+
+.ft-live-board__desktop {
+  width: min(100%, 1100px);
+  margin-inline: auto;
+  margin-bottom: 112px;
+  padding: 14px;
+  border: 3px solid #a97525;
+  background: #18121c;
+  box-shadow: 12px 12px 0 #321b38;
+}
+
+.ft-live-board__desktop img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid #08070a;
+}
+
+.ft-live-board figcaption {
+  padding: 17px 5px 3px;
+  display: flex;
+  gap: 18px;
+  color: rgba(246,233,189,.7);
+  font-size: 18px;
+}
+
+.ft-live-board figcaption span { color: var(--ft-gold); font-family: var(--font-pixel-display), monospace; font-size: 8px; }
+
+.ft-live-board__mobile-grid {
+  display: grid;
+  grid-template-columns: .72fr .9fr .72fr;
+  gap: clamp(24px, 5vw, 74px);
+  align-items: center;
+}
+
+.ft-live-board__mobile-grid figure {
+  margin-bottom: 0;
+  padding: 9px;
+  border: 3px solid #98651f;
+  background: #171219;
+  box-shadow: 9px 9px 0 #311936;
+}
+
+.ft-live-board__mobile-grid figure img { width: 100%; height: auto; display: block; }
+.ft-live-board__mobile-grid figcaption { padding: 13px 4px 4px; display: block; color: var(--ft-gold); font-family: var(--font-pixel-display), monospace; font-size: 7px; line-height: 1.6; text-align: center; text-transform: uppercase; }
+.ft-live-board__mobile-copy h3 { margin: 0 0 25px; color: #f7e7b2; font-family: var(--font-pixel-display), monospace; font-size: clamp(1.45rem, 3vw, 2.8rem); line-height: 1.35; }
+.ft-live-board__mobile-copy > p:last-child { margin: 0; color: rgba(246,233,189,.72); font-size: 21px; line-height: 1.5; }
+
+.ft-payment__rail {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 3px solid #95631d;
+  background: #121015;
+  box-shadow: 10px 10px 0 #311936;
+}
+
+.ft-payment__plain {
+  margin-bottom: 54px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.ft-payment__plain article {
+  padding: 24px;
+  border-left: 4px solid var(--ft-gold);
+  background: rgba(91,39,106,.18);
+}
+
+.ft-payment__plain strong {
+  display: block;
+  margin-bottom: 10px;
+  color: #ffe39a;
+  font-family: var(--font-pixel-display), monospace;
+  font-size: 9px;
+  line-height: 1.65;
+}
+
+.ft-payment__plain p {
+  margin: 0;
+  color: rgba(246,233,189,.72);
+  font-size: 19px;
+  line-height: 1.4;
+}
+
+.ft-payment__rail article {
+  position: relative;
+  min-height: 335px;
+  padding: 27px 24px;
+  border-right: 1px solid rgba(239,189,72,.25);
+}
+
+.ft-payment__rail article:nth-child(3n) { border-right: 0; }
+.ft-payment__rail article:nth-child(-n+3) { border-bottom: 1px solid rgba(239,189,72,.25); }
+
+.ft-payment__rail article:last-child { border-right: 0; }
+.ft-payment__rail article:not(:last-child)::after { content: "→"; position: absolute; right: -12px; top: 28px; z-index: 2; width: 24px; height: 24px; display: grid; place-items: center; background: var(--ft-gold); color: #171016; font-family: var(--font-pixel-display), monospace; font-size: 9px; }
+.ft-payment__rail h3 { margin-top: 72px; font-size: 11px; }
+.ft-payment__rail p { font-size: 18px; }
+
+.ft-reliability {
+  display: grid;
+  grid-template-columns: .72fr 1.28fr;
+  gap: clamp(50px, 8vw, 120px);
+}
+
+.ft-reliability__intro h2 { margin-bottom: 28px; }
+.ft-reliability__intro > p:last-child { color: rgba(246,233,189,.7); font-size: 21px; line-height: 1.5; }
+.ft-reliability__grid { display: grid; grid-template-columns: 1fr 1fr; border: 3px solid #96631d; box-shadow: 10px 10px 0 #2e1833; }
+.ft-reliability__grid article { min-height: 285px; padding: 28px; border-right: 1px solid rgba(239,189,72,.24); border-bottom: 1px solid rgba(239,189,72,.24); background: linear-gradient(145deg, #1c1520, #100d13); }
+.ft-reliability__grid article:nth-child(even) { border-right: 0; }
+.ft-reliability__grid article:nth-child(n+3) { border-bottom: 0; }
+.ft-reliability__grid h3 { margin-top: 38px; font-size: 11px; }
+
+.ft-tech {
+  display: grid;
+  grid-template-columns: .82fr 1.18fr;
+  gap: clamp(50px, 9vw, 130px);
+  align-items: center;
+}
+
+.ft-tech__proof {
+  padding: 38px;
+  display: grid;
+  gap: 22px;
+  border: 4px double #c68d29;
+  background: linear-gradient(135deg, #2c1535, #130f17);
+  box-shadow: 11px 11px 0 #08070a;
+}
+
+.ft-tech__proof > span {
+  color: #ffd15d;
+  font-family: var(--font-pixel-display), monospace;
+  font-size: clamp(4.5rem, 9vw, 8.5rem);
+  line-height: .9;
+  text-shadow: 7px 7px 0 #6f2432;
+}
+
+.ft-tech__proof strong { display: block; margin-bottom: 8px; color: #fff0b9; font-family: var(--font-pixel-display), monospace; font-size: 10px; line-height: 1.5; }
+.ft-tech__proof p { margin: 0; color: rgba(246,233,189,.68); font-size: 19px; line-height: 1.42; }
+.ft-tech__stack h2 { margin-bottom: 38px; }
+.ft-tech__stack > div { display: flex; flex-wrap: wrap; gap: 10px; }
+.ft-tech__stack span { padding: 10px 12px; border: 2px solid rgba(239,189,72,.4); background: #171219; color: #f5dfa0; font-family: var(--font-pixel-display), monospace; font-size: 7px; line-height: 1.55; box-shadow: 3px 3px 0 #301834; }
+
+.ft-outcome {
+  position: relative;
+  min-height: 860px;
+  padding: 170px 24px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  isolation: isolate;
+  background:
+    radial-gradient(circle at center, rgba(97,39,106,.5), transparent 42rem),
+    #08070a;
+}
+
+.ft-outcome::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background: url("/images/projects/fallen-throne/generated/throne-room-hero.png") center / cover;
+  opacity: .22;
+}
+
+.ft-outcome__ornaments {
+  z-index: -1;
+  object-fit: contain;
+  opacity: .17;
+  image-rendering: pixelated;
+  transform: scale(1.12);
+}
+
+.ft-outcome__content {
+  width: min(900px, 100%);
+  padding: clamp(34px, 6vw, 72px);
+  border: 4px double #d29b31;
+  background: rgba(15,11,18,.91);
+  box-shadow: 14px 14px 0 #381d3d;
+  text-align: center;
+}
+
+.ft-outcome h2 { margin-bottom: 30px; }
+.ft-outcome__content > p:not(.ft-kicker) { max-width: 720px; margin: 0 auto 38px; color: rgba(246,233,189,.76); font-size: 22px; line-height: 1.48; }
+.ft-outcome .ft-actions { justify-content: center; }
+
+@media (max-width: 1000px) {
+  .ft-section__heading,
+  .ft-overview__grid,
+  .ft-judgment,
+  .ft-reliability,
+  .ft-tech { grid-template-columns: 1fr; }
+  .ft-section__heading { gap: 12px; }
+  .ft-loop__steps { grid-template-columns: 1fr; }
+  .ft-loop__steps article { min-height: 310px; }
+  .ft-live-board__mobile-grid { grid-template-columns: 1fr 1fr; }
+  .ft-live-board__mobile-copy { grid-column: 1 / -1; grid-row: 1; max-width: 720px; }
+  .ft-payment__plain { grid-template-columns: 1fr; }
+  .ft-payment__rail { grid-template-columns: 1fr 1fr; }
+  .ft-payment__rail article { min-height: 260px; border-bottom: 1px solid rgba(239,189,72,.25); }
+  .ft-payment__rail article:last-child { border-bottom: 0; }
+  .ft-payment__rail article:nth-child(3n) { border-right: 1px solid rgba(239,189,72,.25); }
+  .ft-payment__rail article:nth-child(2n) { border-right: 0; }
+  .ft-payment__rail article:not(:last-child)::after { display: none; }
+}
+
+@media (max-width: 700px) {
+  .fallen-throne-case { font-size: 19px; }
+  .ft-nav { top: 8px; width: calc(100% - 16px); min-height: 52px; gap: 4px; }
+  .ft-nav::before,
+  .ft-nav::after { display: none; }
+  .ft-nav a { padding: 0 8px; font-size: 6px; }
+  .ft-soundtrack { right: 10px; bottom: 10px; }
+  .ft-soundtrack button { min-height: 46px; padding-right: 9px; }
+  .ft-soundtrack button span { width: 30px; height: 30px; }
+  .ft-soundtrack button strong { font-size: 6px; }
+  .ft-hero { min-height: 820px; }
+  .ft-hero__backdrop { object-position: 58% center; }
+  .ft-hero__shade { background: linear-gradient(0deg, #08070a 3%, rgba(5,4,7,.92) 42%, rgba(5,4,7,.32) 100%); }
+  .ft-hero__content { width: calc(100% - 30px); padding: 118px 0 78px; }
+  .ft-hero__wordmark { width: min(104%, 480px); margin: 0 0 16px -14px; }
+  .fallen-throne-case .ft-hero__wordmark { margin-bottom: 16px; }
+  .ft-hero__lede { font-size: 1.6rem; }
+  .ft-hero__support { font-size: 19px; }
+  .ft-actions { flex-direction: column; }
+  .ft-button { width: 100%; min-height: 68px; font-size: 19px; }
+  .fallen-throne-case .ft-button { font-size: 19px; }
+  .ft-button__label { padding: 16px 56px 15px 70px; }
+  .ft-hero__scroll { display: none; }
+  .ft-section { width: calc(100% - 30px); padding: 94px 0; }
+  .ft-kicker { font-size: 7px; }
+  .ft-section__heading { margin-bottom: 48px; }
+  .ft-section__heading h2,
+  .ft-judgment h2,
+  .ft-reliability h2,
+  .ft-tech h2,
+  .ft-outcome h2 { font-size: clamp(1.55rem, 9.5vw, 2.6rem); line-height: 1.35; }
+  .ft-premise-copy { grid-template-columns: 76px 1fr; gap: 14px; }
+  .ft-premise-copy p { font-size: 1.45rem; }
+  .ft-illuminated-t { width: 76px; margin-top: -6px; }
+  .ft-overview dl > div { grid-template-columns: 62px 1fr; min-height: 112px; padding: 18px 16px; border-width: 18px; border-image-width: 21px; }
+  .ft-meta-asset { width: 60px; height: 66px; }
+  .ft-overview dd { font-size: 18px; }
+  .ft-loop__steps article { min-height: 300px; padding: 70px 34px 38px; border-width: 34px; border-image-width: 36px; }
+  .ft-loop__number { top: 20px; left: 20px; width: 52px; height: 52px; }
+  .ft-loop__steps h3 { margin-top: 22px; }
+  .ft-character-lineup { grid-template-columns: 1fr 1fr; gap: 24px 8px; }
+  .ft-character { height: 245px; }
+  .ft-character-lineup figcaption { font-size: 6px; }
+  .ft-character-lineup figcaption span { font-size: 13px; }
+  .ft-judgment { width: calc(100% + 30px); margin-left: -15px; padding-inline: 15px; }
+  .ft-judgment__quote { padding: 22px; }
+  .ft-judgment blockquote { font-size: 1.15rem; }
+  .ft-judgment__copy p { font-size: 19px; }
+  .ft-live-board__desktop { margin-bottom: 80px; padding: 6px; box-shadow: 6px 6px 0 #321b38; }
+  .ft-live-board figcaption { font-size: 15px; }
+  .ft-live-board__mobile-grid { grid-template-columns: 1fr; }
+  .ft-live-board__mobile-copy { grid-column: auto; grid-row: auto; }
+  .ft-live-board__mobile-grid figure { width: min(100%, 430px); margin-inline: auto; }
+  .ft-payment__rail { grid-template-columns: 1fr; }
+  .ft-payment__rail article,
+  .ft-payment__rail article:last-child { grid-column: auto; min-height: 0; border-right: 0; }
+  .ft-payment__rail h3 { margin-top: 36px; }
+  .ft-reliability__grid { grid-template-columns: 1fr; }
+  .ft-reliability__grid article { min-height: 0; border-right: 0; border-bottom: 1px solid rgba(239,189,72,.24); }
+  .ft-reliability__grid article:nth-child(n+3) { border-bottom: 1px solid rgba(239,189,72,.24); }
+  .ft-reliability__grid article:last-child { border-bottom: 0; }
+  .ft-tech__proof { padding: 26px; }
+  .ft-tech__proof > span { font-size: 4.2rem; }
+  .ft-outcome { min-height: 730px; padding-inline: 15px; }
+  .ft-outcome__content { padding: 32px 20px; box-shadow: 7px 7px 0 #381d3d; }
+  .ft-outcome__content > p:not(.ft-kicker) { font-size: 19px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fallen-throne-case *,
+  .fallen-throne-case *::before,
+  .fallen-throne-case *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -4367,6 +5208,7 @@ summary::marker {
 .case-stage:nth-child(2) { top: 120px; z-index: 2; }
 .case-stage:nth-child(3) { top: 128px; z-index: 3; }
 .case-stage:nth-child(4) { top: 136px; z-index: 4; }
+.case-stage:nth-child(5) { top: 144px; z-index: 5; }
 
 .case-stage--compass {
   --case-bg: #0b5f99;
@@ -4411,6 +5253,57 @@ summary::marker {
   --case-line: rgba(245,242,233,.18);
   --case-canvas: #e6ebf2;
   --case-accent: #24c38e;
+}
+
+.case-stage--fallen-throne {
+  --case-bg: #17131d;
+  --case-fg: #f7e7b2;
+  --case-muted: rgba(247,231,178,.68);
+  --case-line: rgba(238,181,48,.26);
+  --case-canvas: #09080b;
+  --case-accent: #f0b933;
+  transition: border-radius 280ms ease, background-color 280ms ease, box-shadow 280ms ease;
+}
+
+.case-stage--fallen-throne:hover {
+  border-radius: 2px;
+  background-color: #08070a;
+  background-image:
+    linear-gradient(rgba(8,7,10,.82), rgba(8,7,10,.92)),
+    url("/images/projects/fallen-throne/generated/throne-room-hero.png");
+  background-position: center;
+  background-size: cover;
+  box-shadow: 0 -18px 0 #38266a, 0 -24px 0 #d09a28, 0 34px 90px rgba(0,0,0,.52);
+}
+
+.case-stage--fallen-throne:hover .case-stage__copy h3,
+.case-stage--fallen-throne:hover .case-stage__headline,
+.case-stage--fallen-throne:hover .case-stage__link {
+  font-family: var(--font-pixel-display), monospace;
+  letter-spacing: -.02em;
+}
+
+.case-stage--fallen-throne:hover .case-stage__copy h3 {
+  color: #ffd566;
+  font-size: clamp(2.3rem, 3.7vw, 4.5rem);
+  line-height: 1.08;
+  text-shadow: 4px 4px 0 #5d1e24;
+}
+
+.case-stage--fallen-throne:hover .case-stage__headline {
+  font-size: clamp(1.15rem, 1.55vw, 1.65rem);
+  line-height: 1.55;
+}
+
+.case-stage--fallen-throne:hover .case-stage__meta,
+.case-stage--fallen-throne:hover .case-stage__signal,
+.case-stage--fallen-throne:hover .case-stage__tags span {
+  font-family: var(--font-pixel-display), monospace;
+}
+
+.case-stage--fallen-throne:hover .case-stage__tags span {
+  border-radius: 0;
+  box-shadow: 3px 3px 0 rgba(240,185,51,.28);
 }
 
 .case-stage__meta {
@@ -4576,6 +5469,79 @@ summary::marker {
   border-radius: 50%;
   background: rgba(255,255,255,.22);
   filter: blur(1px);
+}
+
+.case-stage__visual--fallen-throne {
+  border: 2px solid #6f4a17;
+  background:
+    linear-gradient(rgba(5,5,8,.05), rgba(5,5,8,.4)),
+    url("/images/projects/fallen-throne/fallen-throne-social-share.jpg") center / cover;
+  image-rendering: pixelated;
+}
+
+.case-stage__visual--fallen-throne::before {
+  z-index: 0;
+  opacity: .18;
+  background-image: linear-gradient(transparent 50%, rgba(0,0,0,.48) 50%);
+  background-size: 100% 4px;
+}
+
+.case-stage__visual--fallen-throne::after {
+  inset: 0;
+  width: auto;
+  border-radius: 0;
+  background: radial-gradient(circle at 50% 35%, transparent 20%, rgba(0,0,0,.55) 100%);
+  opacity: .7;
+}
+
+.fallen-card__crest {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  z-index: 6;
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  border: 2px solid #e8b331;
+  background: #501e31;
+  color: #ffd45c;
+  font-size: 24px;
+  box-shadow: 4px 4px 0 #171016;
+}
+
+.fallen-card__hover-copy {
+  position: absolute;
+  left: 20px;
+  bottom: 18px;
+  z-index: 8;
+  padding: 9px 12px;
+  border: 2px solid #d9a52f;
+  background: #24152f;
+  color: #ffe3a1;
+  font-family: var(--font-pixel-display), monospace;
+  font-size: 8px;
+  line-height: 1.55;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.case-stage--fallen-throne:hover .fallen-card__hover-copy {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.case-stage--fallen-throne .case-stage__image {
+  image-rendering: pixelated;
+}
+
+.case-stage--fallen-throne:hover .case-stage__primary,
+.case-stage--fallen-throne:hover .case-stage__secondary {
+  border-radius: 0;
+  border-color: #d09a28;
+  box-shadow: 8px 8px 0 rgba(30,13,34,.82);
 }
 
 .case-stage__asset-label {
@@ -5556,6 +6522,46 @@ summary::marker {
 
 .work-dossier--compass {
   --dossier-accent: #1686c8;
+}
+
+.work-dossier--fallen-throne {
+  --dossier-accent: #d7a32c;
+  transition: background-color 260ms ease, color 260ms ease;
+}
+
+.work-dossier--fallen-throne:hover {
+  margin-inline: calc(clamp(24px, 5.4vw, 104px) * -1);
+  padding-inline: clamp(24px, 5.4vw, 104px);
+  background:
+    linear-gradient(90deg, rgba(8,7,10,.96), rgba(24,14,30,.9)),
+    url("/images/projects/fallen-throne/generated/throne-room-hero.png") center / cover;
+  color: #f7e7b2;
+}
+
+.work-dossier--fallen-throne:hover h3,
+.work-dossier--fallen-throne:hover .work-dossier__action {
+  font-family: var(--font-pixel-display), monospace;
+  letter-spacing: -.02em;
+}
+
+.work-dossier--fallen-throne:hover h3 {
+  color: #ffd15b;
+  font-size: clamp(2.6rem, 5.1vw, 6.1rem);
+  line-height: 1.15;
+  text-shadow: 4px 4px 0 #602130;
+}
+
+.work-dossier--fallen-throne:hover .work-dossier__visual {
+  border: 3px solid #d7a32c;
+  box-shadow: 10px 10px 0 #392044;
+}
+
+.work-dossier--fallen-throne .work-dossier__visual img {
+  image-rendering: pixelated;
+}
+
+.work-dossier--fallen-throne:hover :is(.work-dossier__category, .work-dossier__description, .work-dossier dd, .work-dossier time) {
+  color: rgba(247,231,178,.76);
 }
 
 .work-ledger--dark .work-dossier {

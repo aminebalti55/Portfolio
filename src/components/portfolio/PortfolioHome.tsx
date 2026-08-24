@@ -6,7 +6,7 @@ import { LogoCloud } from "@/components/sections/LogoCloud";
 import { projects } from "@/lib/projects";
 import { socials } from "@/lib/content";
 
-const selected = ["compass", "invoicebirds", "easyrhis", "autoally"]
+const selected = ["compass", "fallen-throne", "invoicebirds", "easyrhis", "autoally"]
   .map((slug) => projects.find((project) => project.slug === slug))
   .filter((project): project is NonNullable<typeof project> => Boolean(project));
 
@@ -25,6 +25,14 @@ const showcaseDetails: Record<string, {
     secondaryImage: "/images/projects/compass/compass-app-04-assistant.png",
     secondaryAlt: "Compass AI assistant answering a fleet operations question",
     secondaryLabel: "Grounded AI assistant",
+  },
+  "fallen-throne": {
+    signal: "Live experiment · Stripe-backed",
+    headline: "A leaderboard where the interface is the game.",
+    primaryLabel: "Live bidding hall",
+    secondaryImage: "/images/projects/fallen-throne/live/board-mobile-430.png",
+    secondaryAlt: "Fallen Throne live leaderboard on a mobile viewport",
+    secondaryLabel: "Responsive game board",
   },
   invoicebirds: {
     signal: "Revenue systems · Payments",
@@ -112,6 +120,46 @@ const notes = [
 function BrowserFrame({ project }: { project: (typeof selected)[number] }) {
   const showcase = showcaseDetails[project.slug];
 
+  if (project.slug === "fallen-throne") {
+    return (
+      <div className="case-stage__visual case-stage__visual--fallen-throne">
+        <span className="case-stage__asset-label">Hover to enter the kingdom</span>
+        <div className="fallen-card__crest" aria-hidden="true">♛</div>
+        <div className="case-stage__primary fallen-card__desktop">
+          <div className="case-stage__window-bar">
+            <span /><span /><span />
+            <p>fallenthrone.lol / live board</p>
+          </div>
+          <div className="case-stage__screen">
+            <Image
+              src="/images/projects/fallen-throne/live/board-complete.png"
+              alt="Fallen Throne live pixel-art bidding leaderboard"
+              fill
+              sizes="(min-width: 900px) 58vw, 100vw"
+              className="case-stage__image"
+            />
+          </div>
+        </div>
+        <div className="case-stage__secondary fallen-card__mobile">
+          <div className="case-stage__secondary-label">
+            <span>Inside the system</span>
+            <strong>Mobile kingdom</strong>
+          </div>
+          <div className="case-stage__secondary-screen">
+            <Image
+              src={showcase.secondaryImage}
+              alt={showcase.secondaryAlt}
+              fill
+              sizes="(min-width: 900px) 18vw, 58vw"
+              className="case-stage__image"
+            />
+          </div>
+        </div>
+        <span className="fallen-card__hover-copy" aria-hidden="true">The crown is live.</span>
+      </div>
+    );
+  }
+
   return (
     <div className="case-stage__visual">
       <span className="case-stage__asset-label">{showcase.primaryLabel}</span>
@@ -197,12 +245,12 @@ export function PortfolioHome() {
         <div className="selected-work__heading">
           <div>
             <p className="kicker">Selected systems</p>
-            <strong>04</strong>
+            <strong>05</strong>
             <span>production stories</span>
           </div>
           <h2>Work that holds up<br /><em>under real use.</em></h2>
           <div className="selected-work__heading-note">
-            <p>Four shipped systems. Two real interfaces from each. Scroll the stack to inspect the work beneath the headline.</p>
+            <p>Five shipped systems with real interfaces and production context. One of them hides a different world when you get close.</p>
             <span>Scroll to inspect <i aria-hidden="true">↓</i></span>
           </div>
         </div>
@@ -211,7 +259,7 @@ export function PortfolioHome() {
           {selected.map((project, index) => (
             <article className={`case-stage case-stage--${project.slug}`} key={project.slug}>
               <div className="case-stage__meta">
-                <span>Case 0{index + 1} / 04</span>
+                <span>Case 0{index + 1} / 05</span>
                 <p>{project.category}</p>
                 <p>{project.year}</p>
               </div>
@@ -237,7 +285,7 @@ export function PortfolioHome() {
         </div>
 
         <div className="selected-work__more">
-          <Link className="button button--ink" href="/work">View all nine projects <span>↗</span></Link>
+          <Link className="button button--ink" href="/work">View all ten projects <span>↗</span></Link>
         </div>
       </section>
 
