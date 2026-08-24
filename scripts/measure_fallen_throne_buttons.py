@@ -76,7 +76,7 @@ def main() -> None:
         "sheet",
         nargs="?",
         type=Path,
-        default=Path("public/images/projects/fallen-throne/generated/custom-buttons.png"),
+        default=Path("public/images/projects/fallen-throne/generated/custom-buttons.avif"),
     )
     parser.add_argument("--css-height", type=float, default=78)
     args = parser.parse_args()

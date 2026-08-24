@@ -261,7 +261,7 @@
   letter-spacing: .035em;
   text-transform: uppercase;
   background-color: transparent;
-  background-image: url("/images/projects/fallen-throne/generated/custom-buttons.png");
+  background-image: url("/images/projects/fallen-throne/generated/custom-buttons.avif");
   background-repeat: no-repeat;
   background-size: 100% 300%;
   image-rendering: pixelated;
@@ -277,7 +277,8 @@
   padding: 18px 68px 17px 86px;
   display: block;
   text-align: center;
-  transform: translateY(1px);
+  white-space: nowrap;
+  transform: translateY(1.5px);
 }
 
 .ft-button:hover,
@@ -394,7 +395,7 @@
   aspect-ratio: .72;
   display: block;
   margin-top: -10px;
-  background-image: url("/images/projects/fallen-throne/generated/letter-t.png");
+  background-image: url("/images/projects/fallen-throne/generated/letter-t.avif");
   background-repeat: no-repeat;
   background-position: center top;
   background-size: contain;
@@ -416,7 +417,7 @@
   min-height: 118px;
   padding: 24px 28px 22px;
   border: 24px solid transparent;
-  border-image: url("/images/projects/fallen-throne/generated/chapter-panel.png") 160 fill / 28px / 0 stretch;
+  border-image: url("/images/projects/fallen-throne/generated/chapter-panel.avif") 160 fill / 28px / 0 stretch;
   filter: drop-shadow(7px 8px 0 #241326);
 }
 
@@ -434,10 +435,10 @@
   filter: drop-shadow(3px 4px 0 rgba(0,0,0,.55));
 }
 
-.ft-meta-asset--role { background-image: url("/images/projects/fallen-throne/generated/icon-role.png"); }
-.ft-meta-asset--status { background-image: url("/images/projects/fallen-throne/generated/icon-status.png"); }
-.ft-meta-asset--loop { background-image: url("/images/projects/fallen-throne/generated/icon-loop.png"); }
-.ft-meta-asset--delivery { background-image: url("/images/projects/fallen-throne/generated/icon-delivery.png"); }
+.ft-meta-asset--role { background-image: url("/images/projects/fallen-throne/generated/icon-role.avif"); }
+.ft-meta-asset--status { background-image: url("/images/projects/fallen-throne/generated/icon-status.avif"); }
+.ft-meta-asset--loop { background-image: url("/images/projects/fallen-throne/generated/icon-loop.avif"); }
+.ft-meta-asset--delivery { background-image: url("/images/projects/fallen-throne/generated/icon-delivery.avif"); }
 
 .ft-loop__steps {
   display: grid;
@@ -450,7 +451,7 @@
   min-height: 370px;
   padding: 72px 50px 48px;
   border: 52px solid transparent;
-  border-image: url("/images/projects/fallen-throne/generated/chapter-panel.png") 170 fill / 52px / 0 stretch;
+  border-image: url("/images/projects/fallen-throne/generated/chapter-panel.avif") 170 fill / 52px / 0 stretch;
   filter: drop-shadow(9px 10px 0 #241326);
 }
 
@@ -494,7 +495,7 @@
 .ft-character {
   width: 100%;
   height: clamp(230px, 29vw, 390px);
-  background-image: url("/images/projects/fallen-throne/generated/rank-characters.png");
+  background-image: url("/images/projects/fallen-throne/generated/rank-characters.avif");
   background-repeat: no-repeat;
   background-size: 400% 100%;
   background-position-y: center;
@@ -548,7 +549,7 @@
   gap: clamp(56px, 10vw, 150px);
   background:
     linear-gradient(rgba(22,16,26,.94), rgba(12,9,14,.98)),
-    url("/images/projects/fallen-throne/generated/throne-room-hero.png") center / cover;
+    url("/images/projects/fallen-throne/generated/throne-room-hero.avif") center / cover;
 }
 
 .ft-judgment__quote {
@@ -736,7 +737,7 @@
   position: absolute;
   inset: 0;
   z-index: -2;
-  background: url("/images/projects/fallen-throne/generated/throne-room-hero.png") center / cover;
+  background: url("/images/projects/fallen-throne/generated/throne-room-hero.avif") center / cover;
   opacity: .22;
 }
 
@@ -800,9 +801,12 @@
   .ft-hero__lede { font-size: 1.6rem; }
   .ft-hero__support { font-size: 19px; }
   .ft-actions { flex-direction: column; }
-  .ft-button { width: 100%; min-height: 68px; font-size: 19px; }
-  .fallen-throne-case .ft-button { font-size: 19px; }
-  .ft-button__label { padding: 16px 56px 15px 70px; }
+  .ft-button { width: 100%; min-height: 68px; font-size: clamp(17px, 5.1vw, 19px); }
+  .fallen-throne-case .ft-button { font-size: clamp(17px, 5.1vw, 19px); }
+  .ft-button__label {
+    padding: 16px 56px 15px 70px;
+    transform: translateY(.5px);
+  }
   .ft-hero__scroll { display: none; }
   .ft-section { width: calc(100% - 30px); padding: 94px 0; }
   .ft-kicker { font-size: 7px; }
@@ -847,6 +851,29 @@
   .ft-outcome { min-height: 730px; padding-inline: 15px; }
   .ft-outcome__content { padding: 32px 20px; box-shadow: 7px 7px 0 #381d3d; }
   .ft-outcome__content > p:not(.ft-kicker) { font-size: 19px; }
+}
+
+@media (max-width: 390px) {
+  .fallen-throne-case .ft-button {
+    min-height: 64px;
+    font-size: 17px;
+    letter-spacing: .02em;
+  }
+
+  .ft-button__label {
+    padding: 14px 38px 13px 52px;
+    transform: translateY(1.3px);
+  }
+}
+
+@media (max-width: 340px) {
+  .fallen-throne-case .ft-button {
+    font-size: 16px;
+  }
+
+  .ft-button__label {
+    padding-inline: 44px 34px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -5270,7 +5297,7 @@ summary::marker {
   background-color: #08070a;
   background-image:
     linear-gradient(rgba(8,7,10,.82), rgba(8,7,10,.92)),
-    url("/images/projects/fallen-throne/generated/throne-room-hero.png");
+    url("/images/projects/fallen-throne/generated/throne-room-hero.avif");
   background-position: center;
   background-size: cover;
   box-shadow: 0 -18px 0 #38266a, 0 -24px 0 #d09a28, 0 34px 90px rgba(0,0,0,.52);
@@ -6534,7 +6561,7 @@ summary::marker {
   padding-inline: clamp(24px, 5.4vw, 104px);
   background:
     linear-gradient(90deg, rgba(8,7,10,.96), rgba(24,14,30,.9)),
-    url("/images/projects/fallen-throne/generated/throne-room-hero.png") center / cover;
+    url("/images/projects/fallen-throne/generated/throne-room-hero.avif") center / cover;
   color: #f7e7b2;
 }
 

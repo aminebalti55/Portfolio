@@ -30,7 +30,7 @@ const showcaseDetails: Record<string, {
     signal: "Live experiment · Stripe-backed",
     headline: "A leaderboard where the interface is the game.",
     primaryLabel: "Live bidding hall",
-    secondaryImage: "/images/projects/fallen-throne/live/board-mobile-430.png",
+    secondaryImage: "/images/projects/fallen-throne/live/board-mobile-430.avif",
     secondaryAlt: "Fallen Throne live leaderboard on a mobile viewport",
     secondaryLabel: "Responsive game board",
   },
@@ -132,7 +132,7 @@ function BrowserFrame({ project }: { project: (typeof selected)[number] }) {
           </div>
           <div className="case-stage__screen">
             <Image
-              src="/images/projects/fallen-throne/live/board-complete.png"
+              src="/images/projects/fallen-throne/live/board-complete.avif"
               alt="Fallen Throne live pixel-art bidding leaderboard"
               fill
               sizes="(min-width: 900px) 58vw, 100vw"

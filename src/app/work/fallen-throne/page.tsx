@@ -7,15 +7,6 @@ import { SITE_URL } from "@/lib/site";
 const title = "Fallen Throne — Pixel-Art Bidding Leaderboard";
 const description = "A live pixel-art bidding leaderboard where cumulative spend determines who rules the board.";
 const liveUrl = "https://fallenthrone.lol/";
-const buttonLabelStyle = {
-  fontFamily: "var(--font-pixel-body), monospace",
-  fontSize: "22px",
-  fontWeight: 700,
-  lineHeight: 1,
-  letterSpacing: ".035em",
-  transform: "translateY(1.5px)",
-} as const;
-
 export const metadata: Metadata = {
   title,
   description,
@@ -64,7 +55,7 @@ const technology = [
   "Durable Objects",
   "Wrangler",
   "Custom CSS",
-  "AVIF + PNG",
+  "AVIF media pipeline",
   "Node test runner",
 ];
 
@@ -102,7 +93,7 @@ export default function FallenThroneCaseStudy() {
 
       <header className="ft-hero">
         <Image
-          src="/images/projects/fallen-throne/generated/throne-room-hero.png"
+          src="/images/projects/fallen-throne/generated/throne-room-hero.avif"
           alt="A pixel-art throne room lit by braziers, with a crown waiting below the throne"
           fill
           priority
@@ -114,7 +105,7 @@ export default function FallenThroneCaseStudy() {
           <h1 className="sr-only">Fallen Throne</h1>
           <Image
             className="ft-hero__wordmark"
-            src="/images/projects/fallen-throne/generated/fallen-throne-wordmark.png"
+            src="/images/projects/fallen-throne/generated/fallen-throne-wordmark.avif"
             alt="Fallen Throne"
             width={1535}
             height={1024}
@@ -123,8 +114,8 @@ export default function FallenThroneCaseStudy() {
           <p className="ft-hero__lede">A live pixel-art bidding leaderboard where cumulative spend determines who rules the board.</p>
           <p className="ft-hero__support">Visitors submit a website or social profile, place a Stripe-backed bid, and climb a public hierarchy built to feel like a game.</p>
           <div className="ft-actions">
-            <a className="ft-button ft-button--gold" href={liveUrl} target="_blank" rel="noreferrer"><span className="ft-button__label" style={buttonLabelStyle}>Enter the live kingdom</span></a>
-            <a className="ft-button ft-button--ghost" href="#overview"><span className="ft-button__label" style={buttonLabelStyle}>Read the build story</span></a>
+            <a className="ft-button ft-button--gold" href={liveUrl} target="_blank" rel="noreferrer"><span className="ft-button__label">Enter the live kingdom</span></a>
+            <a className="ft-button ft-button--ghost" href="#overview"><span className="ft-button__label">Read the build story</span></a>
           </div>
         </div>
         <div className="ft-hero__scroll" aria-hidden="true">Scroll to descend ↓</div>
@@ -199,7 +190,7 @@ export default function FallenThroneCaseStudy() {
         </div>
         <figure className="ft-live-board__desktop">
           <Image
-            src="/images/projects/fallen-throne/live/board-complete.png"
+            src="/images/projects/fallen-throne/live/board-complete.avif"
             alt="Desktop Fallen Throne leaderboard with the king, dukes, knights, commoners, and lower rank"
             width={1440}
             height={900}
@@ -209,7 +200,7 @@ export default function FallenThroneCaseStudy() {
         </figure>
         <div className="ft-live-board__mobile-grid">
           <figure>
-            <Image src="/images/projects/fallen-throne/live/board-mobile-430.png" alt="Fallen Throne mobile leaderboard" width={430} height={932} sizes="(max-width: 700px) 86vw, 31vw" />
+            <Image src="/images/projects/fallen-throne/live/board-mobile-430.avif" alt="Fallen Throne mobile leaderboard" width={430} height={932} sizes="(max-width: 700px) 86vw, 31vw" />
             <figcaption>Responsive rank composition</figcaption>
           </figure>
           <div className="ft-live-board__mobile-copy">
@@ -218,7 +209,7 @@ export default function FallenThroneCaseStudy() {
             <p>The mobile version introduces its own controls, tighter character tiers, and a bottom game dock. The board still reads from crown to floor without turning the experience into a generic stacked list.</p>
           </div>
           <figure>
-            <Image src="/images/projects/fallen-throne/live/join-mobile-430.png" alt="Fallen Throne mobile join form" width={430} height={932} sizes="(max-width: 700px) 86vw, 31vw" />
+            <Image src="/images/projects/fallen-throne/live/join-mobile-430.avif" alt="Fallen Throne mobile join form" width={430} height={932} sizes="(max-width: 700px) 86vw, 31vw" />
             <figcaption>Composited checkout entrance</figcaption>
           </figure>
         </div>
@@ -280,14 +271,14 @@ export default function FallenThroneCaseStudy() {
       </section>
 
       <section className="ft-outcome">
-        <Image src="/images/projects/fallen-throne/generated/royal-ui-kit.png" alt="" fill sizes="100vw" className="ft-outcome__ornaments" aria-hidden="true" />
+        <Image src="/images/projects/fallen-throne/generated/royal-ui-kit.avif" alt="" fill sizes="100vw" className="ft-outcome__ornaments" aria-hidden="true" />
         <div className="ft-outcome__content">
           <p className="ft-kicker">Outcome</p>
           <h2>Not a mockup.<br /><em>A live kingdom.</em></h2>
           <p>Fallen Throne shipped as a public product experiment with a complete payment loop, a responsive game interface, edge deployment, and a regression suite that protects the parts most likely to break trust.</p>
           <div className="ft-actions">
-            <a className="ft-button ft-button--gold" href={liveUrl} target="_blank" rel="noreferrer"><span className="ft-button__label" style={buttonLabelStyle}>Challenge the board</span></a>
-            <Link className="ft-button ft-button--ghost" href="/work"><span className="ft-button__label" style={buttonLabelStyle}>Return to selected work</span></Link>
+            <a className="ft-button ft-button--gold" href={liveUrl} target="_blank" rel="noreferrer"><span className="ft-button__label">Challenge the board</span></a>
+            <Link className="ft-button ft-button--ghost" href="/work"><span className="ft-button__label">Return to selected work</span></Link>
           </div>
         </div>
       </section>
