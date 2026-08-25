@@ -5294,7 +5294,6 @@ summary::marker {
 }
 
 .case-stage--fallen-throne:hover {
-  z-index: 20;
   border-radius: 2px;
   background-color: #08070a;
   background-image:
