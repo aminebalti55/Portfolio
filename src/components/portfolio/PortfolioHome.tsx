@@ -27,8 +27,8 @@ const showcaseDetails: Record<string, {
     secondaryLabel: "Grounded AI assistant",
   },
   "fallen-throne": {
-    signal: "Live experiment · Stripe-backed",
-    headline: "A leaderboard where the interface is the game.",
+    signal: "",
+    headline: "A paid leaderboard where every bid reshapes the public ranking.",
     primaryLabel: "Live bidding hall",
     secondaryImage: "/images/projects/fallen-throne/live/board-mobile-430.avif",
     secondaryAlt: "Fallen Throne live leaderboard on a mobile viewport",
@@ -266,7 +266,7 @@ export function PortfolioHome() {
 
               <div className="case-stage__grid">
                 <div className="case-stage__copy">
-                  <p className="case-stage__signal">{showcaseDetails[project.slug].signal}</p>
+                  {showcaseDetails[project.slug].signal ? <p className="case-stage__signal">{showcaseDetails[project.slug].signal}</p> : null}
                   <h3>{project.title}</h3>
                   <p className="case-stage__headline">{showcaseDetails[project.slug].headline}</p>
                   <p className="case-stage__description">{project.description}</p>

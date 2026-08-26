@@ -5290,7 +5290,12 @@ summary::marker {
   --case-canvas: #09080b;
   --case-accent: #f0b933;
   isolation: isolate;
-  transition: border-radius 280ms ease, background-color 280ms ease, box-shadow 280ms ease;
+  background-image:
+    linear-gradient(rgba(23,19,29,.98), rgba(23,19,29,.98)),
+    url("/images/projects/fallen-throne/generated/throne-room-hero.avif");
+  background-position: center;
+  background-size: cover;
+  transition: border-radius 180ms ease, background-color 180ms ease;
 }
 
 .case-stage--fallen-throne:hover {
@@ -5301,7 +5306,7 @@ summary::marker {
     url("/images/projects/fallen-throne/generated/throne-room-hero.avif");
   background-position: center;
   background-size: cover;
-  box-shadow: 0 -18px 0 #38266a, 0 -24px 0 #d09a28, 0 34px 90px rgba(0,0,0,.52);
+  box-shadow: 0 -8px 0 #38266a, 0 -12px 0 #d09a28, 8px 10px 0 rgba(0,0,0,.38);
   cursor: url("/images/projects/fallen-throne/pixel-cursor.svg") 4 2, pointer;
 }
 
@@ -5309,29 +5314,37 @@ summary::marker {
   cursor: url("/images/projects/fallen-throne/pixel-cursor.svg") 4 2, pointer;
 }
 
-.case-stage--fallen-throne:hover .case-stage__copy h3,
-.case-stage--fallen-throne:hover .case-stage__headline,
-.case-stage--fallen-throne:hover .case-stage__link {
+.case-stage--fallen-throne .case-stage__copy h3 {
+  position: relative;
+  transition: color 120ms ease;
+}
+
+.case-stage--fallen-throne .case-stage__copy h3::after {
+  content: "FALLEN THRONE";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  color: #ffd566;
   font-family: var(--font-pixel-display), monospace;
-  letter-spacing: -.02em;
+  font-size: clamp(1.6rem, 2.5vw, 3rem);
+  line-height: 1.15;
+  letter-spacing: -.025em;
+  text-shadow: 4px 4px 0 #5d1e24;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 120ms ease, transform 160ms cubic-bezier(.2,.8,.2,1);
+  pointer-events: none;
 }
 
 .case-stage--fallen-throne:hover .case-stage__copy h3 {
-  color: #ffd566;
-  font-size: clamp(2.3rem, 3.7vw, 4.5rem);
-  line-height: 1.08;
-  text-shadow: 4px 4px 0 #5d1e24;
+  color: transparent;
 }
 
-.case-stage--fallen-throne:hover .case-stage__headline {
-  font-size: clamp(1.15rem, 1.55vw, 1.65rem);
-  line-height: 1.55;
-}
-
-.case-stage--fallen-throne:hover .case-stage__meta,
-.case-stage--fallen-throne:hover .case-stage__signal,
-.case-stage--fallen-throne:hover .case-stage__tags span {
-  font-family: var(--font-pixel-display), monospace;
+.case-stage--fallen-throne:hover .case-stage__copy h3::after {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .case-stage--fallen-throne:hover .case-stage__tags span {
@@ -5357,6 +5370,9 @@ summary::marker {
   box-shadow: 5px 5px 0 #08070a;
   opacity: 1;
   visibility: visible;
+  font-family: var(--font-pixel-body), monospace;
+  font-size: 21px;
+  letter-spacing: .015em;
 }
 
 .case-stage--fallen-throne:hover .case-stage__link strong {
@@ -5531,6 +5547,7 @@ summary::marker {
 }
 
 .case-stage__visual--fallen-throne {
+  contain: layout paint;
   border: 2px solid #6f4a17;
   background:
     linear-gradient(rgba(5,5,8,.05), rgba(5,5,8,.4)),
@@ -5601,6 +5618,12 @@ summary::marker {
   border-radius: 0;
   border-color: #d09a28;
   box-shadow: 8px 8px 0 rgba(30,13,34,.82);
+}
+
+.case-stage--fallen-throne .case-stage__primary,
+.case-stage--fallen-throne .case-stage__secondary {
+  will-change: transform;
+  transition: transform 180ms cubic-bezier(.2,.8,.2,1), border-color 120ms ease;
 }
 
 .case-stage__asset-label {
@@ -5730,63 +5753,6 @@ summary::marker {
   object-position: top;
 }
 
-@media (min-width: 1101px) and (min-height: 760px) {
-  @supports (animation-timeline: view()) {
-    .case-stage__image {
-      animation: case-screen-focus linear both;
-      animation-timeline: view();
-      animation-range: entry 8% cover 30%;
-    }
-
-    .case-stage__copy {
-      animation: case-copy-arrive linear both;
-      animation-timeline: view();
-      animation-range: entry 8% cover 28%;
-    }
-
-    .case-stage__visual {
-      animation: case-visual-arrive linear both;
-      animation-timeline: view();
-      animation-range: entry 6% cover 28%;
-    }
-  }
-}
-
-@keyframes case-screen-focus {
-  from {
-    filter: saturate(.7) contrast(.92);
-    transform: scale(1.06);
-  }
-  to {
-    filter: saturate(1) contrast(1);
-    transform: scale(1);
-  }
-}
-
-@keyframes case-copy-arrive {
-  from {
-    opacity: .72;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes case-visual-arrive {
-  from {
-    opacity: .82;
-    clip-path: inset(3% 0 0 0 round 18px);
-    transform: translateY(16px);
-  }
-  to {
-    opacity: 1;
-    clip-path: inset(0 0 0 0 round 18px);
-    transform: translateY(0);
-  }
-}
-
 @media (min-width: 1101px) and (max-height: 759px) {
   .case-stage {
     padding: 18px 24px 22px;
@@ -5843,35 +5809,6 @@ summary::marker {
     height: 38px;
   }
 
-  .case-stage--fallen-throne:hover .case-stage__copy h3 {
-    max-width: none;
-    font-size: 2rem;
-    line-height: 1.1;
-    white-space: nowrap;
-  }
-
-  .case-stage--fallen-throne:hover .case-stage__headline {
-    font-family: var(--font-pixel-body), monospace;
-    font-size: 21px;
-    line-height: 1.2;
-    letter-spacing: .015em;
-  }
-
-  .case-stage--fallen-throne:hover .case-stage__signal,
-  .case-stage--fallen-throne:hover .case-stage__tags span,
-  .case-stage--fallen-throne:hover .case-stage__link {
-    font-family: var(--font-pixel-body), monospace;
-  }
-
-  .case-stage--fallen-throne:hover .case-stage__tags span {
-    padding: 5px 9px;
-    font-size: 16px;
-    letter-spacing: .02em;
-  }
-
-  .case-stage--fallen-throne:hover .case-stage__description {
-    line-height: 1.35;
-  }
 }
 
 @media (max-width: 1100px) {
