@@ -6006,6 +6006,7 @@ summary::marker {
 
   .selected-work__heading > div:first-child {
     grid-template-columns: 1fr auto;
+    column-gap: 24px;
     align-items: end;
   }
 
