@@ -5360,6 +5360,7 @@ summary::marker {
 .case-stage--fallen-throne .case-stage__link {
   position: relative;
   z-index: 20;
+  border: 3px solid transparent;
   font-family: var(--font-pixel-body), monospace;
   font-size: 21px;
   letter-spacing: .015em;
