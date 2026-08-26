@@ -5360,6 +5360,9 @@ summary::marker {
 .case-stage--fallen-throne .case-stage__link {
   position: relative;
   z-index: 20;
+  font-family: var(--font-pixel-body), monospace;
+  font-size: 21px;
+  letter-spacing: .015em;
 }
 
 .case-stage--fallen-throne:hover .case-stage__link {
@@ -5370,9 +5373,6 @@ summary::marker {
   box-shadow: 5px 5px 0 #08070a;
   opacity: 1;
   visibility: visible;
-  font-family: var(--font-pixel-body), monospace;
-  font-size: 21px;
-  letter-spacing: .015em;
 }
 
 .case-stage--fallen-throne:hover .case-stage__link strong {
