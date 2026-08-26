@@ -6,7 +6,7 @@
 // Vercel (or change the fallback below) and every surface updates at once.
 
 export const SITE_URL = (
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://aminebdev.vercel.app"
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://aminebdev.com"
 ).replace(/\/$/, "");
 
 export const SITE_NAME = "Med Amine Balti — Portfolio";
@@ -17,7 +17,7 @@ export const person = {
   name: "Med Amine Balti",
   alternateName: "Amine Balti",
   jobTitle: "Senior Full-Stack Engineer",
-  email: "mohamedamine.balti@esprit.tn",
+  email: "amine@aminebdev.com",
   addressCountryCode: "TN",
   addressCountry: "Tunisia",
   nationality: "Tunisian",

@@ -12,7 +12,7 @@ export const brand = {
 };
 
 export const socials = {
-  email: "mohamedamine.balti@esprit.tn",
+  email: "amine@aminebdev.com",
   phone: "+216 92 358 690",
   github: "https://github.com/aminebalti55",
   linkedin: "https://www.linkedin.com/in/aminebdev/",
