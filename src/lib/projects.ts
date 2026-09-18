@@ -107,7 +107,7 @@ export const projects: Project[] = [
   },
   {
     slug: "romorquage",
-    title: "Romorquage Mont Rapido",
+    title: "Remorquage Mont Rapido",
     category: "Towing Service · Landing Page",
     kind: "client",
     client: "Mont Rapido Towing Services",
@@ -185,7 +185,7 @@ export const projects: Project[] = [
  *                   (escrow, KYC, real-time messaging)
  *
  * Deliberately excluded: FLEDEM has no screenshot yet and a placeholder card
- * undercuts the row; Romorquage is a landing page next to four platforms; the
+ * undercuts the row; Remorquage is a landing page next to four platforms; the
  * solo builds are strong but a prospect is buying paid delivery first.
  */
 export const featuredProjects = projects.filter((p) => p.featured);

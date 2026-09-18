@@ -10,7 +10,7 @@ import { Footer } from "@/components/sections/Footer";
 import { CaseStudySystemSection } from "@/components/ui/CaseStudySystemSection";
 
 export const metadata: Metadata = {
-  title: "Romorquage Mont Rapido — Case Study",
+  title: "Remorquage Mont Rapido — Case Study",
   description:
     "A mobile-first service site for a Montréal towing company, with clear service coverage, location context, and direct contact paths.",
 };
@@ -56,7 +56,7 @@ export default function RomorquageCaseStudy() {
           </div>
 
           <h1 className="mt-6 font-display text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
-            Romorquage Mont Rapido
+            Remorquage Mont Rapido
           </h1>
 
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/75 sm:text-xl">
@@ -91,7 +91,7 @@ export default function RomorquageCaseStudy() {
           <div className="relative aspect-[16/9] overflow-hidden rounded-2xl border border-zinc-200 bg-zinc-100 dark:border-zinc-800 dark:bg-zinc-900">
             <Image
               src="/images/projects/romorquage/hero.png"
-              alt="Romorquage Mont Rapido Landing Page"
+              alt="Remorquage Mont Rapido Landing Page"
               fill
               className="object-cover"
               priority
@@ -119,7 +119,7 @@ export default function RomorquageCaseStudy() {
                   handle this vehicle, and how do I reach dispatch?
                 </p>
                 <p>
-                  Romorquage Mont Rapido needed a modern, mobile-first landing page 
+                  Remorquage Mont Rapido needed a modern, mobile-first landing page
                   that would establish the service clearly, show their equipment and
                   available work, and keep the phone action within easy reach — while highlighting their coverage area with 
                   an interactive map.
