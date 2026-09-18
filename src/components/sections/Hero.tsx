@@ -67,7 +67,7 @@ const staggerItem = {
 
 export function Hero() {
   return (
-    <section className="relative isolate min-h-screen overflow-hidden rounded-b-[48px] bg-[#100706] text-white">
+    <section className="relative min-h-screen overflow-hidden rounded-b-[48px] bg-[#100706] text-white">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_75%_72%_at_50%_42%,rgba(155,44,12,0.25)_0%,rgba(68,20,10,0.18)_46%,transparent_72%)]" />
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(17,7,6,0.12)_0%,rgba(12,5,4,0.02)_38%,rgba(5,3,3,0.56)_100%)]" />
       
@@ -87,15 +87,15 @@ export function Hero() {
               animate="visible"
               variants={fadeInScale}
             >
-              <div className="pointer-events-none absolute bottom-[0%] left-1/2 z-0 h-[500px] w-[700px] -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse_at_50%_60%,rgba(255,81,19,0.30)_0%,rgba(180,44,10,0.16)_42%,transparent_73%)] blur-[68px] lg:h-[620px] lg:w-[900px]" />
-              <div className="absolute bottom-[8%] left-1/2 z-0 h-[320px] w-[320px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle_at_43%_34%,#ff7b35_0%,#ff571c_42%,#e43a10_70%,#9f210a_100%)] shadow-[0_0_90px_rgba(255,73,15,0.18)] sm:bottom-[10%] sm:h-[420px] sm:w-[420px] lg:bottom-[4%] lg:h-[540px] lg:w-[540px]" />
+              <div className="pointer-events-none absolute bottom-[0%] left-1/2 z-0 h-[500px] w-[700px] -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse_at_50%_60%,rgba(255,81,19,0.30)_0%,rgba(180,44,10,0.16)_42%,transparent_73%)] blur-[68px] lg:h-[434px] lg:w-[630px]" />
+              <div className="absolute bottom-[8%] left-1/2 z-0 h-[320px] w-[320px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle_at_43%_34%,#ff7b35_0%,#ff571c_42%,#e43a10_70%,#9f210a_100%)] shadow-[0_0_90px_rgba(255,73,15,0.18)] sm:bottom-[10%] sm:h-[420px] sm:w-[420px] lg:bottom-[4%] lg:h-[378px] lg:w-[378px]" />
 
-              <div className="relative z-10 -mb-24 h-[520px] w-[400px] sm:-mb-28 sm:h-[620px] sm:w-[480px] lg:-mb-32 lg:h-[750px] lg:w-[600px]">
+              <div className="relative z-10 -mb-24 h-[520px] w-[400px] sm:-mb-28 sm:h-[620px] sm:w-[480px] lg:-mb-20 lg:h-[525px] lg:w-[420px]">
                 <Image
                   src="/images/amine-portrait.png"
                   alt="Amine - Senior Software Engineer"
                   fill
-                  sizes="(min-width: 1024px) 600px, (min-width: 640px) 480px, 400px"
+                  sizes="(min-width: 1024px) 420px, (min-width: 640px) 480px, 400px"
                   className="object-contain object-bottom [filter:contrast(1.04)_saturate(.88)_brightness(.98)]"
                   priority
                 />
@@ -113,14 +113,17 @@ export function Hero() {
                 variants={fadeInUp}
                 custom={0.1}
               >
-                <span className="inline-flex items-center gap-2 rounded-full border border-[#ff7740]/35 bg-[#ff5a1f]/10 px-3 py-1 text-[11px] font-semibold text-[#ff9b73]">
-                  <span className="h-1.5 w-1.5 rounded-full bg-[#ff641f] shadow-[0_0_12px_rgba(255,100,31,0.8)]" />
+                <span className="inline-flex items-center gap-2 border-b border-[#ff641f]/30 pb-1.5 font-mono text-[11px] uppercase tracking-[0.15em] text-[#ff9b73]">
+                  <span className="relative flex h-1.5 w-1.5">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#ff641f]/70" />
+                    <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-[#ff641f]" />
+                  </span>
                   Open for select engagements
                 </span>
                 <p className="mt-4 text-[11px] font-semibold tracking-[0.2em] uppercase text-white/55">
                   Senior full-stack product engineer
                 </p>
-                <h1 className="font-inter mt-3 text-[clamp(2.8rem,7vw,5.5rem)] font-extrabold uppercase leading-[0.88] tracking-[-0.03em] text-white">
+                <h1 className="font-inter mt-3 text-[clamp(2.8rem,7vw,5.5rem)] font-extrabold uppercase leading-[0.88] tracking-[-0.03em] text-white lg:text-[clamp(2.125rem,3.3vw,2.75rem)]">
                   I Build
                   <br />
                   Production SaaS
