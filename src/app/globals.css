@@ -5046,7 +5046,7 @@ summary::marker {
   color: var(--orange);
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 1279px) {
   .hero-brief {
     max-width: 440px;
     padding: 18px 0 48px;
@@ -5054,6 +5054,12 @@ summary::marker {
 
   .hero-brief__statement {
     font-size: clamp(2.2rem, 9vw, 3rem);
+  }
+}
+
+@media (min-width: 1280px) {
+  .hero-brief {
+    margin-right: 0;
   }
 }
 
@@ -5122,7 +5128,7 @@ summary::marker {
 
 .selected-work__heading {
   display: grid;
-  grid-template-columns: .62fr 1.42fr .96fr;
+  grid-template-columns: auto max-content minmax(260px, 1fr);
   gap: 48px;
   align-items: end;
   padding-bottom: 96px;
@@ -5169,6 +5175,7 @@ summary::marker {
 
 .selected-work__heading-note {
   display: grid;
+  justify-self: end;
   gap: 26px;
 }
 
@@ -5178,6 +5185,7 @@ summary::marker {
   color: rgba(17,17,15,.62);
   font-size: 15px;
   line-height: 1.68;
+  text-wrap: pretty;
 }
 
 .selected-work__heading-note > span {
@@ -5819,6 +5827,7 @@ summary::marker {
 
   .selected-work__heading-note {
     grid-column: 2;
+    justify-self: start;
   }
 
   .case-stage {
@@ -6024,7 +6033,7 @@ summary::marker {
   }
 
   .selected-work__heading h2 {
-    font-size: clamp(3.25rem, 15vw, 4.5rem);
+    font-size: clamp(2.75rem, 14vw, 4.5rem);
   }
 
   .selected-work__heading-note {

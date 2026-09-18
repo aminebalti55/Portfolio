@@ -248,7 +248,7 @@ export function PortfolioHome() {
             <strong>05</strong>
             <span>production stories</span>
           </div>
-          <h2>Work that holds up<br /><em>under real use.</em></h2>
+          <h2>Work that holds&nbsp;up<br /><em>under real use.</em></h2>
           <div className="selected-work__heading-note">
             <p>Five shipped systems with real interfaces and production context. One of them hides a different world when you get close.</p>
             <span>Scroll to inspect <i aria-hidden="true">↓</i></span>
